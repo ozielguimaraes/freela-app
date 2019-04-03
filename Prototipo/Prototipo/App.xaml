@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Prototipo.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--Global Styles-->
+            <Color x:Key="PrimaryColor">#212121</Color>
+            <Color x:Key="PrimaryDarkColor">#212121</Color>
+            <Color x:Key="Accent">#00C168</Color>
+
+            <Color x:Key="PageBackgroundColor">#303030</Color>
+            
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+
+            <OnPlatform x:Key="PagePadding" x:TypeArguments="Thickness" Default="10,0,10,0">
+                <!--<On Platform="Android">10,0,10,0</On>
+                <On Platform="iOS">10,0,10,0</On>-->
+            </OnPlatform>
+
+            <Style TargetType="ContentPage">
+                <Setter Property="Title" Value="Protótipo" />
+                <Setter Property="Padding" Value="{StaticResource PagePadding}" />
+            </Style>
+
+            <Style x:Key="PageStyle" TargetType="ContentPage">
+                <Setter Property="Padding" Value="{StaticResource PagePadding}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource PageBackgroundColor}" />
+            </Style>
+
+            <OnPlatform x:Key="SpinnerPrimaryColor" x:TypeArguments="Color" iOS="Black" />
+            <Style x:Key="SpinnerLoading" TargetType="ActivityIndicator">
+                <Setter Property="HeightRequest" Value="50"></Setter>
+                <Setter Property="WidthRequest" Value="50"></Setter>
+                <Setter Property="VerticalOptions" Value="Center"></Setter>
+                <Setter Property="Color" Value="{StaticResource SpinnerPrimaryColor}"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
