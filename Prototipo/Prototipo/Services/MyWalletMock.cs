@@ -24,8 +24,8 @@ namespace Prototipo.Services
                     TotalProposal=7009.88m,
                     TotalProposalAproved=4990.20m,
                     Balance=700,
-                    EndDate=DateTime.Now,
-                    StartDate=DateTime.Now.AddDays(2),
+                    EndDate=DateTime.Now.AddDays(2),
+                    StartDate=DateTime.Now,
                     StartValue=700m,
                     EndValue=750m
                 }

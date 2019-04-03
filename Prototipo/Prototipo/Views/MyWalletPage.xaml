@@ -12,64 +12,181 @@
             </ToolbarItem.Icon>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
-        <StackLayout>
-                    <Label Text="Data Inicial" 
+        <StackLayout Padding="0,10,0,0">
+            <StackLayout>
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition Height="1" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition Width="5*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Data Inicial"
+                       Grid.Row="0"
+                               Grid.Column="0"
                            FontSize="Micro"
                            TextColor="White" 
                            VerticalOptions="Start"
                            HorizontalOptions="Start"></Label>
 
-            <Label Text="Data Final" 
+                    <Label Text="Data Final" 
+                       Grid.Row="0"
+                               Grid.Column="1"
                            FontSize="Micro"
                            TextColor="White"
                            VerticalOptions="Start"
                            HorizontalOptions="End"></Label>
-            
-            <StackLayout Orientation="Horizontal">
-                    <Grid >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="5*" />
-                            <ColumnDefinition Width="5*" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
 
-                        <Label Text="{Binding Item.StartDate, StringFormat='{0:dd}'}" 
+                    <StackLayout
+                        Margin="0,15,0,0"
+                        HorizontalOptions="StartAndExpand"
+                        Grid.Column="0">
+                        <StackLayout Orientation="Horizontal"
+                             Padding="0,10">
+                            <Label Text="{Binding Item.StartDate, StringFormat='{0:dd}'}" 
                                Grid.Column="0"
-                               FontSize="Large"
+                               FontSize="28"
                                TextColor="White"
-                               VerticalOptions="End"></Label>
-                        <BoxView  Grid.Row="0" BackgroundColor="AliceBlue" />
-                        <BoxView Grid.Column="1" Grid.Row="1" BackgroundColor="IndianRed" />
-                    </Grid>
+                           FontAttributes="Bold"
+                               VerticalOptions="Center"
+                                   Margin="0,0,5,0"></Label>
 
+                                <Label Text="{Binding Item.StartDate, StringFormat='{0:MMM &#10; yyyy}'}" 
+                               Grid.Column="0"
+                               FontSize="16"
+        VerticalTextAlignment="Center"
+        HorizontalTextAlignment="Center"
+                               TextColor="#707270"
+                                   Margin="0,0,15,0"></Label>
+
+                            <Image Source="calendar" HeightRequest="25"></Image>
+                        </StackLayout>
+                        <StackLayout >
+                            <BoxView
+                            HorizontalOptions="FillAndExpand"
+                            Color="White"
+                                HeightRequest="1"
+                         Grid.Column="0"
+                       Grid.Row="2"></BoxView>
+                            <Label Text="{Binding Item.StartValue, StringFormat='{0:C}'}"
+                                   TextColor="White"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout
+                        Margin="0,15,0,0"
+                        HorizontalOptions="EndAndExpand"
+                        Grid.Column="1">
+                        <StackLayout Orientation="Horizontal"
+                             Padding="0,10">
+                        <Image Source="calendar" HeightRequest="25"
+                                   Grid.Column="1"></Image>
+                            
+                            <Label Text="{Binding Item.EndDate, StringFormat='{0:dd}'}" 
+                               Grid.Column="1"
+                               FontSize="28"
+                                   Margin="15,0,5,0"
+                               TextColor="White"
+                           FontAttributes="Bold"
+                               VerticalOptions="Center"></Label>
+
+                            <Label Text="{Binding Item.EndDate, StringFormat='{0:MMM &#10; yyyy}'}" 
+                               Grid.Column="0"
+        VerticalTextAlignment="Center"
+        HorizontalTextAlignment="Center"
+                               FontSize="16"
+                               TextColor="#707270"
+                                   Margin="0,0,15,0"></Label>
+                        </StackLayout>
+                        <StackLayout>
+                            <BoxView
+                            HorizontalOptions="FillAndExpand"
+                            Color="White"
+                                HeightRequest="1"
+                         Grid.Column="1"
+                       Grid.Row="2"></BoxView>
+                            <Label Text="{Binding Item.EndValue, StringFormat='{0:C}'}"
+                                   HorizontalOptions="EndAndExpand"
+                                   TextColor="White"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
             </StackLayout>
-
             <StackLayout Orientation="Horizontal">
-                <StackLayout Orientation="Horizontal" 
-                         HorizontalOptions="Start">
-                    <Label Text="sdsa" 
-                           FontSize="Micro"
-                           TextColor="White"></Label>
-                    
+                <StackLayout Margin="25,0,0,0">
+                    <Frame
+    CornerRadius="100"
+    Padding="1"
+    BackgroundColor="#1f2027"
+    AbsoluteLayout.LayoutFlags="XProportional">
+                        <Frame.AbsoluteLayout.LayoutBounds>
+                            <OnPlatform x:TypeArguments="Rectangle" iOS=".95,80,-1,-1" Android=".95,20,-1,-1" />
+                        </Frame.AbsoluteLayout.LayoutBounds>
+                        <StackLayout>
+                            <Label
+TextColor="#707270"
+        WidthRequest="190"
+        HeightRequest="20"
+        VerticalTextAlignment="Center"
+        HorizontalTextAlignment="Center"
+        FontSize="12"
+                                Margin="0,50,0,0"
+        Text="Meus Lucros">
+                            </Label>
+                            <Label Text="{Binding Item.StartValue, StringFormat='{0:C}'}"
+        WidthRequest="190"
+        HeightRequest="15"
+        VerticalTextAlignment="Center"
+        HorizontalTextAlignment="Center"
+                                       Margin="0"
+                                   TextColor="White"></Label>
+                            <BoxView HeightRequest="1" Color="White" WidthRequest="80" HorizontalOptions="CenterAndExpand"></BoxView>
+                            <Label
+TextColor="#707270"
+        WidthRequest="190"
+        HeightRequest="10"
+        VerticalTextAlignment="Center"
+        HorizontalTextAlignment="Center"
+        FontSize="8"
+                                Margin="0,15,0,0"
+        Text="Saldo"></Label>
+                            <Label Text="{Binding Item.StartValue, StringFormat='{0:C}'}"
+        WidthRequest="190"
+        HeightRequest="20"
+        VerticalTextAlignment="Center"
+        HorizontalTextAlignment="Center"
+                                       Margin="0,0,0,30"
+                                   TextColor="White"></Label>
+                        </StackLayout>
+                    </Frame>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal"
+                <StackLayout
                          HorizontalOptions="EndAndExpand"
                          VerticalOptions="Start">
                     <Label Text="Minhas Propostas" 
                            FontSize="Medium"
                            TextColor="White"></Label>
-                    <Label Text="{Binding TotalProposal}" 
+                    <Label Text="{Binding Item.TotalProposal, StringFormat='{0:C}'}" 
                            FontSize="Medium"
                            TextColor="White"></Label>
 
+                    <Label Text="Aprovadas" 
+                           Margin="0,50,0,0"
+                           FontSize="Medium"
+                           TextColor="White"></Label>
+                    <Label Text="{Binding Item.Balance, StringFormat='{0:C}'}" 
+                           FontSize="Medium"
+                           TextColor="White"></Label>
                 </StackLayout>
             </StackLayout>
-            
+            <StackLayout>
+                
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
