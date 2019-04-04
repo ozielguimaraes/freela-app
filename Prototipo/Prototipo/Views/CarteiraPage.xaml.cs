@@ -1,9 +1,12 @@
-﻿using Prototipo.ViewModels;
+﻿using Prototipo.Services;
+using Prototipo.ViewModels;
+using System;
+using System.Diagnostics;
 using Xamarin.Forms;
 
 namespace Prototipo.Views
 {
-	public partial class CarteiraPage : ContentPage
+    public partial class CarteiraPage : ContentPage
     {
         private readonly CarteiraVm _vm;
 
@@ -14,11 +17,27 @@ namespace Prototipo.Views
             BindingContext = _vm = _vm ?? new CarteiraVm();
         }
 
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
+            if (IsBusy) return;
 
-            _vm.LoadDetailsCommand.Execute(null);
+            IsBusy = true;
+
+            try
+            {
+                var mock = new CarteiraMock();
+                var item = await mock.GetItemAsync(string.Empty);
+                _vm.LoadDetailsCommand.Execute(item);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
     }
 }

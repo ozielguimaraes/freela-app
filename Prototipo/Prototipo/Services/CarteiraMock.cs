@@ -3,15 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Xamarin.Forms.Internals;
 
 namespace Prototipo.Services
 {
+    [Preserve(AllMembers = true)]
     public class CarteiraMock : IDataStore<Carteira>
     {
         List<Carteira> items;
 
         public CarteiraMock()
-
         {
             items = new List<Carteira>
             {

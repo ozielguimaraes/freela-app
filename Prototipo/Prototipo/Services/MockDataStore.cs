@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Prototipo.Models;
+using Xamarin.Forms.Internals;
 
 namespace Prototipo.Services
 {
+    [Preserve(AllMembers = true)]
     public class MockDataStore : IDataStore<Item>
     {
         List<Item> items;

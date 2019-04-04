@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
-//[assembly: Dependency(typeof(NavigationService))]
 namespace Prototipo.Services
 {
     [Preserve(AllMembers = true)]

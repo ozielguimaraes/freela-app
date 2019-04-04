@@ -18,35 +18,19 @@ namespace Prototipo.ViewModels
         public CarteiraVm()
         {
             Title = "Minha Carteira";
-            LoadDetailsCommand = new Command(async () => await LoadDetails());
+            LoadDetailsCommand = new Command<Carteira>((carteira) =>  LoadDetails(carteira));
             IrParaPropostasCommand = new Command(async () => await IrParaPropostas());
         }
 
 
-        private async Task LoadDetails()
+        private void LoadDetails(Carteira item)
         {
-            if (IsBusy) return;
-
-            IsBusy = true;
-
-            try
-            {
-                var mock = new CarteiraMock();
-                Item = await mock.GetItemAsync(string.Empty);
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-            }
-            finally
-            {
-                IsBusy = false;
-            }
+            Item = item;
         }
 
         private async Task IrParaPropostas()
         {
-            await NavigationService.PushAsync(new PropostasPage());
+            await NavigationService.PushAsync(new NavigationPage(new PropostasPage()));
         }
     }
 }
