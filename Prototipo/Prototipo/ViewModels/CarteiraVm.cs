@@ -1,23 +1,27 @@
 ﻿using Prototipo.Models;
 using Prototipo.Services;
+using Prototipo.Views;
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace Prototipo.Vms
+namespace Prototipo.ViewModels
 {
-    public class MyWalletVm : BaseVm
+    public class CarteiraVm : BaseVm
     {
-        public MyWalletVm()
+        public ICommand LoadDetailsCommand { get; set; }
+        public ICommand IrParaPropostasCommand { get; set; }
+        public Carteira Item { get; set; }
+
+        public CarteiraVm()
         {
             Title = "Minha Carteira";
             LoadDetailsCommand = new Command(async () => await LoadDetails());
+            IrParaPropostasCommand = new Command(async () => await IrParaPropostas());
         }
 
-        public MyWallet Item { get; set; }
-        public ICommand LoadDetailsCommand { get; set; }
 
         private async Task LoadDetails()
         {
@@ -27,7 +31,7 @@ namespace Prototipo.Vms
 
             try
             {
-                var mock = new MyWalletMock();
+                var mock = new CarteiraMock();
                 Item = await mock.GetItemAsync(string.Empty);
             }
             catch (Exception ex)
@@ -38,6 +42,11 @@ namespace Prototipo.Vms
             {
                 IsBusy = false;
             }
+        }
+
+        private async Task IrParaPropostas()
+        {
+            await NavigationService.PushAsync(new PropostasPage());
         }
     }
 }

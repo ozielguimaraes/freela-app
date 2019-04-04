@@ -1,13 +1,10 @@
 ﻿using Prototipo.Models;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace Prototipo.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : MasterDetailPage
     {
         Dictionary<int, NavigationPage> MenuPages = new Dictionary<int, NavigationPage>();
@@ -17,7 +14,7 @@ namespace Prototipo.Views
 
             MasterBehavior = MasterBehavior.Popover;
 
-            MenuPages.Add((int)MenuItemType.MyWallet, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.Carteira, (NavigationPage)Detail);
         }
 
         public async Task NavigateFromMenu(int id)
@@ -26,8 +23,11 @@ namespace Prototipo.Views
             {
                 switch (id)
                 {
-                    case (int)MenuItemType.MyWallet:
-                        MenuPages.Add(id, new NavigationPage(new MyWalletPage()));
+                    case (int)MenuItemType.Carteira:
+                        MenuPages.Add(id, new NavigationPage(new CarteiraPage()));
+                        break;
+                    case (int)MenuItemType.Proposta:
+                        MenuPages.Add(id, new NavigationPage(new PropostasPage()));
                         break;
                     case (int)MenuItemType.Browse:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));

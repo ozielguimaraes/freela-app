@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
 using Xamarin.Forms;
-
 using Prototipo.Models;
 using Prototipo.Services;
+using Prototipo.Services.Interfaces;
 
-namespace Prototipo.Vms
+namespace Prototipo.ViewModels
 {
     public class BaseVm : INotifyPropertyChanged
     {
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
+        protected INavigationService NavigationService;
+
+        public BaseVm()
+        {
+            NavigationService = DependencyService.Get<INavigationService>();
+        }
 
         bool isBusy = false;
         public bool IsBusy

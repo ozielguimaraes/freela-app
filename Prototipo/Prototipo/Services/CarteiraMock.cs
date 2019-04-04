@@ -6,40 +6,43 @@ using System.Threading.Tasks;
 
 namespace Prototipo.Services
 {
-    public class MyWalletMock : IDataStore<MyWallet>
+    public class CarteiraMock : IDataStore<Carteira>
     {
-        List<MyWallet> items;
+        List<Carteira> items;
 
-        public MyWalletMock()
+        public CarteiraMock()
+
         {
-            items = new List<MyWallet>
+            items = new List<Carteira>
             {
-                new MyWallet
+                new Carteira
                 {
-                    AmountProposal = 110,
+                    AmountInits = 110,
+                    AmountProposal = 1,
                     AmountProposalAproved = 40,
                     AmountProposalReproved = 10,
                     AmountProposalPeding = 40,
                     AmountProposalInRevision = 6,
-                    TotalProposal=7009.88m,
-                    TotalProposalAproved=4990.20m,
-                    Balance=700,
-                    EndDate=DateTime.Now.AddDays(2),
-                    StartDate=DateTime.Now,
-                    StartValue=700m,
-                    EndValue=750m
+                    TotalProposal = 7009.88m,
+                    TotalBocked = 700m,
+                    TotalProposalAproved = 4990.20m,
+                    Balance = 700,
+                    EndDate = DateTime.Now.AddDays(2),
+                    StartDate = DateTime.Now,
+                    StartValue = 700m,
+                    EndValue = 750m
                 }
             };
         }
 
-        public async Task<bool> AddItemAsync(MyWallet item)
+        public async Task<bool> AddItemAsync(Carteira item)
         {
             items.Add(item);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(MyWallet item)
+        public async Task<bool> UpdateItemAsync(Carteira item)
         {
             var oldItem = items.FirstOrDefault();
             items.Remove(oldItem);
@@ -56,12 +59,12 @@ namespace Prototipo.Services
             return await Task.FromResult(true);
         }
 
-        public async Task<MyWallet> GetItemAsync(string id)
+        public async Task<Carteira> GetItemAsync(string id)
         {
             return await Task.FromResult(items.FirstOrDefault());
         }
 
-        public async Task<IEnumerable<MyWallet>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<Carteira>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
         }

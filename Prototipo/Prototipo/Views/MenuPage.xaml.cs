@@ -1,7 +1,5 @@
 ﻿using Prototipo.Models;
-using System;
 using System.Collections.Generic;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,6 +16,8 @@ namespace Prototipo.Views
 
             menuItems = new List<HomeMenuItem>
             {
+                new HomeMenuItem {Id = MenuItemType.Carteira, Title="Minha carteira" },
+                new HomeMenuItem {Id = MenuItemType.Proposta, Title="Minhas propostas" },
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" }
             };

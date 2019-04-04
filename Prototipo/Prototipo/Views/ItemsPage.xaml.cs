@@ -9,7 +9,7 @@ using Xamarin.Forms.Xaml;
 
 using Prototipo.Models;
 using Prototipo.Views;
-using Prototipo.Vms;
+using Prototipo.ViewModels;
 
 namespace Prototipo.Views
 {

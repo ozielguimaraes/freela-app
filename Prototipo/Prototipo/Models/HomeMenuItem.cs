@@ -2,7 +2,8 @@
 {
     public enum MenuItemType
     {
-        MyWallet,
+        Carteira,
+        Proposta,
         Browse,
         About
     }

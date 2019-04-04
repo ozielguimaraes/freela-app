@@ -2,18 +2,17 @@
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
-
 using Prototipo.Models;
 using Prototipo.Views;
+using System.Windows.Input;
 
-namespace Prototipo.Vms
+namespace Prototipo.ViewModels
 {
     public class ItemsVm : BaseVm
     {
         public ObservableCollection<Item> Items { get; set; }
-        public Command LoadItemsCommand { get; set; }
+        public ICommand LoadItemsCommand { get; set; }
 
         public ItemsVm()
         {

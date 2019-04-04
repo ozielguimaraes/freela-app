@@ -1,6 +1,6 @@
 ﻿using Prototipo.Models;
 
-namespace Prototipo.Vms
+namespace Prototipo.ViewModels
 {
     public class ItemDetailVm : BaseVm
     {

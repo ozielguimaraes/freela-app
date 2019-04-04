@@ -1,18 +1,19 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Prototipo.Views;
+using Prototipo.Services.Interfaces;
+using Prototipo.Services;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Prototipo
 {
     public partial class App : Application
     {
-
         public App()
         {
             InitializeComponent();
 
+            DependencyService.Register<INavigationService, NavigationService>();
             MainPage = new MainPage();
         }
 

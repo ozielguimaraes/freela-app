@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 using Xamarin.Forms;
 
-namespace Prototipo.Vms
+namespace Prototipo.ViewModels
 {
     public class AboutVm : BaseVm
     {

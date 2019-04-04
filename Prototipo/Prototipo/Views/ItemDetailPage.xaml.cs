@@ -4,7 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using Prototipo.Models;
-using Prototipo.Vms;
+using Prototipo.ViewModels;
 
 namespace Prototipo.Views
 {
