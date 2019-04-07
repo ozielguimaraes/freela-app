@@ -1,22 +1,21 @@
-﻿using Prototipo.Models;
-using Prototipo.ViewModels;
+﻿using Prototipo.ViewModels;
 using Xamarin.Forms;
 
-namespace Prototipo.Views
+namespace Prototipo.Pages.Proposta
 {
-    public partial class PropostasPage : ContentPage
+    public partial class ListaPropostaPage : ContentPage
     {
-        private readonly PropostasVm _vm;
+        private readonly ListaPropostaPageModel _pageModel;
 
-        public PropostasPage()
+        public ListaPropostaPage()
         {
             InitializeComponent();
-            BindingContext = _vm = _vm ?? new PropostasVm();
+            BindingContext = _pageModel = _pageModel ?? new ListaPropostaPageModel();
         }
 
         private async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            var item = args.SelectedItem as Proposta;
+            var item = args.SelectedItem as Models.Proposta;
             if (item == null) return;
 
             //await Navigation.PushAsync(new ItemDetailPage(new ItemDetailVm(item)));
@@ -29,8 +28,8 @@ namespace Prototipo.Views
         {
             base.OnAppearing();
 
-            if (_vm.Items.Count == 0)
-                _vm.LoadItemsCommand.Execute(null);
+            if (_pageModel.Items.Count == 0)
+                _pageModel.LoadItemsCommand.Execute(null);
         }
     }
 }

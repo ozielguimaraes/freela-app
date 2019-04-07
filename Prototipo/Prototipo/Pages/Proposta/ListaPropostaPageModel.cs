@@ -1,5 +1,6 @@
 ﻿using Prototipo.Models;
 using Prototipo.Services.Mocks;
+using Prototipo.ViewModels;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -7,17 +8,17 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace Prototipo.ViewModels
+namespace Prototipo.Pages.Proposta
 {
-    public class PropostasVm : BaseVm
+    public class ListaPropostaPageModel : BasePageModel
     {
-        public ObservableCollection<Proposta> Items { get; set; }
+        public ObservableCollection<Models.Proposta> Items { get; set; }
         public ICommand LoadItemsCommand { get; set; }
 
-        public PropostasVm()
+        public ListaPropostaPageModel()
         {
             Title = "Minhas Propostas";
-            Items = new ObservableCollection<Proposta>();
+            Items = new ObservableCollection<Models.Proposta>();
             LoadItemsCommand = new Command(async () => await LoadItems());
         }
 

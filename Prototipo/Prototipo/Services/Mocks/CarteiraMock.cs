@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms.Internals;
 
-namespace Prototipo.Services
+namespace Prototipo.Services.Mocks
 {
     [Preserve(AllMembers = true)]
     public class CarteiraMock : IDataStore<Carteira>
@@ -22,7 +22,7 @@ namespace Prototipo.Services
                     AmountProposal = 1,
                     AmountProposalAproved = 40,
                     AmountProposalReproved = 10,
-                    AmountProposalPeding = 40,
+                    AmountProposalPending = 40,
                     AmountProposalInRevision = 6,
                     TotalProposal = 7009.88m,
                     TotalBocked = 700m,

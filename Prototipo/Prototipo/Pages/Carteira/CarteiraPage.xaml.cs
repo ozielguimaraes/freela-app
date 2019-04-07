@@ -1,20 +1,18 @@
-﻿using Prototipo.Services;
-using Prototipo.ViewModels;
-using System;
+﻿using System;
 using System.Diagnostics;
 using Xamarin.Forms;
 
-namespace Prototipo.Views
+namespace Prototipo.Pages.Carteira
 {
     public partial class CarteiraPage : ContentPage
     {
-        private readonly CarteiraVm _vm;
+        private readonly CarteiraPageModel _pageModel;
 
         public CarteiraPage()
         {
             InitializeComponent();
 
-            BindingContext = _vm = _vm ?? new CarteiraVm();
+            BindingContext = _pageModel = _pageModel ?? new CarteiraPageModel();
         }
 
         protected async override void OnAppearing()
@@ -26,9 +24,7 @@ namespace Prototipo.Views
 
             try
             {
-                var mock = new CarteiraMock();
-                var item = await mock.GetItemAsync(string.Empty);
-                _vm.LoadDetailsCommand.Execute(item);
+                _pageModel.LoadDetailsCommand.Execute(null);
             }
             catch (Exception ex)
             {

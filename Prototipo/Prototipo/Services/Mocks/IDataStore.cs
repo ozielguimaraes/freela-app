@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Prototipo.Services
+namespace Prototipo.Services.Mocks
 {
     public interface IDataStore<T>
     {

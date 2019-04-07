@@ -1,8 +1,8 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Prototipo.Views;
 using Prototipo.Services.Interfaces;
 using Prototipo.Services;
+using Prototipo.Pages;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Prototipo
@@ -13,6 +13,8 @@ namespace Prototipo
         {
             InitializeComponent();
 
+            DependencyService.Register<IMessageService, MessageService>();
+            DependencyService.Register<IExceptionService, ExceptionService>();
             DependencyService.Register<INavigationService, NavigationService>();
             MainPage = new MainPage();
         }

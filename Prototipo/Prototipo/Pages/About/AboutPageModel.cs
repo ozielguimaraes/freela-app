@@ -1,13 +1,14 @@
-﻿using System;
+﻿using Prototipo.ViewModels;
+using System;
 using System.Windows.Input;
 
 using Xamarin.Forms;
 
-namespace Prototipo.ViewModels
+namespace Prototipo.Pages.About
 {
-    public class AboutVm : BaseVm
+    public class AboutPageModel : BasePageModel
     {
-        public AboutVm()
+        public AboutPageModel()
         {
             Title = "About";
 

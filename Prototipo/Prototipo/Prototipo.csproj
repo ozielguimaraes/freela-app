@@ -15,10 +15,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\CarteiraPage.xaml">
+    <Compile Update="Pages\Proposta\ListaPropostaPage.xaml.cs">
+      <DependentUpon>ListaPropostaPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Pages\Carteira\CarteiraPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\PropostasPage.xaml">
+    <EmbeddedResource Update="Pages\Proposta\ListaPropostaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

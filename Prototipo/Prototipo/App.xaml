@@ -8,17 +8,17 @@
             <Color x:Key="PrimaryColor">#212121</Color>
             <Color x:Key="PrimaryDarkColor">#212121</Color>
             <Color x:Key="Accent">#00C168</Color>
+            <Color x:Key="PrimaryLabelColor">#9a9a9a</Color>
+            <Color x:Key="SecondaryLabelColor">#404040</Color>
 
             <Color x:Key="PageBackgroundColor">#303030</Color>
-            
+
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource PrimaryColor}" />
                 <Setter Property="BarTextColor" Value="White" />
             </Style>
 
             <OnPlatform x:Key="PagePadding" x:TypeArguments="Thickness" Default="10,0,10,0">
-                <!--<On Platform="Android">10,0,10,0</On>
-                <On Platform="iOS">10,0,10,0</On>-->
             </OnPlatform>
 
             <Style TargetType="ContentPage">

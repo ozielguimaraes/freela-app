@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Prototipo.Views.CarteiraPage"
+             x:Class="Prototipo.Pages.Carteira.CarteiraPage"
              Title="{Binding Title}"
              Style="{StaticResource PageStyle}">
     <ContentPage.ToolbarItems>
@@ -253,7 +253,7 @@ TextColor="#707270"
 
                         <!--Valores-->
                         <Label Grid.Row="1" Grid.Column="0"
-                        Text="{Binding Item.AmountProposalPeding}" 
+                        Text="{Binding Item.AmountProposalPending}" 
                         TextColor="White"></Label>
                         <Label Grid.Row="1" Grid.Column="1"
                         Text="{Binding Item.AmountProposalInRevision}" 
