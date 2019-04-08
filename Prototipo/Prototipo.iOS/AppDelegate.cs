@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Prototipo.iOS.Renderers;
 using UIKit;
 
 namespace Prototipo.iOS
@@ -24,6 +25,7 @@ namespace Prototipo.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+            ProgressRingRenderer.Init();
 
             return base.FinishedLaunching(app, options);
         }

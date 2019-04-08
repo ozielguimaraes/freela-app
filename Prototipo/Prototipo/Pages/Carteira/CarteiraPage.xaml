@@ -120,10 +120,10 @@
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <StackLayout Margin="25,0,0,0">
-                        <Frame
+                        <Frame OutlineColor="#115f61"
     CornerRadius="100"
-    Padding="1"
-    BackgroundColor="#1f2027"
+    Padding="10"
+    BackgroundColor="#031831"
     AbsoluteLayout.LayoutFlags="XProportional">
                             <Frame.AbsoluteLayout.LayoutBounds>
                                 <OnPlatform x:TypeArguments="Rectangle" iOS=".95,80,-1,-1" Android=".95,20,-1,-1" />
@@ -140,8 +140,6 @@ TextColor="#707270"
         Text="Meus Lucros">
                                 </Label>
                                 <Label Text="{Binding Item.StartValue, StringFormat='{0:C}'}"
-        WidthRequest="170"
-        HeightRequest="15"
         VerticalTextAlignment="Center"
         HorizontalTextAlignment="Center"
                                        Margin="0"
@@ -149,20 +147,16 @@ TextColor="#707270"
                                 <BoxView HeightRequest="1" Color="White" WidthRequest="80" HorizontalOptions="CenterAndExpand"></BoxView>
                                 <Label
 TextColor="#707270"
-        WidthRequest="170"
-        HeightRequest="10"
         VerticalTextAlignment="Center"
         HorizontalTextAlignment="Center"
         FontSize="8"
                                 Margin="0,15,0,0"
         Text="Saldo"></Label>
                                 <Label Text="{Binding Item.StartValue, StringFormat='{0:C}'}"
-        WidthRequest="170"
-        HeightRequest="20"
         VerticalTextAlignment="Center"
         HorizontalTextAlignment="Center"
                                        Margin="0,0,0,30"
-                                   TextColor="White"></Label>
+                                   TextColor="#115f61"></Label>
                             </StackLayout>
                         </Frame>
                     </StackLayout>

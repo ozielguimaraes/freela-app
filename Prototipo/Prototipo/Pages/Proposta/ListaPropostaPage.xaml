@@ -1,21 +1,105 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:control="clr-namespace:Prototipo.Controls"
              x:Class="Prototipo.Pages.Proposta.ListaPropostaPage"
              Title="{Binding Title}"
              Style="{StaticResource PageStyle}">
 
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Margin="0,8,0,0">
             <ListView x:Name="ItemsListView"
                 ItemsSource="{Binding Items}" 
-                      SeparatorVisibility="None" 
-                      HasUnevenRows="False" 
-                      HeightRequest="40">
+                      HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Label Text="{Binding Cliente}"></Label>
+                            <Frame OutlineColor="Red" Margin="0,0,0,6" Padding="0" CornerRadius="5">
+                                <Grid BackgroundColor="White">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="12" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="5" />
+                                        <ColumnDefinition Width="90" />
+                                        <ColumnDefinition Width="2" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="80" />
+                                        <ColumnDefinition Width="50" />
+                                    </Grid.ColumnDefinitions>
+    
+                                    <BoxView Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" 
+                                             Color="#28abe1"></BoxView>
+
+                                    <Label Grid.Row="0" Grid.Column="1" 
+                                                       Text="{Binding Numero, StringFormat='N° {0:}'}"
+                                           HorizontalOptions="Center"
+                                               FontSize="10"
+                                           FontAttributes="Bold"
+                                               TextColor="Black"></Label>
+                                    <Label Grid.Row="1" Grid.Column="1"
+                                           Text="{Binding Cliente}"
+                                           HorizontalTextAlignment="Center"
+                                               TextColor="Black"
+                                               FontSize="9"></Label>
+
+                                    <control:ProgressRing Grid.Row="2" Grid.Column="1"
+                                        HeightRequest="50"
+                                        RingThickness="4"
+                                                          RingProgressColor="{Binding Conclusao.GetColor}"
+                                                          ProgressColor="{Binding Conclusao.GetColor}"
+                                                          Progress="{Binding Conclusao.PercentagemConclusao, StringFormat='0.{0}'}"
+                                    ></control:ProgressRing>
+
+                                    <BoxView Grid.Row="0" Grid.Column="2" Grid.RowSpan="4"
+                                             WidthRequest="1" BackgroundColor="#CCCCCC" />
+
+                                    <!--<Frame Grid.Row="2" Grid.Column="1"
+                                            OutlineColor="{Binding Conclusao.GetColor}"
+                                           CornerRadius="33"
+                                           HorizontalOptions="CenterAndExpand"
+                                           VerticalOptions="CenterAndExpand"
+                                           WidthRequest="15"
+                                           HeightRequest="15">
+
+                                            <Label Text="{Binding Conclusao.PercentagemConclusao, StringFormat='{0:}%'}"
+                                                   TextColor="{Binding Conclusao.GetColor}"/>
+                                        </Frame>-->
+
+                                    
+                                    
+                                    
+                                            <Label Grid.Row="1" Grid.Column="3"
+                                               HorizontalOptions="StartAndExpand"
+                                               FontSize="Micro"
+                                               Text="EMPREENDIMENTO"></Label>
+                                            <Label  Grid.Row="2" Grid.Column="3"
+                                                Text="{Binding Empreendimento}" 
+                                                   FontAttributes="Bold"
+                                                    HorizontalOptions="StartAndExpand"></Label>
+
+                                            <Label Grid.Row="1" Grid.Column="4" 
+                                               FontSize="Micro"
+                                               Text="TORRE"></Label>
+                                            <Label  Grid.Row="2" Grid.Column="4"
+                                                   FontAttributes="Bold"
+                                                Text="{Binding Torre}" ></Label>
+
+                                            <Label Grid.Row="1" Grid.Column="5"
+                                               HorizontalOptions="EndAndExpand"
+                                               FontSize="Micro"
+                                                   Margin="0,0,5,0"
+                                               Text="UNIDADE"></Label>
+                                            <Label Grid.Row="2" Grid.Column="5"
+                                               Text="{Binding Unidade}"
+                                                   Margin="0,0,5,0"
+                                                   FontAttributes="Bold"
+                                                   HorizontalOptions="EndAndExpand"></Label>
+                                        </Grid>
+                            </Frame>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

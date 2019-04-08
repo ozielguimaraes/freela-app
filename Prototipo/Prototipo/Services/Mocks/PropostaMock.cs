@@ -22,7 +22,9 @@ namespace Prototipo.Services.Mocks
                     Empreendimento = "Jd America",
                     Torre = "Norte",
                     Unidade = "833",
-                    PercentagemConclusao = 84,
+                    Conclusao = new Conclusao{
+                     PercentagemConclusao = 84
+                    },
                     Movimentacoes = new List<string>{
                         "Montar Pasta - Análise de Documentos",
                         "Montar Pasta - Entrar em Contato"
@@ -35,7 +37,9 @@ namespace Prototipo.Services.Mocks
                     Empreendimento = "Itaim Bibi",
                     Torre = "Centro",
                     Unidade = "658",
-                    PercentagemConclusao = 38,
+                    Conclusao = new Conclusao{
+                     PercentagemConclusao = 38
+                    },
                     Movimentacoes = new List<string>{
                         "Montar Pasta - Análise de Documentos",
                         "Montar Pasta - Entrar em Contato"
@@ -48,7 +52,9 @@ namespace Prototipo.Services.Mocks
                     Empreendimento = "Itaim Bibi",
                     Torre = "Centro",
                     Unidade = "658",
-                    PercentagemConclusao = 82,
+                    Conclusao = new Conclusao{
+                     PercentagemConclusao = 82
+                    },
                     Movimentacoes = new List<string>{
                         "Montar Pasta - Análise de Documentos",
                         "Montar Pasta - Entrar em Contato"
@@ -61,7 +67,9 @@ namespace Prototipo.Services.Mocks
                     Empreendimento = "Itaim Bibi",
                     Torre = "Centro",
                     Unidade = "658",
-                    PercentagemConclusao = 50,
+                    Conclusao = new Conclusao{
+                     PercentagemConclusao = 50
+                    },
                     Movimentacoes = new List<string>{
                         "Montar Pasta - Análise de Documentos",
                         "Montar Pasta - Entrar em Contato"
@@ -74,12 +82,14 @@ namespace Prototipo.Services.Mocks
                     Empreendimento = "Itaim Bibi",
                     Torre = "Centro",
                     Unidade = "658",
-                    PercentagemConclusao = 38,
+                    Conclusao = new Conclusao{
+                     PercentagemConclusao = 38
+                    },
                     Movimentacoes = new List<string>{
                         "Montar Pasta - Análise de Documentos",
                         "Montar Pasta - Entrar em Contato"
                     }
-                },
+                }
             };
         }
 
