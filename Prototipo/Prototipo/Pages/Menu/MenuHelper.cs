@@ -15,6 +15,7 @@ namespace Prototipo.Pages.Menu
             {
                 case MenuType.Carteira: return new MainPage();
                 case MenuType.Proposta: return new ListaPropostaPage();
+                case MenuType.NovaProposta: return new NovaPropostaPage();
                 case MenuType.About: return new AboutPage();
                 default: return new MainPage();
             }
@@ -26,6 +27,7 @@ namespace Prototipo.Pages.Menu
             {
                 new MenuItemVm("Minha carteira", "carteira", MenuType.Carteira),
                 new MenuItemVm("Minhas propostas", "proposta", MenuType.Proposta),
+                new MenuItemVm("Nova proposta", "proposta", MenuType.NovaProposta),
                 new MenuItemVm("Sobre", "about", MenuType.About),
             };
 

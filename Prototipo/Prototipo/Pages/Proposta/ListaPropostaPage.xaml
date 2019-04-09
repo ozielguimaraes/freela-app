@@ -5,7 +5,14 @@
              x:Class="Prototipo.Pages.Proposta.ListaPropostaPage"
              Title="{Binding Title}"
              Style="{StaticResource PageStyle}">
-
+    <ContentPage.ToolbarItems>
+        <ToolbarItem>
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource" Default="chat">
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Margin="0,8,0,0">
             <ListView x:Name="ItemsListView"

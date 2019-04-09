@@ -15,6 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Pages\Proposta\AdicionarCompradorPropostaPage.xaml.cs">
+      <DependentUpon>AdicionarCompradorPropostaPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Pages\Proposta\ListaPropostaPage.xaml.cs">
       <DependentUpon>ListaPropostaPage.xaml</DependentUpon>
     </Compile>
@@ -24,7 +27,16 @@
     <EmbeddedResource Update="Pages\Carteira\CarteiraPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Proposta\AdicionarCompradorPropostaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Proposta\AdicionarDocumentoPropostaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Pages\Proposta\ListaPropostaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Proposta\NovaPropostaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Prototipo.Pages.Proposta.AdicionarCompradorPropostaPage"
+             Title="Comprador">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="CPF" />
+            <Entry Text=""
+                   Keyboard="Numeric"/>
+
+            <Label Text="Nome completo" />
+            <Entry Text="" />
+            
+            <Label Text="Data de Nascimento" />
+            <Entry Text="" 
+                   Keyboard="Numeric"/>
+
+            <Label Text="Escolaridade" />
+            <Entry Text="" />
+
+            <Label Text="Gênero" />
+            <Entry Text="" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

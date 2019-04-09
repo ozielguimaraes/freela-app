@@ -11,7 +11,10 @@ namespace Prototipo.Models
         public string Torre { get; set; }
         public string Unidade { get; set; }
         public Conclusao Conclusao { get; set; }
-        public ICollection<string> Movimentacoes { get; set; }
+        public string PenultimaMovimentacao => Movimentacoes[1];
+        public string UltimaMovimentacao => Movimentacoes[0];
+
+        public IList<string> Movimentacoes { get; set; }
     }
 
     public class Conclusao
