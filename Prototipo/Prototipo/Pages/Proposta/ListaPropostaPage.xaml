@@ -52,14 +52,31 @@
                                            HorizontalTextAlignment="Center"
                                                TextColor="Black"
                                                FontSize="9"></Label>
-
-                                    <control:ProgressRing Grid.Row="2" Grid.Column="1"
+                                    <Grid Grid.Row="2" Grid.Column="1" Padding="10,0,18,0">
+                                        <control:ProgressRing 
+                                            BackgroundColor="Transparent"
+                                                          VerticalOptions="EndAndExpand"
+                                                     HorizontalOptions="FillAndExpand" 
                                         HeightRequest="50"
                                         RingThickness="4"
                                                           RingProgressColor="{Binding Conclusao.GetColor}"
                                                           ProgressColor="{Binding Conclusao.GetColor}"
                                                           Progress="{Binding Conclusao.PercentagemConclusao, StringFormat='0.{0}'}"
-                                    ></control:ProgressRing>
+                                    >
+                                        </control:ProgressRing>
+                                        <Label Text="{Binding Conclusao.PercentagemConclusao}" 
+                                               Margin="22,15,0,0" TextColor="{Binding Conclusao.GetColor}"></Label>
+                                    </Grid>
+
+                                    <!--<control:ProgressRing Grid.Row="2" Grid.Column="1"
+                                                          VerticalOptions="EndAndExpand"
+                                        HeightRequest="50"
+                                        RingThickness="4"
+                                                          RingProgressColor="{Binding Conclusao.GetColor}"
+                                                          ProgressColor="{Binding Conclusao.GetColor}"
+                                                          Progress="{Binding Conclusao.PercentagemConclusao, StringFormat='0.{0}'}"
+                                    >
+                                    </control:ProgressRing>-->
 
                                     <BoxView Grid.Row="0" Grid.Column="2" Grid.RowSpan="4"
                                              WidthRequest="1" BackgroundColor="#CCCCCC" />
@@ -76,36 +93,54 @@
                                                    TextColor="{Binding Conclusao.GetColor}"/>
                                         </Frame>-->
 
-                                    
-                                    
-                                    
-                                            <Label Grid.Row="1" Grid.Column="3"
+
+                                    <FlexLayout Direction="Column"
+                                                Grid.Row="0" 
+                                                Grid.RowSpan="3" 
+                                                Grid.Column="3" 
+                                                Grid.ColumnSpan="3">
+                                        <!--<control:ProgressRing Grid.Row="2" Grid.Column="1"
+                                                          VerticalOptions="Start"
+                                        HeightRequest="10"
+                                        RingThickness="2" />-->
+                                        
+                                        <Label Text="{Binding UltimaMovimentacao}" 
+                                               FontSize="12"
+                                               VerticalOptions="EndAndExpand"/>
+                                        <BoxView HeightRequest="1" Margin="0,5" BackgroundColor="#CCCCCC" />
+                                        <Label Text="{Binding PenultimaMovimentacao}" FontSize="12" />
+                                    </FlexLayout>
+
+                                    <Label Grid.Row="2" Grid.Column="3"
                                                HorizontalOptions="StartAndExpand"
+                                           VerticalOptions="EndAndExpand"
                                                FontSize="Micro"
                                                Text="EMPREENDIMENTO"></Label>
-                                            <Label  Grid.Row="2" Grid.Column="3"
+                                    <Label  Grid.Row="3" Grid.Column="3"
                                                 Text="{Binding Empreendimento}" 
                                                    FontAttributes="Bold"
                                                     HorizontalOptions="StartAndExpand"></Label>
 
-                                            <Label Grid.Row="1" Grid.Column="4" 
+                                    <Label Grid.Row="2" Grid.Column="4" 
+                                           VerticalOptions="EndAndExpand"
                                                FontSize="Micro"
                                                Text="TORRE"></Label>
-                                            <Label  Grid.Row="2" Grid.Column="4"
+                                    <Label  Grid.Row="3" Grid.Column="4"
                                                    FontAttributes="Bold"
                                                 Text="{Binding Torre}" ></Label>
 
-                                            <Label Grid.Row="1" Grid.Column="5"
+                                    <Label Grid.Row="2" Grid.Column="5"
                                                HorizontalOptions="EndAndExpand"
+                                           VerticalOptions="EndAndExpand"
                                                FontSize="Micro"
                                                    Margin="0,0,5,0"
                                                Text="UNIDADE"></Label>
-                                            <Label Grid.Row="2" Grid.Column="5"
+                                    <Label Grid.Row="3" Grid.Column="5"
                                                Text="{Binding Unidade}"
                                                    Margin="0,0,5,0"
                                                    FontAttributes="Bold"
                                                    HorizontalOptions="EndAndExpand"></Label>
-                                        </Grid>
+                                </Grid>
                             </Frame>
                         </ViewCell>
                     </DataTemplate>
