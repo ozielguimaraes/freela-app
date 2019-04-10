@@ -64,7 +64,6 @@
     <Compile Include="AppVersion.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Renderers\ProgressRingRenderer.cs" />
-    <Compile Include="Renderers\BorderFrameRenderer.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

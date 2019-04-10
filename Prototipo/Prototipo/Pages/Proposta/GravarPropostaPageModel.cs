@@ -2,9 +2,9 @@
 
 namespace Prototipo.Pages.Proposta
 {
-    public class NovaPropostaPageModel : BasePageModel
+    public class GravarPropostaPageModel : BasePageModel
     {
-        public NovaPropostaPageModel()
+        public GravarPropostaPageModel()
         {
             Title = "Nova Proposta";
         }

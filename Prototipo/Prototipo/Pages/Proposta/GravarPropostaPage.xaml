@@ -2,11 +2,11 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:Prototipo.Pages.Proposta"
-             x:Class="Prototipo.Pages.Proposta.NovaPropostaPage"
+             x:Class="Prototipo.Pages.Proposta.GravarPropostaPage"
              Title="{Binding Title}"
              Style="{StaticResource PageStyle}">
 
-    <views:AdicionarCompradorPropostaPage />
-    <views:AdicionarDocumentoPropostaPage />
-    <views:AdicionarCompradorPropostaPage />
+    <views:GravarCompradorPropostaPage />
+    <views:GravarDocumentoPropostaPage />
+    <views:GravarCompradorPropostaPage />
 </TabbedPage>

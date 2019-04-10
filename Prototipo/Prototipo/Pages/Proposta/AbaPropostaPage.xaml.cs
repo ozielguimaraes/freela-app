@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace Prototipo.Pages.Proposta
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class AdicionarDocumentoPropostaPage : ContentPage
+	public partial class AbaPropostaPage : ContentPage
 	{
-		public AdicionarDocumentoPropostaPage ()
+		public AbaPropostaPage ()
 		{
 			InitializeComponent ();
 		}

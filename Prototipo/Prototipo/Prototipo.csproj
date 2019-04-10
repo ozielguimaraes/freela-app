@@ -15,11 +15,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Pages\Proposta\AdicionarCompradorPropostaPage.xaml.cs">
-      <DependentUpon>AdicionarCompradorPropostaPage.xaml</DependentUpon>
+    <Compile Update="Pages\Proposta\GravarCompradorPropostaPage.xaml.cs">
+      <DependentUpon>GravarCompradorPropostaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\Proposta\GravarDocumentoPropostaPage.xaml.cs">
+      <DependentUpon>GravarDocumentoPropostaPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Pages\Proposta\ListaPropostaPage.xaml.cs">
       <DependentUpon>ListaPropostaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\Proposta\GravarPropostaPage.xaml.cs">
+      <DependentUpon>GravarPropostaPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -27,16 +33,19 @@
     <EmbeddedResource Update="Pages\Carteira\CarteiraPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Proposta\AdicionarCompradorPropostaPage.xaml">
+    <EmbeddedResource Update="Pages\Proposta\AbaPropostaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Proposta\AdicionarDocumentoPropostaPage.xaml">
+    <EmbeddedResource Update="Pages\Proposta\GravarCompradorPropostaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Proposta\GravarDocumentoPropostaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\Proposta\ListaPropostaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Proposta\NovaPropostaPage.xaml">
+    <EmbeddedResource Update="Pages\Proposta\GravarPropostaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

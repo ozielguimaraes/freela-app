@@ -2,9 +2,9 @@
 
 namespace Prototipo.Pages.Proposta
 {
-    public partial class AdicionarCompradorPropostaPage : ContentPage
+    public partial class GravarCompradorPropostaPage : ContentPage
     {
-        public AdicionarCompradorPropostaPage()
+        public GravarCompradorPropostaPage()
         {
             InitializeComponent();
         }
