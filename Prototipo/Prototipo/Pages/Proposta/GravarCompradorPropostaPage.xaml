@@ -5,70 +5,149 @@
              Title="Comprador">
     
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="CPF" />
-            <Entry Text=""
-                   Keyboard="Numeric"/>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="CPF"
+                   TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry Text=""
+                   Placeholder="Ex: 123.456.789-00"
+                   PlaceholderColor="{StaticResource PlaceholderColor}"
+                   MaxLength="11"
+                   Keyboard="Numeric"
+                   ReturnType="Next" />
 
-            <Label Text="Nome completo" />
-            <Entry Text="" Keyboard="" />
-            
-            <Label Text="Data de nascimento" />
-            <Entry Text=""
-                   Keyboard="Numeric" />
+                <Label Text="Nome completo"
+                   TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry Placeholder="Ex: Oziel Guimarães de Paula Silva"
+                       PlaceholderColor="{StaticResource PlaceholderColor}"
+                   ReturnType="Next">
+                    <Entry.Keyboard>
+                        <Keyboard x:FactoryMethod="Create">
+                            <x:Arguments>
+                                <KeyboardFlags>Suggestions,CapitalizeWord</KeyboardFlags>
+                            </x:Arguments>
+                        </Keyboard>
+                    </Entry.Keyboard>
+                </Entry>
 
-            <Label Text="Escolaridade" />
-            <Entry Text="" />
+                <Label Text="Data de nascimento"
+                   TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry Text=""
+                   Placeholder="Ex: 01/01/2001"
+                   PlaceholderColor="{StaticResource PlaceholderColor}"
+                   MaxLength="10"
+                   Keyboard="Numeric"
+                   ReturnType="Next" />
 
-            <Label Text="Gênero" />
-            <Entry Text="" />
+                <Label Text="Escolaridade"
+                   TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry Text=""
+                   PlaceholderColor="{StaticResource PlaceholderColor}"
+                   Keyboard="Text"
+                   ReturnType="Next" />
 
-            <Label Text="Estado civil" />
-            <Entry Text="" />
+                <Label Text="Gênero"
+                   TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry Text=""
+                   PlaceholderColor="{StaticResource PlaceholderColor}" />
 
-            <Label Text="Nacionalidade" />
-            <Entry Text="" />
+                <Label Text="Estado civil"
+                   TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry Text=""
+                   PlaceholderColor="{StaticResource PlaceholderColor}" />
 
-            <Label Text="Naturalidade" />
-            <Entry Text="" />
+                <Label Text="Nacionalidade"
+                   TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry Text=""
+                   ReturnType="Next" />
 
-            <Label Text="Valor FGTS" />
-            <Entry Text=""
-                   Keyboard="Numeric" />
+                <Label Text="Naturalidade"
+                   TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry Text=""
+                   PlaceholderColor="{StaticResource PlaceholderColor}"
+                   ReturnType="Next" />
 
-            <Label Text="Nome do pai" />
-            <Entry Text="" />
+                <Label Text="Valor FGTS"
+                   TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry Text=""
+                   PlaceholderColor="{StaticResource PlaceholderColor}"
+                   Keyboard="Numeric"
+                   ReturnType="Next" />
 
-            <Label Text="Nome da mãe" />
-            <Entry Text="" />
+                <Label Text="Nome do pai"
+                   TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry Text=""
+                   PlaceholderColor="{StaticResource PlaceholderColor}"
+                   MaxLength="50"
+                   ReturnType="Next" />
 
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Documentos" FontSize="Medium" />
-            </StackLayout>
+                <Label Text="Nome da mãe"
+                   TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry Text=""
+                   PlaceholderColor="{StaticResource PlaceholderColor}"
+                   MaxLength="50"
+                   ReturnType="Next" />
 
-            <Label Text="Tipo documento" />
-            <Entry Text="" />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Documentos"
+                           TextColor="{StaticResource PrimaryLabelColor}" 
+                           FontSize="Medium" />
+                </StackLayout>
 
-            <Label Text="N° documento" />
-            <Entry Text="" />
+                <Label Text="Tipo documento"
+                   TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry Text=""
+                   PlaceholderColor="{StaticResource PlaceholderColor}" />
 
-            <Label Text="Orgão expedidor" />
-            <Entry Text="" />
+                <Label Text="N° documento"
+                   TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry Text=""
+                   PlaceholderColor="{StaticResource PlaceholderColor}"
+                   ReturnType="Next" />
 
-            <Label Text="Data de emissão" />
-            <Entry Text=""
-                   Keyboard="Numeric" />
+                <Label Text="Orgão expedidor"
+                   TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry Placeholder="Ex: SSP"
+                   PlaceholderColor="{StaticResource PlaceholderColor}"
+                   MaxLength="10"
+                   ReturnType="Next">
+                    <Entry.Keyboard>
+                        <Keyboard x:FactoryMethod="Create">
+                            <x:Arguments>
+                                <KeyboardFlags>Suggestions,CapitalizeCharacter</KeyboardFlags>
+                            </x:Arguments>
+                        </Keyboard>
+                    </Entry.Keyboard>
+                </Entry>
 
-            <Label Text="Cat. profissional" />
-            <Entry Text="" />
+                <Label Text="Data de emissão"
+                   TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry Text=""
+                       Placeholder="01/01/2005"
+                   PlaceholderColor="{StaticResource PlaceholderColor}"
+                   MaxLength="10"
+                   Keyboard="Numeric"
+                   ReturnType="Next" />
 
-            <Label Text="Dependentes n°" />
-            <Entry Text=""
-                   Keyboard="Numeric" />
+                <Label Text="Cat. profissional"
+                   TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry Text="" 
+                   PlaceholderColor="{StaticResource PlaceholderColor}"
+                   MaxLength="20"
+                   ReturnType="Next" />
 
-            <Button Text="Adicionar documentos" 
+                <Label Text="Dependentes n°"
+                   TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry Text=""
+                   PlaceholderColor="{StaticResource PlaceholderColor}"
+                   MaxLength="2"
+                   Keyboard="Numeric"
+                   ReturnType="Done" />
+
+                <Button Text="Adicionar documentos" 
                     BackgroundColor="#c9c9c9"
                     CornerRadius="8" />
-        </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -8,5 +8,7 @@ namespace Prototipo.Pages.Proposta
         {
             Title = "Nova Proposta";
         }
+
+
     }
 }

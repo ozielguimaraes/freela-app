@@ -5,13 +5,14 @@
     <Application.Resources>
         <ResourceDictionary>
             <!--Global Styles-->
-            <Color x:Key="PrimaryColor">#212121</Color>
-            <Color x:Key="PrimaryDarkColor">#212121</Color>
-            <Color x:Key="Accent">#00C168</Color>
-            <Color x:Key="PrimaryLabelColor">#9a9a9a</Color>
+            <Color x:Key="PrimaryColor">#11233c</Color>
+            <Color x:Key="PrimaryDarkColor">#11233c</Color>
+            <Color x:Key="Accent">#30c2dc</Color>
+            <Color x:Key="PrimaryLabelColor">#b4c2d1</Color>
+            <Color x:Key="PlaceholderColor">#b4c2d1</Color>
             <Color x:Key="SecondaryLabelColor">#404040</Color>
 
-            <Color x:Key="PageBackgroundColor">#303030</Color>
+            <Color x:Key="PageBackgroundColor">#2e3f56</Color>
 
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource PrimaryColor}" />
