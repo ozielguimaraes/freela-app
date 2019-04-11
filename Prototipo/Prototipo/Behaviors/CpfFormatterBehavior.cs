@@ -21,9 +21,8 @@ namespace Prototipo.Behaviors
         private static void OnTextChanged(object sender, TextChangedEventArgs args)
         {
             if (args.OldTextValue == null) return;
-            if (args.NewTextValue.Length < args.OldTextValue.Length) return;
-
             var entry = (Entry)sender;
+            if (args.NewTextValue.Length < args.OldTextValue.Length) return;
 
             entry.Text = FormatCpfNumber(entry.Text);
         }

@@ -44,8 +44,8 @@ namespace Prototipo.Pages
                 if (!string.IsNullOrWhiteSpace(page.Title)) Title = page.Title;
 
                 Detail = item.Type == MenuType.Carteira ? page : new NavigationPage(page);
-                if (Device.RuntimePlatform == Device.Android)
-                    await Task.Delay(100);
+                //if (Device.RuntimePlatform == Device.Android)
+                //    await Task.Delay(100);
 
                 IsPresented = false;
             }

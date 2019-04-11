@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:Prototipo.Behaviors;assembly=Prototipo"
              x:Class="Prototipo.Pages.Proposta.GravarCompradorPropostaPage"
              Title="Comprador">
     
@@ -12,9 +13,13 @@
                 <Entry Text=""
                    Placeholder="Ex: 123.456.789-00"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
-                   MaxLength="11"
+                   MaxLength="14"
                    Keyboard="Numeric"
-                   ReturnType="Next" />
+                   ReturnType="Next">
+                    <Entry.Behaviors>
+                        <behaviors:CpfFormatterBehavior />
+                    </Entry.Behaviors>
+                </Entry>
 
                 <Label Text="Nome completo"
                    TextColor="{StaticResource PrimaryLabelColor}" />
