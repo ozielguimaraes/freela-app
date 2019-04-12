@@ -11,6 +11,7 @@
                 <Label Text="CPF"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text=""
+                   TextColor="{StaticResource EntryColor}"
                    Placeholder="Ex: 123.456.789-00"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    MaxLength="14"
@@ -24,6 +25,7 @@
                 <Label Text="Nome completo"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Placeholder="Ex: Oziel Guimarães de Paula Silva"
+                   TextColor="{StaticResource EntryColor}"
                        PlaceholderColor="{StaticResource PlaceholderColor}"
                    ReturnType="Next">
                     <Entry.Keyboard>
@@ -38,43 +40,64 @@
                 <Label Text="Data de nascimento"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text=""
+                   TextColor="{StaticResource EntryColor}"
                    Placeholder="Ex: 01/01/2001"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    MaxLength="10"
                    Keyboard="Numeric"
-                   ReturnType="Next" />
+                   ReturnType="Next">
+                    <Entry.Behaviors>
+                        <behaviors:DateFormatterBehavior />
+                    </Entry.Behaviors>
+                </Entry>
 
                 <Label Text="Escolaridade"
                    TextColor="{StaticResource PrimaryLabelColor}" />
-                <Entry Text=""
-                   PlaceholderColor="{StaticResource PlaceholderColor}"
-                   Keyboard="Text"
-                   ReturnType="Next" />
+                <Picker 
+                    Title="Selecione"
+                    TextColor="{StaticResource EntryColor}"
+                    BackgroundColor="{StaticResource EntryBackgroundColor}"
+                    ItemDisplayBinding="{Binding Value}"
+                    SelectedItem="{Binding Escolaridade}"
+                    ItemsSource="{Binding ListaEscolaridade}" />
 
                 <Label Text="Gênero"
                    TextColor="{StaticResource PrimaryLabelColor}" />
-                <Entry Text=""
-                   PlaceholderColor="{StaticResource PlaceholderColor}" />
+                <Picker 
+                    Title="Selecione"
+                    TextColor="{StaticResource EntryColor}"
+                    BackgroundColor="{StaticResource EntryBackgroundColor}"
+                    ItemDisplayBinding="{Binding Value}"
+                    SelectedItem="{Binding Genero}"
+                    ItemsSource="{Binding ListaGenero}" />
 
                 <Label Text="Estado civil"
                    TextColor="{StaticResource PrimaryLabelColor}" />
-                <Entry Text=""
-                   PlaceholderColor="{StaticResource PlaceholderColor}" />
+                <Picker 
+                    Title="Selecione"
+                    TextColor="{StaticResource EntryColor}"
+                    BackgroundColor="{StaticResource EntryBackgroundColor}"
+                    ItemDisplayBinding="{Binding Value}"
+                    SelectedItem="{Binding EstadoCivil}"
+                    ItemsSource="{Binding ListaEstadoCivil}" />
 
                 <Label Text="Nacionalidade"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text=""
+                   TextColor="{StaticResource EntryColor}"
                    ReturnType="Next" />
 
                 <Label Text="Naturalidade"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text=""
+                   TextColor="{StaticResource EntryColor}"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    ReturnType="Next" />
 
                 <Label Text="Valor FGTS"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text=""
+                   TextColor="{StaticResource EntryColor}"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    Keyboard="Numeric"
                    ReturnType="Next" />
@@ -82,6 +105,7 @@
                 <Label Text="Nome do pai"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text=""
+                   TextColor="{StaticResource EntryColor}"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    MaxLength="50"
                    ReturnType="Next" />
@@ -89,6 +113,7 @@
                 <Label Text="Nome da mãe"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text=""
+                   TextColor="{StaticResource EntryColor}"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    MaxLength="50"
                    ReturnType="Next" />
@@ -101,18 +126,25 @@
 
                 <Label Text="Tipo documento"
                    TextColor="{StaticResource PrimaryLabelColor}" />
-                <Entry Text=""
-                   PlaceholderColor="{StaticResource PlaceholderColor}" />
+                <Picker 
+                    Title="Selecione"
+                    TextColor="{StaticResource EntryColor}"
+                    BackgroundColor="{StaticResource EntryBackgroundColor}"
+                    ItemDisplayBinding="{Binding Value}"
+                    SelectedItem="{Binding TipoDocumento}"
+                    ItemsSource="{Binding ListaTipoDocumento}" />
 
                 <Label Text="N° documento"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text=""
+                   TextColor="{StaticResource EntryColor}"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    ReturnType="Next" />
 
                 <Label Text="Orgão expedidor"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Placeholder="Ex: SSP"
+                   TextColor="{StaticResource EntryColor}"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    MaxLength="10"
                    ReturnType="Next">
@@ -128,15 +160,21 @@
                 <Label Text="Data de emissão"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text=""
-                       Placeholder="01/01/2005"
+                   TextColor="{StaticResource EntryColor}"
+                   Placeholder="Ex: 01/01/2005"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    MaxLength="10"
                    Keyboard="Numeric"
-                   ReturnType="Next" />
+                   ReturnType="Next">
+                    <Entry.Behaviors>
+                        <behaviors:DateFormatterBehavior />
+                    </Entry.Behaviors>
+                </Entry>
 
                 <Label Text="Cat. profissional"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text="" 
+                   TextColor="{StaticResource EntryColor}"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    MaxLength="20"
                    ReturnType="Next" />
@@ -144,6 +182,7 @@
                 <Label Text="Dependentes n°"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text=""
+                   TextColor="{StaticResource EntryColor}"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    MaxLength="2"
                    Keyboard="Numeric"
@@ -151,7 +190,8 @@
 
                 <Button Text="Adicionar documentos" 
                     BackgroundColor="#c9c9c9"
-                    CornerRadius="8" />
+                    CornerRadius="8"
+                        Margin="0,10" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

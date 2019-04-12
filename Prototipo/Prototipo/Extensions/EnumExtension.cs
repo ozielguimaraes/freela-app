@@ -9,34 +9,29 @@ namespace Prototipo.Extensions
     //https://forums.xamarin.com/discussion/74074/enum-description-in-pcl
     public static class EnumExtension
     {
-        private static TAttribute GetAttribute<TAttribute>(this Enum value) where TAttribute : Attribute
+        public static List<EnumValueDataAttribute> ConvertToList<TEnum>()
+            where TEnum : struct // can't constrain to enums so closest thing
+        {
+            return Enum.GetValues(typeof(TEnum)).Cast<Enum>()
+                .Select(val => GetAttribute(val))
+                .OrderBy(o => o.Value).ToList();
+        }
+
+        public static EnumValueDataAttribute GetAttribute(Enum value)
         {
             var type = value.GetType();
             var name = Enum.GetName(type, value);
             return type.GetRuntimeField(name)
                 .GetCustomAttributes(false)
-                .OfType<TAttribute>()
+                .OfType<EnumValueDataAttribute>()
                 .FirstOrDefault();
-        }
-
-        public static IEnumerable<EnumValueDataAttribute> ConvertToList<TEnum>()
-            where TEnum : struct // can't constrain to enums so closest thing
-        {
-            return Enum.GetValues(typeof(TEnum)).Cast<Enum>()
-                .Select(val => val.GetAttribute<EnumValueDataAttribute>())
-                .OrderBy(o => o.Description).ToList();
-        }
-
-        public static EnumValueDataAttribute GetAttribute(Enum value)
-        {
-            return value.GetAttribute<EnumValueDataAttribute>();
         }
 
         public static EnumValueDataAttribute GetByType<TEnum>(string value) where TEnum : struct // can't constrain to enums so closest thing
         {
             return Enum.GetValues(typeof(TEnum)).Cast<Enum>()
-                .Select(val => val.GetAttribute<EnumValueDataAttribute>())
-                .ToList().FirstOrDefault(v => v.KeyValue.Equals(value));
+                .Select(val => GetAttribute(val))
+                .ToList().FirstOrDefault(v => v.Key.Equals(value));
         }
     }
 }
