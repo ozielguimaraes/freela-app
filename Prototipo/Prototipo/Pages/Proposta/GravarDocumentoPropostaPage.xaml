@@ -4,10 +4,29 @@
              x:Class="Prototipo.Pages.Proposta.GravarDocumentoPropostaPage"
              Title="Documento">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="DOC!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <FlexLayout Direction="Row"
+                        Wrap="Wrap">
+                    <Image Source="chat" />
+                    <Image Source="chat" />
+                    <Image Source="chat" />
+                    <Image Source="chat" />
+                    <Image Source="chat" />
+                    <Image Source="chat" />
+                    <Image Source="chat" />
+                    <Image Source="chat" />
+                    <Image Source="chat" />
+                    <Image Source="chat" />
+                    <Image Source="chat" />
+                    <Image Source="chat" />
+                    <Image Source="chat" />
+                    <Image Source="chat" />
+                    <Image Source="chat" />
+                    <Image Source="chat" />
+                    <Image Source="chat" />
+                </FlexLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

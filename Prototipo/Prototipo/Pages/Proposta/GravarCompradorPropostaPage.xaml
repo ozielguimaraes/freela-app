@@ -85,14 +85,33 @@
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text=""
                    TextColor="{StaticResource EntryColor}"
-                   ReturnType="Next" />
+                   PlaceholderColor="{StaticResource PlaceholderColor}"
+                   MaxLength="10"
+                   ReturnType="Next">
+                    <Entry.Keyboard>
+                        <Keyboard x:FactoryMethod="Create">
+                            <x:Arguments>
+                                <KeyboardFlags>Suggestions,CapitalizeWord</KeyboardFlags>
+                            </x:Arguments>
+                        </Keyboard>
+                    </Entry.Keyboard>
+                </Entry>
 
                 <Label Text="Naturalidade"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text=""
                    TextColor="{StaticResource EntryColor}"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
-                   ReturnType="Next" />
+                   MaxLength="10"
+                   ReturnType="Next">
+                    <Entry.Keyboard>
+                        <Keyboard x:FactoryMethod="Create">
+                            <x:Arguments>
+                                <KeyboardFlags>Suggestions,CapitalizeWord</KeyboardFlags>
+                            </x:Arguments>
+                        </Keyboard>
+                    </Entry.Keyboard>
+                </Entry>
 
                 <Label Text="Valor FGTS"
                    TextColor="{StaticResource PrimaryLabelColor}" />
@@ -107,16 +126,32 @@
                 <Entry Text=""
                    TextColor="{StaticResource EntryColor}"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
-                   MaxLength="50"
-                   ReturnType="Next" />
+                   MaxLength="10"
+                   ReturnType="Next">
+                    <Entry.Keyboard>
+                        <Keyboard x:FactoryMethod="Create">
+                            <x:Arguments>
+                                <KeyboardFlags>Suggestions,CapitalizeWord</KeyboardFlags>
+                            </x:Arguments>
+                        </Keyboard>
+                    </Entry.Keyboard>
+                </Entry>
 
                 <Label Text="Nome da mãe"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text=""
                    TextColor="{StaticResource EntryColor}"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
-                   MaxLength="50"
-                   ReturnType="Next" />
+                   MaxLength="10"
+                   ReturnType="Next">
+                    <Entry.Keyboard>
+                        <Keyboard x:FactoryMethod="Create">
+                            <x:Arguments>
+                                <KeyboardFlags>Suggestions,CapitalizeWord</KeyboardFlags>
+                            </x:Arguments>
+                        </Keyboard>
+                    </Entry.Keyboard>
+                </Entry>
 
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Documentos"
