@@ -5,14 +5,11 @@ namespace Prototipo.Pages.Proposta
 {
     public class GravarDocumentoPropostaPageModel : BasePageModel
     {
-        public ObservableCollection<Models.Proposta> Items { get; set; }
+        public ObservableCollection<Models.Documento> Items { get; set; }
 
         public GravarDocumentoPropostaPageModel()
         {
-            Items = new ObservableCollection<Models.Proposta>
-            {
-                new Models.Proposta{ }
-            };
+            Items = new ObservableCollection<Models.Documento>();
         }
     }
 }

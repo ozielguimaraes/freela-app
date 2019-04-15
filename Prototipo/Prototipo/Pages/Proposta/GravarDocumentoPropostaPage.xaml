@@ -5,26 +5,10 @@
              Title="Documento">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-                <FlexLayout Direction="Row"
+            <StackLayout x:Name="stack">
+                <FlexLayout x:Name="flex" Direction="Row"
                         Wrap="Wrap">
-                    <Image Source="chat" />
-                    <Image Source="chat" />
-                    <Image Source="chat" />
-                    <Image Source="chat" />
-                    <Image Source="chat" />
-                    <Image Source="chat" />
-                    <Image Source="chat" />
-                    <Image Source="chat" />
-                    <Image Source="chat" />
-                    <Image Source="chat" />
-                    <Image Source="chat" />
-                    <Image Source="chat" />
-                    <Image Source="chat" />
-                    <Image Source="chat" />
-                    <Image Source="chat" />
-                    <Image Source="chat" />
-                    <Image Source="chat" />
+                    
                 </FlexLayout>
             </StackLayout>
         </ScrollView>

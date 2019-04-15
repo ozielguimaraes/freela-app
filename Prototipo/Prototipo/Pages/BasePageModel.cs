@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using Xamarin.Forms;
-using Prototipo.Models;
-using Prototipo.Services;
 using Prototipo.Services.Interfaces;
 using System.Windows.Input;
 
@@ -13,7 +8,7 @@ namespace Prototipo.ViewModels
     public class BasePageModel : ObservableObject
     {
         protected IExceptionService ExceptionService;
-        protected IMessageService MessageService;
+        public IMessageService MessageService;
         protected INavigationService NavigationService;
 
         public ICommand OnMenuItemSelectedCommand { get; set; }
