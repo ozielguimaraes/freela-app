@@ -10,6 +10,8 @@ namespace Prototipo.Helpers
         public static async Task<Documento> ObterDocumentoAsync(string[] fileTypes)
         {
             var pickedFile = await CrossFilePicker.Current.PickFile(fileTypes);
+            if (pickedFile == null) return null;
+
             return new Documento(pickedFile.DataArray, pickedFile.FileName, pickedFile.FilePath);
         }
 

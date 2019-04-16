@@ -8,5 +8,5 @@
 
     <views:GravarCompradorPropostaPage />
     <views:GravarDocumentoPropostaPage />
-    <views:GravarCompradorPropostaPage />
+    <views:AbaPropostaPage />
 </TabbedPage>

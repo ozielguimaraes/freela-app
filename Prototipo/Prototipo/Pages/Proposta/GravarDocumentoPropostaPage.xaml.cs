@@ -20,7 +20,7 @@ namespace Prototipo.Pages.Proposta
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            if (flex.Children.Count == 0)
+            if (flex.Children?.Count == 0)
             {
                 var tapGestureRecognizer = new TapGestureRecognizer
                 {
@@ -43,6 +43,8 @@ namespace Prototipo.Pages.Proposta
         private async void AdicionarDocumento(object sender, EventArgs e)
         {
             var documento = await FileManager.ObterDocumentoAsync(Constants.AllowedTypes);
+            if (documento == null) return;
+
             if (!Constants.AllowedTypes.Contains(documento.FileName))
             {
                 await _pageModel.MessageService.ShowAsync("Tipo de documento não aceito");

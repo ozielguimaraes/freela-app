@@ -1,12 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Prototipo.Pages.Proposta.AbaPropostaPage">
+             x:Class="Prototipo.Pages.Proposta.AbaPropostaPage"
+             Title="Proposta">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <FlexLayout>
+                    <BoxView Grid.Row="0" Grid.Column="0" Color="Red" />
+                    
+                </FlexLayout>
+
+                <FlexLayout Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Direction="Row"
+                        BackgroundColor="#EEEEEE">
+                    <BoxView WidthRequest="90" Color="Red" />
+                    <Label Text="EMPREENDIMENTO" VerticalTextAlignment="Center" />
+                    <Label Text="Vila Real Jardins" VerticalTextAlignment="Center" />
+                </FlexLayout>
+
+                <!--<BoxView Grid.Row="0" Grid.Column="1" Color="CadetBlue" />
+
+                <BoxView Grid.Row="1" Grid.Column="0" Color="Orange" />
+
+                <BoxView Grid.Row="1" Grid.Column="1" Color="Green" />-->
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
