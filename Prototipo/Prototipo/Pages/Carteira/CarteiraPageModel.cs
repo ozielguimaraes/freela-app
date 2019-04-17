@@ -35,7 +35,7 @@ namespace Prototipo.Pages.Carteira
 
         private async Task IrParaPropostas()
         {
-            await NavigationService.PushAsync(new ListaPropostaPage());
+            await NavigationService.PushModalAsync(new NavigationPage(new ListaPropostaPage()));
         }
     }
 }
