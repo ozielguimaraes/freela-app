@@ -1,20 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace Prototipo.Pages.Empreendimento
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ListaEmpreendimentoPage : ContentPage
-	{
-		public ListaEmpreendimentoPage ()
-		{
-			InitializeComponent ();
-		}
-	}
+    public partial class ListaEmpreendimentoPage : ContentPage
+    {
+        private readonly ListaEmpreendimentoPageModel _pageModel;
+
+        public ListaEmpreendimentoPage()
+        {
+            InitializeComponent();
+            BindingContext = _pageModel = _pageModel ?? new ListaEmpreendimentoPageModel();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            _pageModel.LoadItemsCommand.Execute(null);
+        }
+    }
 }
