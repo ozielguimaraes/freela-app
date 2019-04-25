@@ -12,17 +12,15 @@ namespace Prototipo.Pages
         public MainPage()
         {
             InitializeComponent();
-            MasterBehavior = MasterBehavior.Popover;
 
+            Title = Constants.AppName;
             BindingContext = _pageModel = new MenuPageModel();
+            Detail = new NavigationPage(new Carteira.CarteiraPage());
         }
 
-        public MainPage(Page detail)
+        public void Definir(Page page)
         {
-            InitializeComponent();
-            BindingContext = _pageModel = new MenuPageModel();
-            Detail = detail;
-            IsPresented = false;
+            Detail = page;
         }
 
         protected async override void OnAppearing()

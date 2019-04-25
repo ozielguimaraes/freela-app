@@ -23,6 +23,7 @@ public enum MenuType
 {
     Carteira,
     Proposta,
+    Empreendimento,
     GravarProposta,
     About
 }

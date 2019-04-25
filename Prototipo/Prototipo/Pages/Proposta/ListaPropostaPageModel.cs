@@ -1,5 +1,4 @@
-﻿using Prototipo.Models;
-using Prototipo.Services.Mocks;
+﻿using Prototipo.Services.Mocks;
 using Prototipo.ViewModels;
 using System;
 using System.Collections.ObjectModel;
@@ -13,13 +12,13 @@ namespace Prototipo.Pages.Proposta
     public class ListaPropostaPageModel : BasePageModel
     {
         public ObservableCollection<Models.Proposta> Items { get; set; }
-        public ICommand LoadItemsCommand { get; set; }
+        public ICommand LoadItemsCommand => new Command(async () => await LoadItems());
+        public ICommand ItemSelectedCommand => new Command<int>(async (id) => await ItemSelecionado(id));
 
         public ListaPropostaPageModel()
         {
             Title = "Minhas Propostas";
             Items = new ObservableCollection<Models.Proposta>();
-            LoadItemsCommand = new Command(async () => await LoadItems());
         }
 
         private async Task LoadItems()
@@ -40,6 +39,33 @@ namespace Prototipo.Pages.Proposta
             }
             catch (Exception ex)
             {
+                Debug.WriteLine(ex);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        private async Task ItemSelecionado(int id)
+        {
+            if (IsBusy) return;
+            IsBusy = true;
+
+            try
+            {
+                var mock = new PropostaMock();
+                var item = await mock.GetItemAsync(id.ToString());
+                if (item == null)
+                {
+                    await MessageService.ShowAsync("Proposta não encontrada");
+                    return;
+                }
+                await MessageService.ShowAsync(item.Numero + item.Torre);
+            }
+            catch (Exception ex)
+            {
+                await MessageService.ShowAsync(ex.Message);
                 Debug.WriteLine(ex);
             }
             finally

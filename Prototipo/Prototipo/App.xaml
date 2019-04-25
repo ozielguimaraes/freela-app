@@ -5,6 +5,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <!--Global Styles-->
+            <Color x:Key="BackgroundColor">#181818</Color>
             <Color x:Key="PrimaryColor">#11233c</Color>
             <Color x:Key="PrimaryDarkColor">#11233c</Color>
             <Color x:Key="Accent">#30c2dc</Color>

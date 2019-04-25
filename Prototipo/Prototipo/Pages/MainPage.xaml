@@ -1,82 +1,74 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:menu="clr-namespace:Prototipo.Pages.Menu"
             xmlns:carteira="clr-namespace:Prototipo.Pages.Carteira"
             x:Class="Prototipo.Pages.MainPage"
-                  IsPresented="{Binding IsPresented}">
+                  IsPresented="{Binding IsPresented}"
+                  Title="{Binding Title}">
 
-  <MasterDetailPage.Master>
-    <ContentPage BackgroundColor="#fafafa" Padding="0">
-      <StackLayout>
-        <StackLayout BackgroundColor="#00ACC1" HeightRequest="80">
-          <Label Text="Bem Vindo(a)"
+    <MasterDetailPage.Master>
+        <ContentPage BackgroundColor="#fafafa" Padding="0">
+            <StackLayout>
+                <StackLayout BackgroundColor="#00ACC1" HeightRequest="80">
+                    <Label Text="Bem Vindo(a)"
                  FontSize="Small"
                  VerticalOptions="CenterAndExpand"
                  TextColor="White"
                  HorizontalOptions="Center"/>
-          <BoxView Margin="0" HeightRequest="1" Color="Gray"></BoxView>
-        </StackLayout>
+                    <BoxView Margin="0" HeightRequest="1" Color="Gray"></BoxView>
+                </StackLayout>
 
-        <ListView ItemsSource="{Binding Items}"
+                <ListView ItemsSource="{Binding Items}"
                               HorizontalOptions="FillAndExpand"
                               VerticalOptions="FillAndExpand"
                               RowHeight="60"
                               ItemSelected="OnMenuItemSelected"
                               SeparatorVisibility="None">
 
-          <ListView.ItemTemplate>
-            <DataTemplate>
-              <ViewCell>
-                <StackLayout VerticalOptions="FillAndExpand"
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout VerticalOptions="FillAndExpand"
                              Orientation="Horizontal"
                              Padding="30,10,0,10"
                              Spacing="15">
 
-                  <!--<Image Source="{Binding Icon}"
+                                    <!--<Image Source="{Binding Icon}"
                                    WidthRequest="40"
                                    HeightRequest="40"
                                    VerticalOptions="Center" />-->
 
-                  <Label Text="{Binding Title}"
+                                    <Label Text="{Binding Title}"
                          FontSize="Medium"
                                  FontAttributes="Bold"
                          VerticalOptions="Center"
                          TextColor="#3f3f3f"/>
-                </StackLayout>
-              </ViewCell>
-            </DataTemplate>
-          </ListView.ItemTemplate>
-        </ListView>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
 
-        <Grid RowSpacing="0">
-          <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-          </Grid.RowDefinitions>
-          <Grid.ColumnDefinitions >
-            <ColumnDefinition Width=".50*" />
-            <ColumnDefinition Width=".50*" />
-          </Grid.ColumnDefinitions>
+                <Grid RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width=".50*" />
+                        <ColumnDefinition Width=".50*" />
+                    </Grid.ColumnDefinitions>
 
-          <Label Grid.Column="0" Grid.Row="0" Margin="10,0,0,0" Text="{Binding AppVersion}" TextColor="#3f3f3f" FontSize="Small">
-          </Label>
+                    <Label Grid.Column="0" Grid.Row="0" Margin="10,0,0,0" Text="{Binding AppVersion}" TextColor="#3f3f3f" FontSize="Small">
+                    </Label>
 
                     <Label Grid.Column="0" Grid.Row="1" Margin="10,0,0,0" Text="Powered By: &#10;Guimarães Technologies" TextColor="{StaticResource PrimaryLabelColor}" FontSize="Micro"></Label>
-        </Grid>
-      </StackLayout>
-    </ContentPage>
-  </MasterDetailPage.Master>
-  <MasterDetailPage.Detail>
-    <NavigationPage>
-      <NavigationPage.Icon>
-        <OnPlatform x:TypeArguments="FileImageSource">
-          <On Platform="iOS" Value="tab_feed.png"/>
-        </OnPlatform>
-      </NavigationPage.Icon>
-      <x:Arguments>
-        <carteira:CarteiraPage />
-      </x:Arguments>
-    </NavigationPage>
-  </MasterDetailPage.Detail>
+                </Grid>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
 </MasterDetailPage>

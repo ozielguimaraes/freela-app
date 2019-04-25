@@ -2,9 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:control="clr-namespace:Prototipo.Controls"
+             xmlns:behaviors="clr-namespace:Prototipo.Behaviors"
+             xmlns:converters="clr-namespace:Prototipo.Converters"
              x:Class="Prototipo.Pages.Proposta.ListaPropostaPage"
              Title="{Binding Title}"
              Style="{StaticResource PageStyle}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ItemTappedEventArgsToItemTappedConverter x:Key="ItemTappedConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.ToolbarItems>
         <ToolbarItem>
             <ToolbarItem.Icon>
@@ -16,8 +23,13 @@
     <ContentPage.Content>
         <StackLayout Margin="0,8,0,0">
             <ListView x:Name="ItemsListView"
-                ItemsSource="{Binding Items}" 
+                      ItemsSource="{Binding Items}" 
                       HasUnevenRows="True">
+                <ListView.Behaviors>
+                    <behaviors:EventToCommandBehavior Command="{Binding ItemSelectedCommand}" 
+                                 Converter="{StaticResource ItemTappedConverter}" 
+                                 EventName="ItemTapped" />
+                </ListView.Behaviors>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -73,18 +85,6 @@
 
                                     <BoxView Grid.Row="0" Grid.Column="2" Grid.RowSpan="4"
                                              WidthRequest="1" BackgroundColor="#CCCCCC" />
-
-                                    <!--<Frame Grid.Row="2" Grid.Column="1"
-                                            OutlineColor="{Binding Conclusao.GetColor}"
-                                           CornerRadius="33"
-                                           HorizontalOptions="CenterAndExpand"
-                                           VerticalOptions="CenterAndExpand"
-                                           WidthRequest="15"
-                                           HeightRequest="15">
-
-                                            <Label Text="{Binding Conclusao.PercentagemConclusao, StringFormat='{0:}%'}"
-                                                   TextColor="{Binding Conclusao.GetColor}"/>
-                                        </Frame>-->
 
                                     <FlexLayout Direction="Column"
                                                 Grid.Row="0" 

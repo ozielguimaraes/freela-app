@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
+﻿using FFImageLoading.Forms.Platform;
 using Foundation;
 using Prototipo.iOS.Renderers;
 using UIKit;
+using Xamarin.Forms;
 
 namespace Prototipo.iOS
 {
@@ -23,7 +21,10 @@ namespace Prototipo.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.Init();
+            Forms.Init();
+
+            CachedImageRenderer.Init();
+
             LoadApplication(new App());
             ProgressRingRenderer.Init();
 

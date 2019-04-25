@@ -2,14 +2,44 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Prototipo.Pages.Empreendimento.ListaEmpreendimentoPage"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             xmlns:templates="clr-namespace:Prototipo.Pages.Templates"
              Title="{Binding Title}"
              Style="{StaticResource PageStyle}">
-    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="DetailTitleStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#FFFFFF" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="Margin" Value="6, 0" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout Grid.Row="1">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Similar to"
+                           Style="{StaticResource DetailTitleStyle}"/>
+                    <Label Text="Imóvel" 
+                           Style="{StaticResource DetailTitleStyle}"/>
+                </StackLayout>
+                <flv:FlowListView 
+                                FlowItemsSource="{Binding ItensEmLancamento}"
+                                BackgroundColor="{StaticResource BackgroundColor}"
+                                FlowColumnCount="3" 
+                                FlowColumnExpand="First"
+                                SeparatorVisibility="None"
+                                HasUnevenRows="True"
+                                HeightRequest="350">
+                    <flv:FlowListView.FlowColumnTemplate>
+                        <DataTemplate>
+                            <templates:EmpreendimentoItemTemplate />
+                        </DataTemplate>
+                    </flv:FlowListView.FlowColumnTemplate>
+                </flv:FlowListView>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

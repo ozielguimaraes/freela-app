@@ -1,8 +1,9 @@
-﻿using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using Prototipo.Services.Interfaces;
-using Prototipo.Services;
+﻿using DLToolkit.Forms.Controls;
 using Prototipo.Pages;
+using Prototipo.Services;
+using Prototipo.Services.Interfaces;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Prototipo
@@ -16,9 +17,15 @@ namespace Prototipo
             DependencyService.Register<IMessageService, MessageService>();
             DependencyService.Register<IExceptionService, ExceptionService>();
             DependencyService.Register<INavigationService, NavigationService>();
+            InicializarPlugins();
             MainPage = new MainPage();
         }
 
+        private void InicializarPlugins()
+        {
+            FlowListView.Init();
+        }
+        
         protected override void OnStart()
         {
             // Handle when your app starts
