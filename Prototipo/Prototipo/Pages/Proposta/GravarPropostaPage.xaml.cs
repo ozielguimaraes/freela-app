@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using Prototipo.ViewModels;
+using Xamarin.Forms;
 
 namespace Prototipo.Pages.Proposta
 {
@@ -6,10 +7,15 @@ namespace Prototipo.Pages.Proposta
     {
         private readonly GravarPropostaPageModel _pageModel;
 
-        public GravarPropostaPage()
+        public GravarPropostaPage(PropostaVm proposta = null)
+        {
+            Inicializar();
+            BindingContext = _pageModel = _pageModel ?? new GravarPropostaPageModel(proposta);
+        }
+
+        private void Inicializar()
         {
             InitializeComponent();
-            BindingContext = _pageModel = _pageModel ?? new GravarPropostaPageModel();
         }
     }
 }

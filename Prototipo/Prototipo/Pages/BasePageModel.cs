@@ -9,7 +9,7 @@ namespace Prototipo.ViewModels
     {
         protected IExceptionService ExceptionService;
         public IMessageService MessageService;
-        protected INavigationService NavigationService;
+        public INavigationService NavigationService;
 
         public ICommand OnMenuItemSelectedCommand { get; set; }
 

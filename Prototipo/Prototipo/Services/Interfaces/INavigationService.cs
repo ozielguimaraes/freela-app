@@ -10,6 +10,7 @@ namespace Prototipo.Services.Interfaces
         void NavigateToUrl(string url);
         void MakePhoneCall(string number);
         Task PushModalAsync(Page page);
+        void Navegar(Page page);
         Task PushAsync(Page page);
         Task PopAsync();
         Task PopToRootAsync();

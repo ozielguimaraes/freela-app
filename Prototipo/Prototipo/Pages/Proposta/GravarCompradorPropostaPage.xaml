@@ -10,7 +10,7 @@
             <StackLayout>
                 <Label Text="CPF"
                    TextColor="{StaticResource PrimaryLabelColor}" />
-                <Entry Text=""
+                <Entry Text="{Binding Proposta.Comprador.Cpf}"
                    TextColor="{StaticResource EntryColor}"
                    Placeholder="Ex: 123.456.789-00"
                    PlaceholderColor="{StaticResource PlaceholderColor}"

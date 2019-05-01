@@ -1,4 +1,5 @@
-﻿using Prototipo.Services;
+﻿using Prototipo.Pages;
+using Prototipo.Services;
 using Prototipo.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,12 @@ namespace Prototipo.Services
             if (string.IsNullOrWhiteSpace(number)) return;
 
             NavigateToUrl($"tel:{number.Replace("(", "").Replace("-", "")}");
+        }
+
+        public void Navegar(Page page)
+        {
+            var main = Application.Current.MainPage as MainPage;
+            main.Detail = page;
         }
 
         public async Task PushAsync(Page page)

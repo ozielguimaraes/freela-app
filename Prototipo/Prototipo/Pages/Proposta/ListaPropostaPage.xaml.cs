@@ -13,16 +13,14 @@ namespace Prototipo.Pages.Proposta
             BindingContext = _pageModel = _pageModel ?? new ListaPropostaPageModel();
         }
 
-        //private async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
-        //{
-        //    var item = args.SelectedItem as Models.Proposta;
-        //    if (item == null) return;
+        public async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        {
+            if (!(args.SelectedItem is PropostaVm item)) return;
+            // Manually deselect item.
+            ItemsListView.SelectedItem = null;
 
-        //    //await Navigation.PushAsync(new ItemDetailPage(new ItemDetailVm(item)));
-
-        //    // Manually deselect item.
-        //    ItemsListView.SelectedItem = null;
-        //}
+            await _pageModel.NavigationService.PushModalAsync(new NavigationPage(new GravarPropostaPage(item)));
+        }
 
         protected override void OnAppearing()
         {

@@ -18,6 +18,9 @@ namespace Prototipo
             DependencyService.Register<IExceptionService, ExceptionService>();
             DependencyService.Register<INavigationService, NavigationService>();
             InicializarPlugins();
+#if DEBUG
+            HotReloader.Current.Start(this);
+#endif
             MainPage = new MainPage();
         }
 
@@ -25,7 +28,7 @@ namespace Prototipo
         {
             FlowListView.Init();
         }
-        
+
         protected override void OnStart()
         {
             // Handle when your app starts

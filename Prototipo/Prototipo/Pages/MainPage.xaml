@@ -59,16 +59,23 @@
                         <ColumnDefinition Width=".50*" />
                     </Grid.ColumnDefinitions>
 
-                    <Label Grid.Column="0" Grid.Row="0" Margin="10,0,0,0" Text="{Binding AppVersion}" TextColor="#3f3f3f" FontSize="Small">
+                    <Label Grid.Column="0" Grid.Row="0" 
+                           Margin="10,0,0,0" 
+                           Text="{Binding AppVersion}" 
+                           TextColor="#3f3f3f" 
+                           FontSize="Small">
                     </Label>
 
-                    <Label Grid.Column="0" Grid.Row="1" Margin="10,0,0,0" Text="Powered By: &#10;Guimarães Technologies" TextColor="{StaticResource PrimaryLabelColor}" FontSize="Micro"></Label>
+                    <Label Grid.Column="0" Grid.Row="1" 
+                           Margin="10,0,0,15" 
+                           Text="Powered By: &#10;Guimarães Technologies" 
+                           TextColor="{StaticResource PrimaryLabelColor}" 
+                           FontSize="Micro"></Label>
                 </Grid>
             </StackLayout>
         </ContentPage>
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
-        <NavigationPage>
-        </NavigationPage>
+        <carteira:CarteiraPage></carteira:CarteiraPage>
     </MasterDetailPage.Detail>
 </MasterDetailPage>

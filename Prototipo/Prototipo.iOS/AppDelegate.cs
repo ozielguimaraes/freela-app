@@ -25,7 +25,11 @@ namespace Prototipo.iOS
 
             CachedImageRenderer.Init();
 
-            LoadApplication(new App());
+            var xfApplication = new App();
+#if DEBUG
+            HotReloader.Current.Start(xfApplication, 4291);
+#endif
+            LoadApplication(xfApplication);
             ProgressRingRenderer.Init();
 
             return base.FinishedLaunching(app, options);

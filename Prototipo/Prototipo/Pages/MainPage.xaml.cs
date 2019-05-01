@@ -18,11 +18,6 @@ namespace Prototipo.Pages
             Detail = new NavigationPage(new Carteira.CarteiraPage());
         }
 
-        public void Definir(Page page)
-        {
-            Detail = page;
-        }
-
         protected async override void OnAppearing()
         {
             base.OnAppearing();
@@ -49,4 +44,4 @@ namespace Prototipo.Pages
             }
         }
     }
-}
+}   

@@ -1,0 +1,1 @@
+adb forward tcp:4290 tcp:4290

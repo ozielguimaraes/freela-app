@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Prototipo.Pages.Account.LoginPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Login"
+                   TextColor="{StaticResource PrimaryLabelColor}" />
+            <Entry Placeholder="Ex: mail@mail.com"
+                   TextColor="{StaticResource EntryColor}"
+                       PlaceholderColor="{StaticResource PlaceholderColor}"
+                   ReturnType="Next">
+                <Entry.Keyboard>
+                    <Keyboard x:FactoryMethod="Create">
+                        <x:Arguments>
+                            <KeyboardFlags>Suggestions,CapitalizeNone</KeyboardFlags>
+                        </x:Arguments>
+                    </Keyboard>
+                </Entry.Keyboard>
+            </Entry>
+
+            <Label Text="Senha"
+                   TextColor="{StaticResource PrimaryLabelColor}" />
+            <Entry Placeholder="Ex: mail@mail.com"
+                   IsPassword="True"
+                   TextColor="{StaticResource EntryColor}"
+                       PlaceholderColor="{StaticResource PlaceholderColor}"
+                   ReturnType="Next">
+            </Entry>
+
+            <Button Text="Entrar" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

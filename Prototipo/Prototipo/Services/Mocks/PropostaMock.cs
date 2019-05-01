@@ -1,4 +1,4 @@
-﻿using Prototipo.Models;
+﻿using Prototipo.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,15 +7,15 @@ using Xamarin.Forms.Internals;
 namespace Prototipo.Services.Mocks
 {
     [Preserve(AllMembers = true)]
-    public class PropostaMock : IDataStore<Proposta>
+    public class PropostaMock : IDataStore<PropostaVm>
     {
-        List<Proposta> items;
+        List<PropostaVm> items;
 
         public PropostaMock()
         {
-            items = new List<Proposta>
+            items = new List<PropostaVm>
             {
-                new Proposta
+                new PropostaVm
                 {
                     Numero = 98898,
                     Cliente = "Oziel Guimarães de Paula",
@@ -30,7 +30,7 @@ namespace Prototipo.Services.Mocks
                         "Montar Pasta - Entrar em Contato"
                     }
                 },
-                new Proposta
+                new PropostaVm
                 {
                     Numero = 123456,
                     Cliente = "João Felipe Júnior",
@@ -45,7 +45,7 @@ namespace Prototipo.Services.Mocks
                         "Montar Pasta - Entrar em Contato"
                     }
                 },
-                new Proposta
+                new PropostaVm
                 {
                     Numero = 123456,
                     Cliente = "João Felipe Júnior",
@@ -60,7 +60,7 @@ namespace Prototipo.Services.Mocks
                         "Montar Pasta - Entrar em Contato"
                     }
                 },
-                new Proposta
+                new PropostaVm
                 {
                     Numero = 937163,
                     Cliente = "Mário de Souza Costa",
@@ -75,7 +75,7 @@ namespace Prototipo.Services.Mocks
                         "Montar Pasta - Entrar em Contato"
                     }
                 },
-                new Proposta
+                new PropostaVm
                 {
                     Numero = 123456,
                     Cliente = "João Felipe Júnior",
@@ -93,14 +93,14 @@ namespace Prototipo.Services.Mocks
             };
         }
 
-        public async Task<bool> AddItemAsync(Proposta item)
+        public async Task<bool> AddItemAsync(PropostaVm item)
         {
             items.Add(item);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(Proposta item)
+        public async Task<bool> UpdateItemAsync(PropostaVm item)
         {
             var oldItem = items.FirstOrDefault();
             items.Remove(oldItem);
@@ -117,12 +117,12 @@ namespace Prototipo.Services.Mocks
             return await Task.FromResult(true);
         }
 
-        public async Task<Proposta> GetItemAsync(string id)
+        public async Task<PropostaVm> GetItemAsync(string id)
         {
             return await Task.FromResult(items.FirstOrDefault());
         }
 
-        public async Task<IEnumerable<Proposta>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<PropostaVm>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
         }

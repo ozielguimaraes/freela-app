@@ -3,6 +3,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Android.Support.V7.App;
+using Xamarin.Forms;
 
 namespace Prototipo.Droid
 {
@@ -22,8 +23,12 @@ namespace Prototipo.Droid
             base.OnCreate(savedInstanceState);
 
             CachedImageRenderer.Init(true);
-            Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+            Forms.Init(this, savedInstanceState);
+            var xfApplication = new App();
+#if DEBUG
+            HotReloader.Current.Start(xfApplication, 4290);
+#endif
+            LoadApplication(xfApplication);
         }
     }
 }

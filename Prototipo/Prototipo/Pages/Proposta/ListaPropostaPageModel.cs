@@ -11,14 +11,15 @@ namespace Prototipo.Pages.Proposta
 {
     public class ListaPropostaPageModel : BasePageModel
     {
-        public ObservableCollection<Models.Proposta> Items { get; set; }
+        public ObservableCollection<PropostaVm> Items { get; set; }
         public ICommand LoadItemsCommand => new Command(async () => await LoadItems());
-        public ICommand ItemSelectedCommand => new Command<int>(async (id) => await ItemSelecionado(id));
+        public ICommand ItemSelectedCommand { get; set; }
 
         public ListaPropostaPageModel()
         {
             Title = "Minhas Propostas";
-            Items = new ObservableCollection<Models.Proposta>();
+            Items = new ObservableCollection<PropostaVm>();
+            ItemSelectedCommand = new Command<int>(async (id) => await ItemSelecionado(id));
         }
 
         private async Task LoadItems()
