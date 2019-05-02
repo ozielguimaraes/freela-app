@@ -189,7 +189,7 @@
 
                         <Entry Grid.Row="2" 
                                Grid.Column="1" 
-                               Text="1"
+                               Text="{Binding NovaPreChave.QuantidadeParcelas}"
                                FontSize="12"
                                TextColor="Black"
                                Placeholder="Ex: 360"
@@ -221,7 +221,7 @@
 
                         <Entry Grid.Row="2" 
                                Grid.Column="2"
-                               Text=""
+                               Text="{Binding NovaPreChave.Valor}"
                                VerticalOptions="End"
                                FontSize="12"
                                TextColor="Black"
@@ -240,6 +240,7 @@
                                 Grid.RowSpan="4"
                                 Grid.Column="4"
                                 Text="Adicionar"
+                                Command="{Binding NovaPreChaveCommand}"
                                 FontSize="12"
                                 Margin="15"
                                 Padding="0"
