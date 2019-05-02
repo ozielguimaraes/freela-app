@@ -3,11 +3,11 @@ using System.Collections.ObjectModel;
 
 namespace Prototipo.Pages.Proposta
 {
-    public class GravarDocumentoPropostaPageModel : BasePageModel
+    public class AbaDocumentoPropostaPageModel : BasePageModel
     {
         public ObservableCollection<Models.Documento> Items { get; set; }
 
-        public GravarDocumentoPropostaPageModel()
+        public AbaDocumentoPropostaPageModel()
         {
             Items = new ObservableCollection<Models.Documento>();
         }

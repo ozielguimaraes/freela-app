@@ -7,9 +7,9 @@ using System.Collections.ObjectModel;
 
 namespace Prototipo.Pages.Proposta
 {
-    public class GravarCompradorPropostaPageModel : BasePageModel
+    public class AbaCompradorPropostaPageModel : BasePageModel
     {
-        public GravarCompradorPropostaPageModel()
+        public AbaCompradorPropostaPageModel()
         {
             Title = "Comprador";
             ListaEstadoCivil = EnumExtension.ConvertToList<EstadoCivil>();

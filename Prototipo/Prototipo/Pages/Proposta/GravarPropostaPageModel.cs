@@ -4,22 +4,33 @@ namespace Prototipo.Pages.Proposta
 {
     public class GravarPropostaPageModel : BasePageModel
     {
+        private readonly PropostaVm propostaSelecionada;
+
         public GravarPropostaPageModel(PropostaVm proposta = null)
         {
-            Inicializar(proposta);
-        }
-
-        private PropostaVm _proposta;
-        public PropostaVm Proposta
-        {
-            get { return _proposta; }
-            set { SetProperty(ref _proposta, value); }
-        }
-
-        private void Inicializar(PropostaVm proposta)
-        {
             Title = proposta == null ? "Nova Proposta" : "Editar Proposta";
-            Proposta = proposta ?? new PropostaVm();
+            propostaSelecionada = proposta ?? new PropostaVm();
+        }
+
+        private AbaCompradorPropostaPageModel abaComprador;
+        public AbaCompradorPropostaPageModel AbaComprador
+        {
+            get { return abaComprador; }
+            set { SetProperty(ref abaComprador, value); }
+        }
+
+        private AbaDocumentoPropostaPageModel abaDocumento;
+        public AbaDocumentoPropostaPageModel AbaDocumento
+        {
+            get { return abaDocumento; }
+            set { SetProperty(ref abaDocumento, value); }
+        }
+
+        private AbaPropostaPageModel abaProposta;
+        public AbaPropostaPageModel AbaProposta
+        {
+            get { return abaProposta; }
+            set { SetProperty(ref abaProposta, value); }
         }
     }
 }

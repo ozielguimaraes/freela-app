@@ -6,15 +6,15 @@ using Xamarin.Forms;
 
 namespace Prototipo.Pages.Proposta
 {
-    public partial class GravarDocumentoPropostaPage : ContentPage
+    public partial class AbaDocumentoPropostaPage : ContentPage
     {
-        private GravarDocumentoPropostaPageModel _pageModel;
+        private AbaDocumentoPropostaPageModel _pageModel;
 
-        public GravarDocumentoPropostaPage()
+        public AbaDocumentoPropostaPage()
         {
             InitializeComponent();
 
-            BindingContext = _pageModel = _pageModel ?? new GravarDocumentoPropostaPageModel();
+            BindingContext = _pageModel = _pageModel ?? new AbaDocumentoPropostaPageModel();
         }
 
         protected override void OnAppearing()
