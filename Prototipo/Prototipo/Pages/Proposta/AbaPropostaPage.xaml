@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Prototipo.Pages.Proposta.AbaPropostaPage"
+             xmlns:behavior="clr-namespace:Prototipo.Behaviors"
              Title="Proposta">
     <ContentPage.Content>
         <Grid>
@@ -229,7 +230,11 @@
                                PlaceholderColor="#c6c6c5"
                                Margin="0,5,0,0"
                                MaxLength="10"
-                               Keyboard="Numeric" />
+                               Keyboard="Numeric">
+                            <Entry.Behaviors>
+                                <behavior:MoneyFormatterBehavior />
+                            </Entry.Behaviors>
+                        </Entry>
 
                         <BoxView Grid.Row="0"
                                  Grid.RowSpan="4"
@@ -310,7 +315,7 @@
                                Grid.Column="2"
                                FontSize="Micro"
                                TextColor="Black"
-                               Text="{Binding Valor, StringFormat='Valor:&#10; {0}'}" />
+                               Text="{Binding Valor, StringFormat='Valor:&#10; {0:N}'}" />
 
                                         <BoxView Grid.Row="0"
                                  Grid.RowSpan="4"
