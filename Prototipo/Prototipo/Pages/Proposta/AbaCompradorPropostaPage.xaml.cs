@@ -11,5 +11,18 @@ namespace Prototipo.Pages.Proposta
             InitializeComponent();
             BindingContext = _pageModel = _pageModel ?? new AbaCompradorPropostaPageModel();
         }
+
+        public delegate void AdicionarDocumentos_Clicked(object sender, System.EventArgs e);
+
+
+
+
+        //public System.Action<object, System.EventArgs> AdicionarDocumentos_Clicked { get; set; }
+
+        //public void AdicionarDocumentos_Clicked(System.Action<object, System.EventArgs> action)
+        //{
+
+        //}
+
     }
 }

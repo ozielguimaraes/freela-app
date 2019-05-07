@@ -1,6 +1,5 @@
 ﻿using Prototipo.ViewModels;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
@@ -11,10 +10,60 @@ namespace Prototipo.Pages.Proposta
 {
     public class AbaPropostaPageModel : BasePageModel
     {
-        private readonly List<PreChaveVm> items;
+        private ObservableCollection<PreChaveVm> items;
 
         public ICommand LoadPreChavesCommand { get; set; }
         public ICommand NovaPreChaveCommand { get; set; }
+        public ICommand DeletePreChaveCommand { get; set; }
+
+        private string empreendimento = "Selecione ...";
+        public string Empreendimento
+        {
+            get { return empreendimento; }
+            set { SetProperty(ref empreendimento, value); }
+        }
+
+        private ObservableCollection<string> listaEmpreendimento;
+        public ObservableCollection<string> ListaEmpreendimento
+        {
+            get { return listaEmpreendimento; }
+            set { SetProperty(ref listaEmpreendimento, value); }
+        }
+
+        private string torre;
+        public string Torre
+        {
+            get { return torre; }
+            set { SetProperty(ref torre, value); }
+        }
+
+        private ObservableCollection<string> listaTorre;
+        public ObservableCollection<string> ListaTorre
+        {
+            get { return listaTorre; }
+            set { SetProperty(ref listaTorre, value); }
+        }
+
+        private int unidade;
+        public int Unidade
+        {
+            get { return unidade; }
+            set { SetProperty(ref unidade, value); }
+        }
+
+        private ObservableCollection<int> listaUnidade;
+        public ObservableCollection<int> ListaUnidade
+        {
+            get { return listaUnidade; }
+            set { SetProperty(ref listaUnidade, value); }
+        }
+
+        private decimal valorVenda;
+        public decimal ValorVenda
+        {
+            get { return valorVenda; }
+            set { SetProperty(ref valorVenda, value); }
+        }
 
         private PreChaveVm novaPreChave;
         public PreChaveVm NovaPreChave
@@ -36,34 +85,9 @@ namespace Prototipo.Pages.Proposta
             PreChaves = new ObservableCollection<PreChaveVm>();
             LoadPreChavesCommand = new Command(async () => await LoadPreChaves());
             NovaPreChaveCommand = new Command(async () => await AdicionarNovaPreChave());
+            DeletePreChaveCommand = new Command<PreChaveVm>(async (item) => await DeletePreChave(item));
 
-            items = new List<PreChaveVm>
-                {
-                    //new PreChaveVm
-                    //{
-                    //    QuantidadeParcelas = 86,
-                    //    Valor = 40908,
-                    //    PrimeiroVencimento = DateTime.Now
-                    //},
-                    //new PreChaveVm
-                    //{
-                    //    QuantidadeParcelas = 86,
-                    //    Valor = 40908,
-                    //    PrimeiroVencimento = DateTime.Now
-                    //},
-                    //new PreChaveVm
-                    //{
-                    //    QuantidadeParcelas = 86,
-                    //    Valor = 40908,
-                    //    PrimeiroVencimento = DateTime.Now
-                    //},
-                    new PreChaveVm
-                    {
-                        QuantidadeParcelas = 180,
-                        Valor = 180000,
-                        PrimeiroVencimento = DateTime.Now
-                    }
-                };
+            MockValues();
         }
 
         private async Task LoadPreChaves()
@@ -112,6 +136,7 @@ namespace Prototipo.Pages.Proposta
                     return;
                 }
                 PreChaves.Add(NovaPreChave);
+                NovaPreChave = new PreChaveVm();
 
                 await Task.Delay(500);
             }
@@ -123,6 +148,49 @@ namespace Prototipo.Pages.Proposta
             {
                 IsBusy = false;
             }
+        }
+
+        private async Task DeletePreChave(PreChaveVm item)
+        {
+            if (IsBusy) return;
+
+            IsBusy = true;
+
+            try
+            {
+                //TODO Deletar do servidor/api?
+                PreChaves.Remove(item);
+
+                await Task.Delay(500);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        private void MockValues()
+        {
+            items = new ObservableCollection<PreChaveVm>
+                {
+                    new PreChaveVm
+                    {
+                        QuantidadeParcelas = 180,
+                        Valor = 180000,
+                        PrimeiroVencimento = DateTime.Now
+                    }
+                };
+
+            ListaEmpreendimento = new ObservableCollection<string>
+            {
+                "Prime Village",
+                "Jardim América",
+                "Green Palace"
+            };
         }
     }
 }

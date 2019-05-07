@@ -6,7 +6,4 @@
              Title="{Binding Title}"
              Style="{StaticResource PageStyle}">
 
-    <views:AbaCompradorPropostaPage />
-    <views:AbaDocumentoPropostaPage />
-    <views:AbaPropostaPage />
 </TabbedPage>

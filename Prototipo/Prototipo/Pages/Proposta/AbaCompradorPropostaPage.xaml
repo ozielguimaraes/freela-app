@@ -223,9 +223,10 @@
                    Keyboard="Numeric"
                    ReturnType="Done" />
 
-                <Button Text="Adicionar documentos" 
+                <Button x:Name="AdicionarDocumentos" Text="Adicionar documentos" 
                     BackgroundColor="#c9c9c9"
                     CornerRadius="8"
+                        Clicked="AdicionarDocumentos_Clicked"
                         Margin="0,10" />
             </StackLayout>
         </ScrollView>

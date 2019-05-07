@@ -19,5 +19,15 @@ namespace Prototipo.Pages.Proposta
             if (_pageModel.PreChaves.Count == 0)
                 _pageModel.LoadPreChavesCommand.Execute(null);
         }
+
+        private async void AlterarEmpreendimento_Tapped(object sender, System.EventArgs e)
+        {
+            await _pageModel.MessageService.ShowAsync("clicou");
+        }
+
+        private async void IrParaDocumento_Tapped(object sender, System.EventArgs e)
+        {
+            //GravarPropostaPage.Nav = this;
+        }
     }
 }
