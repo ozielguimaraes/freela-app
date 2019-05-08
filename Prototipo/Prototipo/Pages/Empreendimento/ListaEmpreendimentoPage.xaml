@@ -25,8 +25,7 @@
             <StackLayout>
                 <controls:HorizontalList   
                     ListOrientation="Horizontal" 
-                    ItemsSource="{Binding Itens}"
-                    HeightRequest="200">
+                    ItemsSource="{Binding Itens}">
                     <controls:HorizontalList.ItemTemplate>
                         <DataTemplate>
                             <templates:EmpreendimentoItemTemplate />
@@ -37,21 +36,20 @@
                     Text="Em promoção"
                     FontAttributes="Bold"
                     TextColor="White"
-                    FontSize="16">
+                    FontSize="12">
                     <Label.Margin>
                         <OnPlatform x:TypeArguments="Thickness">
-                            <On Platform="Android" Value="12, 0" />
-                            <On Platform="iOS" Value="12, 12, 12, 0" />
+                            <On Platform="Android" Value="12, 15, 0, 0" />
+                            <On Platform="iOS" Value="12, 15, 12, 0" />
                         </OnPlatform>
                     </Label.Margin>
                 </Label>
                 <controls:HorizontalList   
                     ListOrientation="Horizontal" 
-                    ItemsSource="{Binding ItensEmPromocao}"
-                    HeightRequest="200">
+                    ItemsSource="{Binding ItensEmPromocao}">
                     <controls:HorizontalList.ItemTemplate>
                         <DataTemplate>
-                            <templates:EmpreendimentoItemTemplate />
+                            <templates:EmpreendimentoEmPromocaoTemplate />
                         </DataTemplate>
                     </controls:HorizontalList.ItemTemplate>
                 </controls:HorizontalList>
@@ -70,8 +68,7 @@
                 </Label>
                 <controls:HorizontalList   
                     ListOrientation="Horizontal" 
-                    ItemsSource="{Binding ItensEmLancamento}"
-                    HeightRequest="200">
+                    ItemsSource="{Binding ItensEmLancamento}">
                     <controls:HorizontalList.ItemTemplate>
                         <DataTemplate>
                             <templates:EmpreendimentoItemTemplate />

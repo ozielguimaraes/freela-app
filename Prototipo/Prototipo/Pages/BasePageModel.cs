@@ -1,7 +1,7 @@
-﻿using System;
-using Xamarin.Forms;
-using Prototipo.Services.Interfaces;
+﻿using Prototipo.Services.Interfaces;
+using System;
 using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace Prototipo.ViewModels
 {
@@ -18,10 +18,15 @@ namespace Prototipo.ViewModels
             IsPresented = false;
             IsLoading = false;
             Title = Constants.AppName;
+            AppName = Constants.AppName;
             ExceptionService = DependencyService.Get<IExceptionService>();
             MessageService = DependencyService.Get<IMessageService>();
             NavigationService = DependencyService.Get<INavigationService>();
+            AppVersion = DependencyService.Get<IAppVersion>().GetVersion();
         }
+
+        public string AppName { get; set; }
+        public string AppVersion { get; set; }
 
         bool isBusy = false;
         public bool IsBusy

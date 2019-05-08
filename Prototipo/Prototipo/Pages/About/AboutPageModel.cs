@@ -8,13 +8,11 @@ namespace Prototipo.Pages.About
 {
     public class AboutPageModel : BasePageModel
     {
+        public ICommand OpenDeveloperProfileCommand { get; }
+
         public AboutPageModel()
         {
-            Title = "About";
-
-            OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://github.com/guimaraes-technologies")));
+            OpenDeveloperProfileCommand = new Command(() => Device.OpenUri(new Uri("https://www.linkedin.com/in/ozielguimaraes")));
         }
-
-        public ICommand OpenWebCommand { get; }
     }
 }

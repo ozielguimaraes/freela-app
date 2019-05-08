@@ -2,31 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Prototipo.Pages.About.AboutPage"
-             xmlns:vm="clr-namespace:Prototipo.Pages.About"
-             Title="{Binding Title}">
-    
-    <ContentPage.BindingContext>
-        <vm:AboutPageModel />
-    </ContentPage.BindingContext>
-    
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <!--Page Level Resources: Compatible with Xamarin Live Player -->
-            <Color x:Key="Primary">#2196F3</Color>
-            <Color x:Key="Accent">#96d1ff</Color>
-            <Color x:Key="LightTextColor">#999999</Color>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-    
+             Title="Sobre">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+
         <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
                 <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                    <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" />
+                    <Image Source="developer.jpeg" VerticalOptions="Center" HeightRequest="64" />
                 </ContentView>
             </StackLayout>
         </StackLayout>
@@ -36,9 +22,12 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                <Span Text="AppName" FontAttributes="Bold" FontSize="22" />
+                                <Span Text="{Binding AppName}" 
+                                      FontAttributes="Bold" 
+                                      FontSize="22" />
                                 <Span Text=" " />
-                                <Span Text="1.0" ForegroundColor="{StaticResource LightTextColor}" />
+                                <Span Text="{Binding AppVersion}" 
+                                      ForegroundColor="#999999" />
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>
@@ -47,7 +36,22 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                <Span Text="This app is written in C# and native APIs using the" />
+                                <Span Text="This app is developed by" />
+                                <Span Text=" " />
+                                <Span Text="Oziel Guimarães" FontAttributes="Bold" />
+                                <Span Text=" from " />
+                                <Span Text="Guimaraes Technologies" FontAttributes="Bold" />
+                                <Span Text="." />
+                                <Span Text=" Oziel Guimarães is .NET developer and Mobile Developer specialist." />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="It's written in C# and native APIs using the" />
                                 <Span Text=" " />
                                 <Span Text="Xamarin Platform" FontAttributes="Bold" />
                                 <Span Text="." />
@@ -61,16 +65,20 @@
                             <FormattedString.Spans>
                                 <Span Text="It shares code with its" />
                                 <Span Text=" " />
-                                <Span Text="iOS, Android, and Windows" FontAttributes="Bold" />
+                                <Span Text="iOS" 
+                                      FontAttributes="Bold" />
+                                <Span Text=" and " />
+                                <Span Text="Android" 
+                                      FontAttributes="Bold" />
                                 <Span Text=" " />
                                 <Span Text="versions." />
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-                <Button Margin="0,10,0,0" Text="Learn more"
-                        Command="{Binding OpenWebCommand}"
-                        BackgroundColor="{StaticResource Primary}"
+                <Button Margin="0,10,0,0" Text="Developer's profile"
+                        Command="{Binding OpenDeveloperProfileCommand}"
+                        BackgroundColor="#2196F3"
                         TextColor="White" />
             </StackLayout>
         </ScrollView>

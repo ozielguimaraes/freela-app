@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Prototipo.Pages.Templates.EmpreendimentoItemTemplate">
+             x:Class="Prototipo.Pages.Templates.EmpreendimentoEmPromocaoTemplate">
     <ContentView.Content>
         <StackLayout Orientation="Vertical">
             <Image
                 Aspect="Fill"
                 HeightRequest="120"
-                WidthRequest="120"
+                WidthRequest="200"
                 Source="{Binding Imagem}" />
 
             <Label 

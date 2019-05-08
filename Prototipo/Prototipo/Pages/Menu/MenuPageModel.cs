@@ -17,16 +17,16 @@ namespace Prototipo.Pages.Menu
             set => SetProperty(ref _items, value);
         }
 
-        public string AppVersion { get; set; }
 
         public ICommand LoadItemsCommand { get; set; }
         public ICommand VersionCommand { get; set; }
+        public ICommand OpenDeveloperProfileCommand { get; set; }
 
         public MenuPageModel()
         {
             LoadItemsCommand = new Command(async () => await ExecuteLoadItems());
             VersionCommand = new Command(async () => await ExecuteVersion());
-            AppVersion = $"Versão {DependencyService.Get<IAppVersion>().GetVersion()}";
+            OpenDeveloperProfileCommand = new Command(() => Device.OpenUri(new Uri("https://www.linkedin.com/in/ozielguimaraes")));
         }
 
         private async Task ExecuteLoadItems()

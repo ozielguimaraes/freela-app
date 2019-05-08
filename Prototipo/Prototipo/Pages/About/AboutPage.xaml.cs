@@ -1,6 +1,4 @@
-﻿using System;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Prototipo.Pages.About
@@ -11,6 +9,7 @@ namespace Prototipo.Pages.About
         public AboutPage()
         {
             InitializeComponent();
+            BindingContext = new AboutPageModel();
         }
     }
 }

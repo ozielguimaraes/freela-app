@@ -135,7 +135,7 @@ TextColor="#707270"
         VerticalTextAlignment="Center"
         HorizontalTextAlignment="Center"
         FontSize="12"
-                                Margin="0,40,0,0"
+                                    Margin="0,10,0,0"
         Text="Meus Lucros">
                                 </Label>
                                 <Label Text="{Binding Item.StartValue, StringFormat='{0:C}'}"

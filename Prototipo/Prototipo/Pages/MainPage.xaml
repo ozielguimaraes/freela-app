@@ -7,9 +7,9 @@
                   Title="{Binding Title}">
 
     <MasterDetailPage.Master>
-        <ContentPage BackgroundColor="#fafafa" Padding="0">
+        <ContentPage BackgroundColor="#28466b" Padding="0">
             <StackLayout>
-                <StackLayout BackgroundColor="#00ACC1" HeightRequest="80">
+                <StackLayout BackgroundColor="#11233c" HeightRequest="80">
                     <Label Text="Bem Vindo(a)"
                  FontSize="Small"
                  VerticalOptions="CenterAndExpand"
@@ -33,16 +33,11 @@
                              Padding="30,10,0,10"
                              Spacing="15">
 
-                                    <!--<Image Source="{Binding Icon}"
-                                   WidthRequest="40"
-                                   HeightRequest="40"
-                                   VerticalOptions="Center" />-->
-
                                     <Label Text="{Binding Title}"
                          FontSize="Medium"
                                  FontAttributes="Bold"
                          VerticalOptions="Center"
-                         TextColor="#3f3f3f"/>
+                         TextColor="#cccccc"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
@@ -61,16 +56,21 @@
 
                     <Label Grid.Column="0" Grid.Row="0" 
                            Margin="10,0,0,0" 
-                           Text="{Binding AppVersion}" 
-                           TextColor="#3f3f3f" 
+                           Text="{Binding AppVersion, StringFormat='Versão {0}'}" 
+                           TextColor="#cccccc" 
                            FontSize="Small">
                     </Label>
 
-                    <Label Grid.Column="0" Grid.Row="1" 
+                    <Label Grid.Column="0" Grid.Row="1"
+                           Grid.ColumnSpan="2"
                            Margin="10,0,0,15" 
-                           Text="Powered By: &#10;Guimarães Technologies" 
+                           Text="Powered By: Guimaraes Technologies" 
                            TextColor="{StaticResource PrimaryLabelColor}" 
-                           FontSize="Micro"></Label>
+                           FontSize="Micro">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenDeveloperProfileCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
                 </Grid>
             </StackLayout>
         </ContentPage>
