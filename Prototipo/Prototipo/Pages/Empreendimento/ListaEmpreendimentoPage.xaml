@@ -4,42 +4,81 @@
              x:Class="Prototipo.Pages.Empreendimento.ListaEmpreendimentoPage"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             xmlns:controls="clr-namespace:Prototipo.Controls"
              xmlns:templates="clr-namespace:Prototipo.Pages.Templates"
-             Title="{Binding Title}"
+             Title="Meus Empreendimentos"
              Style="{StaticResource PageStyle}">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style x:Key="DetailTitleStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="#FFFFFF" />
-                <Setter Property="FontSize" Value="20" />
-                <Setter Property="Margin" Value="6, 0" />
+            <Style x:Key="TitleStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+
+            <Style TargetType="controls:HorizontalList">
+                <Setter Property="Margin" Value="12, 0" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout Grid.Row="1">
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Similar to"
-                           Style="{StaticResource DetailTitleStyle}"/>
-                    <Label Text="Imóvel" 
-                           Style="{StaticResource DetailTitleStyle}"/>
-                </StackLayout>
-                <flv:FlowListView 
-                                FlowItemsSource="{Binding ItensEmLancamento}"
-                                BackgroundColor="{StaticResource BackgroundColor}"
-                                FlowColumnCount="3" 
-                                FlowColumnExpand="First"
-                                SeparatorVisibility="None"
-                                HasUnevenRows="True"
-                                HeightRequest="350">
-                    <flv:FlowListView.FlowColumnTemplate>
+        <ScrollView>
+            <StackLayout>
+                <controls:HorizontalList   
+                    ListOrientation="Horizontal" 
+                    ItemsSource="{Binding Itens}"
+                    HeightRequest="200">
+                    <controls:HorizontalList.ItemTemplate>
                         <DataTemplate>
                             <templates:EmpreendimentoItemTemplate />
                         </DataTemplate>
-                    </flv:FlowListView.FlowColumnTemplate>
-                </flv:FlowListView>
+                    </controls:HorizontalList.ItemTemplate>
+                </controls:HorizontalList>
+                <Label
+                    Text="Em promoção"
+                    FontAttributes="Bold"
+                    TextColor="White"
+                    FontSize="16">
+                    <Label.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android" Value="12, 0" />
+                            <On Platform="iOS" Value="12, 12, 12, 0" />
+                        </OnPlatform>
+                    </Label.Margin>
+                </Label>
+                <controls:HorizontalList   
+                    ListOrientation="Horizontal" 
+                    ItemsSource="{Binding ItensEmPromocao}"
+                    HeightRequest="200">
+                    <controls:HorizontalList.ItemTemplate>
+                        <DataTemplate>
+                            <templates:EmpreendimentoItemTemplate />
+                        </DataTemplate>
+                    </controls:HorizontalList.ItemTemplate>
+                </controls:HorizontalList>
+                <Label
+                    FontAttributes="Bold"
+                    TextColor="White"
+                    FontSize="16"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Ultimos Lançamentos">
+                    <Label.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android" Value="12, 12, 0, 0" />
+                            <On Platform="iOS" Value="12, 12, 12, 0" />
+                        </OnPlatform>
+                    </Label.Margin>
+                </Label>
+                <controls:HorizontalList   
+                    ListOrientation="Horizontal" 
+                    ItemsSource="{Binding ItensEmLancamento}"
+                    HeightRequest="200">
+                    <controls:HorizontalList.ItemTemplate>
+                        <DataTemplate>
+                            <templates:EmpreendimentoItemTemplate />
+                        </DataTemplate>
+                    </controls:HorizontalList.ItemTemplate>
+                </controls:HorizontalList>
             </StackLayout>
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -13,7 +13,6 @@ namespace Prototipo.Pages.Empreendimento
 
         public ListaEmpreendimentoPageModel()
         {
-            Title = "Meus Empreendimentos";
             LoadItemsCommand = new Command(() => LoadItens());
             Itens = new ObservableCollection<Models.Empreendimento>();
             ItensEmPromocao = new ObservableCollection<Models.Empreendimento>();

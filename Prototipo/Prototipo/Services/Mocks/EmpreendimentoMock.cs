@@ -37,13 +37,13 @@ namespace Prototipo.Services.Mocks
                 {
                     Id = 4,
                     Nome = "Milenium",
-                    Imagem = "https://pbs.twimg.com/profile_images/378800000084164640/c1bccef486bc92784825e71ec9b27fea.jpeg"
+                    Imagem = "https://abrilexame.files.wordpress.com/2018/08/cubo02.jpg"
                 },
                 new Empreendimento
                 {
                     Id = 5,
                     Nome = "Angélica",
-                    Imagem = "https://pbs.twimg.com/profile_images/378800000084164640/c1bccef486bc92784825e71ec9b27fea.jpeg"
+                    Imagem = "https://abrilexame.files.wordpress.com/2018/08/cubo02.jpg"
                 },
                 new Empreendimento
                 {
