@@ -2,14 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:behaviors="clr-namespace:Prototipo.Behaviors;assembly=Prototipo"
-             xmlns:controls="clr-namespace:Prototipo.Controls"
              x:Class="Prototipo.Pages.Account.LoginPage"
              BackgroundImage="login_background.jpg"
              Title="Login">
 
     <StackLayout Padding="30"
                  VerticalOptions="Center">
-        <Frame BackgroundColor="#B3005B63" HasShadow="True">
+        <Frame BackgroundColor="#B4005B63" HasShadow="True">
             <StackLayout Padding="10" Spacing="10">
                 <Label Text="ACESSO" HorizontalTextAlignment="Center" FontSize="Large">
                     <Label.TextColor>

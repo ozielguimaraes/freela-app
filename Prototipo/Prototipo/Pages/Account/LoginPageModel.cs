@@ -27,6 +27,7 @@ namespace Prototipo.Pages.Account
 
         public LoginPageModel()
         {
+            IsLoading = false;
             EfetuarLoginCommand = new Command(async () => await EfetuarLogin());
         }
 
