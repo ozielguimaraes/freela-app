@@ -1,34 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Prototipo.Pages.Account.LoginPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Login"
-                   TextColor="{StaticResource PrimaryLabelColor}" />
-            <Entry Placeholder="Ex: mail@mail.com"
-                   TextColor="{StaticResource EntryColor}"
-                       PlaceholderColor="{StaticResource PlaceholderColor}"
-                   ReturnType="Next">
-                <Entry.Keyboard>
-                    <Keyboard x:FactoryMethod="Create">
-                        <x:Arguments>
-                            <KeyboardFlags>Suggestions,CapitalizeNone</KeyboardFlags>
-                        </x:Arguments>
-                    </Keyboard>
-                </Entry.Keyboard>
-            </Entry>
+             xmlns:behaviors="clr-namespace:Prototipo.Behaviors;assembly=Prototipo"
+             xmlns:controls="clr-namespace:Prototipo.Controls"
+             x:Class="Prototipo.Pages.Account.LoginPage"
+             BackgroundImage="login_background.jpg"
+             Title="Login">
 
-            <Label Text="Senha"
-                   TextColor="{StaticResource PrimaryLabelColor}" />
-            <Entry Placeholder="Ex: mail@mail.com"
-                   IsPassword="True"
-                   TextColor="{StaticResource EntryColor}"
-                       PlaceholderColor="{StaticResource PlaceholderColor}"
-                   ReturnType="Next">
-            </Entry>
+    <StackLayout Padding="30"
+                 VerticalOptions="Center">
+        <Frame BackgroundColor="#B3005B63" HasShadow="True">
+            <StackLayout Padding="10" Spacing="10">
+                <Label Text="ACESSO" HorizontalTextAlignment="Center" FontSize="Large">
+                    <Label.TextColor>
+                        <OnPlatform x:TypeArguments="Color" Android="White" iOS="#212121"></OnPlatform>
+                    </Label.TextColor>
+                </Label>
 
-            <Button Text="Entrar" />
-        </StackLayout>
-    </ContentPage.Content>
+                <Label TextColor="Black" Text="Login"></Label>
+                <Entry TextColor="Black" 
+                       BackgroundColor="White" 
+                       Text="{Binding Login}" 
+                       Placeholder="123.456.789-00" 
+                       Keyboard="Numeric">
+                    <Entry.Behaviors>
+                        <behaviors:CpfFormatterBehavior />
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Label TextColor="Black" Text="Senha"></Label>
+                <Entry TextColor="Black" 
+                       BackgroundColor="White" 
+                       IsPassword="true" 
+                       Text="{Binding Senha}" 
+                       Placeholder="senha"></Entry>
+                <Button Text="Entrar" 
+                        TextColor="White" 
+                        BackgroundColor="#CC0066CC" 
+                        Command="{Binding EfetuarLoginCommand}"></Button>
+
+                <ActivityIndicator Margin="0,5,0,5" 
+                                   IsRunning="{Binding IsLoading}" 
+                                   Color="{StaticResource PrimaryColor}"></ActivityIndicator>
+            </StackLayout>
+        </Frame>    
+    </StackLayout>
 </ContentPage>

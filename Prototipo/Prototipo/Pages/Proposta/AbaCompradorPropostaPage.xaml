@@ -11,7 +11,7 @@
                 <Label Text="CPF"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text="{Binding Proposta.Comprador.Cpf}"
-                   TextColor="{StaticResource EntryColor}"
+                   TextColor="{StaticResource EntryTextColor}"
                    Placeholder="Ex: 123.456.789-00"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    MaxLength="14"
@@ -25,7 +25,7 @@
                 <Label Text="Nome completo"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Placeholder="Ex: Oziel Guimarães de Paula Silva"
-                   TextColor="{StaticResource EntryColor}"
+                   TextColor="{StaticResource EntryTextColor}"
                        PlaceholderColor="{StaticResource PlaceholderColor}"
                    ReturnType="Next">
                     <Entry.Keyboard>
@@ -40,7 +40,7 @@
                 <Label Text="Data de nascimento"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text=""
-                   TextColor="{StaticResource EntryColor}"
+                   TextColor="{StaticResource EntryTextColor}"
                    Placeholder="Ex: 01/01/2001"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    MaxLength="10"
@@ -55,7 +55,7 @@
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Picker 
                     Title="Selecione"
-                    TextColor="{StaticResource EntryColor}"
+                    TextColor="{StaticResource EntryTextColor}"
                     BackgroundColor="{StaticResource EntryBackgroundColor}"
                     ItemDisplayBinding="{Binding Value}"
                     SelectedItem="{Binding Escolaridade}"
@@ -65,7 +65,7 @@
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Picker 
                     Title="Selecione"
-                    TextColor="{StaticResource EntryColor}"
+                    TextColor="{StaticResource EntryTextColor}"
                     BackgroundColor="{StaticResource EntryBackgroundColor}"
                     ItemDisplayBinding="{Binding Value}"
                     SelectedItem="{Binding Genero}"
@@ -75,7 +75,7 @@
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Picker 
                     Title="Selecione"
-                    TextColor="{StaticResource EntryColor}"
+                    TextColor="{StaticResource EntryTextColor}"
                     BackgroundColor="{StaticResource EntryBackgroundColor}"
                     ItemDisplayBinding="{Binding Value}"
                     SelectedItem="{Binding EstadoCivil}"
@@ -84,7 +84,7 @@
                 <Label Text="Nacionalidade"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text=""
-                   TextColor="{StaticResource EntryColor}"
+                   TextColor="{StaticResource EntryTextColor}"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    MaxLength="10"
                    ReturnType="Next">
@@ -100,7 +100,7 @@
                 <Label Text="Naturalidade"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text=""
-                   TextColor="{StaticResource EntryColor}"
+                   TextColor="{StaticResource EntryTextColor}"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    MaxLength="10"
                    ReturnType="Next">
@@ -116,7 +116,7 @@
                 <Label Text="Valor FGTS"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text=""
-                   TextColor="{StaticResource EntryColor}"
+                   TextColor="{StaticResource EntryTextColor}"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    Keyboard="Numeric"
                    ReturnType="Next" />
@@ -124,7 +124,7 @@
                 <Label Text="Nome do pai"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text=""
-                   TextColor="{StaticResource EntryColor}"
+                   TextColor="{StaticResource EntryTextColor}"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    MaxLength="10"
                    ReturnType="Next">
@@ -140,7 +140,7 @@
                 <Label Text="Nome da mãe"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text=""
-                   TextColor="{StaticResource EntryColor}"
+                   TextColor="{StaticResource EntryTextColor}"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    MaxLength="10"
                    ReturnType="Next">
@@ -163,7 +163,7 @@
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Picker 
                     Title="Selecione"
-                    TextColor="{StaticResource EntryColor}"
+                    TextColor="{StaticResource EntryTextColor}"
                     BackgroundColor="{StaticResource EntryBackgroundColor}"
                     ItemDisplayBinding="{Binding Value}"
                     SelectedItem="{Binding TipoDocumento}"
@@ -172,14 +172,14 @@
                 <Label Text="N° documento"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text=""
-                   TextColor="{StaticResource EntryColor}"
+                   TextColor="{StaticResource EntryTextColor}"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    ReturnType="Next" />
 
                 <Label Text="Orgão expedidor"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Placeholder="Ex: SSP"
-                   TextColor="{StaticResource EntryColor}"
+                   TextColor="{StaticResource EntryTextColor}"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    MaxLength="10"
                    ReturnType="Next">
@@ -195,7 +195,7 @@
                 <Label Text="Data de emissão"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text=""
-                   TextColor="{StaticResource EntryColor}"
+                   TextColor="{StaticResource EntryTextColor}"
                    Placeholder="Ex: 01/01/2005"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    MaxLength="10"
@@ -209,7 +209,7 @@
                 <Label Text="Cat. profissional"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text="" 
-                   TextColor="{StaticResource EntryColor}"
+                   TextColor="{StaticResource EntryTextColor}"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    MaxLength="20"
                    ReturnType="Next" />
@@ -217,7 +217,7 @@
                 <Label Text="Dependentes n°"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text=""
-                   TextColor="{StaticResource EntryColor}"
+                   TextColor="{StaticResource EntryTextColor}"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    MaxLength="2"
                    Keyboard="Numeric"

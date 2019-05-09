@@ -1,5 +1,6 @@
 ﻿using DLToolkit.Forms.Controls;
 using Prototipo.Pages;
+using Prototipo.Pages.Account;
 using Prototipo.Services;
 using Prototipo.Services.Interfaces;
 using Xamarin.Forms;
@@ -21,7 +22,7 @@ namespace Prototipo
 #if DEBUG
             HotReloader.Current.Start(this);
 #endif
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         private void InicializarPlugins()

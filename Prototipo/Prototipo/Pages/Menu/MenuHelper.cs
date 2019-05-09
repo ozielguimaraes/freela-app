@@ -28,9 +28,9 @@ namespace Prototipo.Pages.Menu
             var items = new List<MenuItemVm>
             {
                 new MenuItemVm("Minha carteira", "carteira", MenuType.Carteira),
+                new MenuItemVm("Nova proposta", "proposta", MenuType.GravarProposta),
                 new MenuItemVm("Minhas propostas", "proposta", MenuType.Proposta),
                 new MenuItemVm("Meus empreendimentos", "empreendimento", MenuType.Empreendimento),
-                new MenuItemVm("Nova proposta", "proposta", MenuType.GravarProposta),
                 new MenuItemVm("Sobre", "about", MenuType.About),
             };
 
