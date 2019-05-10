@@ -6,7 +6,7 @@ namespace Prototipo.Services
     {
         public async Task<bool> AutenticarAsync(string login, string senha)
         {
-            await Task.Delay(150);
+            await Task.Delay(1);
             var acessoValido = ValidarAcesso(login, senha);
 
             if (!acessoValido) return false;

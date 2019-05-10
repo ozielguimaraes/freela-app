@@ -1,10 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:carteira="clr-namespace:Prototipo.Pages.Carteira"
             x:Class="Prototipo.Pages.MainPage"
-                  IsPresented="{Binding IsPresented}"
-                  Title="{Binding Title}">
+                  Title="Master">
 
     <MasterDetailPage.Master>
         <ContentPage BackgroundColor="#28466b" Padding="0">
@@ -17,14 +15,13 @@
                  HorizontalOptions="Center"/>
                     <BoxView Margin="0" HeightRequest="1" Color="Gray"></BoxView>
                 </StackLayout>
-
                 <ListView ItemsSource="{Binding Items}"
+                          HasUnevenRows="True"
                               HorizontalOptions="FillAndExpand"
                               VerticalOptions="FillAndExpand"
                               RowHeight="60"
                               ItemSelected="OnMenuItemSelected"
                               SeparatorVisibility="None">
-
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -34,7 +31,7 @@
                              Spacing="15">
 
                                     <Label Text="{Binding Title}"
-                         FontSize="Medium"
+                         FontSize="Micro"
                                  FontAttributes="Bold"
                          VerticalOptions="Center"
                          TextColor="#cccccc"/>
@@ -59,7 +56,7 @@
                            Margin="10,0,0,0" 
                            Text="{Binding AppVersion, StringFormat='Versão {0}'}" 
                            TextColor="#cccccc" 
-                           FontSize="Small">
+                           FontSize="12">
                     </Label>
 
                     <Label Grid.Column="0" 
@@ -78,7 +75,4 @@
             </StackLayout>
         </ContentPage>
     </MasterDetailPage.Master>
-    <MasterDetailPage.Detail>
-        <carteira:CarteiraPage></carteira:CarteiraPage>
-    </MasterDetailPage.Detail>
 </MasterDetailPage>

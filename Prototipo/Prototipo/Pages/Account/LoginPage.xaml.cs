@@ -4,12 +4,14 @@ using Xamarin.Forms.Xaml;
 namespace Prototipo.Pages.Account
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class LoginPage : ContentPage
+    public partial class LoginPage : ContentPage
     {
-		public LoginPage ()
-		{
-			InitializeComponent ();
-            BindingContext = new LoginPageModel();
-		}
-	}
+        private readonly LoginPageModel _pageModel;
+
+        public LoginPage()
+        {
+            InitializeComponent();
+            BindingContext = _pageModel = _pageModel ?? new LoginPageModel();
+        }
+    }
 }

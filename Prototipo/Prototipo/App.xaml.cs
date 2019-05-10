@@ -1,5 +1,4 @@
 ﻿using DLToolkit.Forms.Controls;
-using Prototipo.Pages;
 using Prototipo.Pages.Account;
 using Prototipo.Services;
 using Prototipo.Services.Interfaces;
@@ -22,7 +21,7 @@ namespace Prototipo
 #if DEBUG
             HotReloader.Current.Start(this);
 #endif
-            MainPage = new NavigationPage(new LoginPage());
+            MainPage = new LoginPage();
         }
 
         private void InicializarPlugins()

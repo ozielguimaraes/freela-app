@@ -36,11 +36,11 @@ namespace Prototipo.Pages
             {
                 if (!string.IsNullOrWhiteSpace(page.Title)) Title = page.Title;
 
-                Detail = item.Type == MenuType.Carteira ? page : page;
+                IsPresented = false;
+
+                await Detail.Navigation.PushAsync(page);
                 //if (Device.RuntimePlatform == Device.Android)
                 //    await Task.Delay(100);
-
-                IsPresented = false;
             }
         }
     }

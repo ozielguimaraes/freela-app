@@ -43,7 +43,8 @@ namespace Prototipo.Pages.Account
 
                 if (autenticado)
                 {
-                    await NavigationService.PushAsync(new MainPage());
+                    await NavigationService.PushModalAsync(new MainPage());
+                    NavigationService.RemovePage(NavigationService.GetCurrentPage());
                     return;
                 }
 
@@ -55,7 +56,7 @@ namespace Prototipo.Pages.Account
                 IsLoading = false;
                 await MessageService.ShowAsync("Não foi possível completar o seu login");
             }
-            finally { IsLoading = true; }
+            finally { IsLoading = false; }
         }
     }
 }
