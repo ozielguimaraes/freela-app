@@ -43,8 +43,8 @@ namespace Prototipo.Pages.Account
 
                 if (autenticado)
                 {
-                    await NavigationService.PushModalAsync(new MainPage());
                     NavigationService.RemovePage(NavigationService.GetCurrentPage());
+                    await NavigationService.PushModalAsync(new MainPage());
                     return;
                 }
 

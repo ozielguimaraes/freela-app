@@ -118,11 +118,14 @@
                     </Grid>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <StackLayout Margin="25,0,0,0">
+                    <StackLayout Margin="10,0,0,0">
                         <Frame OutlineColor="#115f61"
+                               
     CornerRadius="100"
-    Padding="10"
+    Padding="10,20"
+                               WidthRequest="150"
     BackgroundColor="#031831"
+                               HorizontalOptions="StartAndExpand"
     AbsoluteLayout.LayoutFlags="XProportional">
                             <Frame.AbsoluteLayout.LayoutBounds>
                                 <OnPlatform x:TypeArguments="Rectangle" iOS=".95,80,-1,-1" Android=".95,20,-1,-1" />
@@ -130,8 +133,6 @@
                             <StackLayout>
                                 <Label
 TextColor="#707270"
-        WidthRequest="170"
-        HeightRequest="20"
         VerticalTextAlignment="Center"
         HorizontalTextAlignment="Center"
         FontSize="12"

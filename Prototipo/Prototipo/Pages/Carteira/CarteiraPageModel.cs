@@ -35,7 +35,11 @@ namespace Prototipo.Pages.Carteira
 
         private async Task IrParaPropostas()
         {
-            NavigationService.Navegar(new NavigationPage(new ListaPropostaPage()));
+            //await NavigationService.PushAsync(new NavigationPage(new ListaPropostaPage()));
+            await NavigationService.PushModalAsync(new NavigationPage(new ListaPropostaPage())
+            {
+                Title = "adsasd"
+            });
         }
     }
 }

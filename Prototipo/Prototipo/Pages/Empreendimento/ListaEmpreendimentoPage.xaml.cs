@@ -15,6 +15,7 @@ namespace Prototipo.Pages.Empreendimento
         protected override void OnAppearing()
         {
             base.OnAppearing();
+
             _pageModel.LoadItemsCommand.Execute(null);
         }
     }

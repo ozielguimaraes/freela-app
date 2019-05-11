@@ -14,14 +14,32 @@ namespace Prototipo.Pages.Empreendimento
         public ListaEmpreendimentoPageModel()
         {
             LoadItemsCommand = new Command(() => LoadItens());
-            Itens = new ObservableCollection<Models.Empreendimento>();
-            ItensEmPromocao = new ObservableCollection<Models.Empreendimento>();
-            ItensEmLancamento = new ObservableCollection<Models.Empreendimento>();
+            //Itens = new ObservableCollection<Models.Empreendimento>();
+            //ItensEmPromocao = new ObservableCollection<Models.Empreendimento>();
+            //ItensEmLancamento = new ObservableCollection<Models.Empreendimento>();
         }
 
-        public ObservableCollection<Models.Empreendimento> Itens { get; set; }
-        public ObservableCollection<Models.Empreendimento> ItensEmPromocao { get; set; }
-        public ObservableCollection<Models.Empreendimento> ItensEmLancamento { get; set; }
+        private ObservableCollection<Models.Empreendimento> itens;
+        public ObservableCollection<Models.Empreendimento> Itens
+        {
+            get { return itens; }
+            set { SetProperty(ref itens, value); }
+        }
+
+
+        private ObservableCollection<Models.Empreendimento> itensEmPromocao;
+        public ObservableCollection<Models.Empreendimento> ItensEmPromocao
+        {
+            get { return itensEmPromocao; }
+            set { SetProperty(ref itensEmPromocao, value); }
+        }
+
+        private ObservableCollection<Models.Empreendimento> itensEmLancamento;
+        public ObservableCollection<Models.Empreendimento> ItensEmLancamento
+        {
+            get { return itensEmLancamento; }
+            set { SetProperty(ref itensEmLancamento, value); }
+        }
 
         private async void LoadItens()
         {
