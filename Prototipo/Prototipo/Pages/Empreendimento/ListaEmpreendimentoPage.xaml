@@ -22,7 +22,7 @@
         <ScrollView>
             <StackLayout>
                 <controls:HorizontalList 
-                    SelectedCommand="{Binding SelectedCommand}"
+                    SelectedCommand="{Binding IrparaDetalhesCommand}"
                     ListOrientation="Horizontal" 
                     ItemsSource="{Binding Itens}">
                     <controls:HorizontalList.ItemTemplate>
@@ -44,7 +44,7 @@
                     </Label.Margin>
                 </Label>
                 <controls:HorizontalList
-                    SelectedCommand="{Binding SelectedCommand}"
+                    SelectedCommand="{Binding IrparaDetalhesCommand}"
                     ListOrientation="Horizontal" 
                     ItemsSource="{Binding ItensEmPromocao}">
                     <controls:HorizontalList.ItemTemplate>

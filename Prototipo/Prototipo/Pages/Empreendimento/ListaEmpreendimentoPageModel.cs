@@ -13,12 +13,12 @@ namespace Prototipo.Pages.Empreendimento
     public class ListaEmpreendimentoPageModel : BasePageModel
     {
         public ICommand LoadItemsCommand { get; set; }
-        public ICommand SelectedCommand { get; set; }
+        public ICommand IrparaDetalhesCommand { get; set; }
 
         public ListaEmpreendimentoPageModel()
         {
             LoadItemsCommand = new Command(() => LoadItens());
-            SelectedCommand = new Command<int>(async (id) => await IrparaDetalhes(id));
+            IrparaDetalhesCommand = new Command<Models.Empreendimento>(async (item) => await IrparaDetalhes(item));
         }
 
         private ObservableCollection<Models.Empreendimento> itens;
@@ -66,7 +66,7 @@ namespace Prototipo.Pages.Empreendimento
             }
         }
 
-        private async Task IrparaDetalhes(int id)
+        private async Task IrparaDetalhes(Models.Empreendimento item)
         {
             try
             {
@@ -74,14 +74,14 @@ namespace Prototipo.Pages.Empreendimento
                 IsLoading = true;
 
                 var service = new EmpreendimentoService();
-                var item = await service.ObterPorIdAsync(id);
-                if (item == null)
+                var itemFromServer = await service.ObterPorIdAsync(item.Id);
+                if (itemFromServer == null)
                 {
                     await MessageService.ShowAsync("Empreendimento não encontrado");
                     return;
                 }
 
-                await NavigationService.PushModalAsync(new DetalhesEmpreendimentoPage(item));
+                await NavigationService.PushModalAsync(new DetalhesEmpreendimentoPage(itemFromServer));
             }
             catch (Exception ex)
             {
