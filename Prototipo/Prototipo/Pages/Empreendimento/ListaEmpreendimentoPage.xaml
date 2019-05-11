@@ -21,7 +21,8 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <controls:HorizontalList   
+                <controls:HorizontalList 
+                    SelectedCommand="{Binding SelectedCommand}"
                     ListOrientation="Horizontal" 
                     ItemsSource="{Binding Itens}">
                     <controls:HorizontalList.ItemTemplate>
@@ -42,7 +43,8 @@
                         </OnPlatform>
                     </Label.Margin>
                 </Label>
-                <controls:HorizontalList   
+                <controls:HorizontalList
+                    SelectedCommand="{Binding SelectedCommand}"
                     ListOrientation="Horizontal" 
                     ItemsSource="{Binding ItensEmPromocao}">
                     <controls:HorizontalList.ItemTemplate>
@@ -64,7 +66,8 @@
                         </OnPlatform>
                     </Label.Margin>
                 </Label>
-                <controls:HorizontalList   
+                <controls:HorizontalList
+                    SelectedCommand="{Binding IrparaDetalhesCommand}"
                     ListOrientation="Horizontal" 
                     ItemsSource="{Binding ItensEmLancamento}">
                     <controls:HorizontalList.ItemTemplate>
