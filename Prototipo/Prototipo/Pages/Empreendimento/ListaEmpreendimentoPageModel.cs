@@ -81,7 +81,7 @@ namespace Prototipo.Pages.Empreendimento
                     return;
                 }
 
-                await NavigationService.PushModalAsync(new DetalhesEmpreendimentoPage(itemFromServer));
+                await NavigationService.PushModalAsync(new NavigationPage(new DetalhesEmpreendimentoPage(itemFromServer)));
             }
             catch (Exception ex)
             {

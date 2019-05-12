@@ -31,7 +31,7 @@
                              Spacing="15">
 
                                     <Label Text="{Binding Title}"
-                         FontSize="Micro"
+                         FontSize="Small"
                                  FontAttributes="Bold"
                          VerticalOptions="Center"
                          TextColor="#cccccc"/>

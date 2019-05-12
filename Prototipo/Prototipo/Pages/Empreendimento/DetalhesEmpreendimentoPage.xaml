@@ -2,13 +2,54 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Prototipo.Pages.Empreendimento.DetalhesEmpreendimentoPage"
+             xmlns:controls="clr-namespace:Prototipo.Controls"
+             xmlns:templates="clr-namespace:Prototipo.Pages.Templates"
              Style="{StaticResource PageStyle}"
              Title="{Binding Title}">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout Orientation="Horizontal">
+                <Image 
+                    Aspect="Fill"
+                    Source="{Binding Item.Imagem}"
+                    HorizontalOptions="Start"
+                    WidthRequest="200"
+                    HeightRequest="80" />
+                <Label Text="{Binding Item.Nome}"
+                       VerticalOptions="StartAndExpand"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       FontSize="Medium" />
+            </StackLayout>
+            <StackLayout>
+                <Label
+                    Text="Unidades"
+                    HorizontalOptions="CenterAndExpand"
+                    FontAttributes="Bold"
+                    TextColor="White"
+                    FontSize="Small">
+                    <Label.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android" Value="12, 15, 0, 0" />
+                            <On Platform="iOS" Value="12, 15, 12, 0" />
+                        </OnPlatform>
+                    </Label.Margin>
+                </Label>
+            </StackLayout>
+            <BoxView HeightRequest="5"
+                     Color="Gray"/>
+            <Label
+                    Text="Torres"
+                    FontAttributes="Bold"
+                    TextColor="White"
+                    FontSize="Small">
+                <Label.Margin>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="Android" Value="12, 15, 0, 0" />
+                        <On Platform="iOS" Value="12, 15, 12, 0" />
+                    </OnPlatform>
+                </Label.Margin>
+            </Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

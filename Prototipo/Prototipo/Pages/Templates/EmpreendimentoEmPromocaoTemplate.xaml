@@ -14,7 +14,7 @@
                 Text="{Binding Nome}"
                 TextColor="White"
                 FontAttributes="Bold"
-                FontSize="16"
+                FontSize="Medium"
                 HorizontalOptions="Center" />
         </StackLayout>
     </ContentView.Content>
