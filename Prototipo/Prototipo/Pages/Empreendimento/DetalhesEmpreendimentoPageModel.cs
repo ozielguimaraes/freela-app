@@ -1,5 +1,4 @@
 ﻿using Prototipo.ViewModels;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace Prototipo.Pages.Empreendimento

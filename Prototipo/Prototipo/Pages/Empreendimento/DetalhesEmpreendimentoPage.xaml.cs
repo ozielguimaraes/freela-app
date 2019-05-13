@@ -12,6 +12,11 @@ namespace Prototipo.Pages.Empreendimento
         {
             InitializeComponent();
             BindingContext = _pageModel = _pageModel ?? new DetalhesEmpreendimentoPageModel(model);
+            ListUnidades.ItemTapped += async (s, e) =>
+            {
+                ListUnidades.SelectedItem = null;
+
+            };
         }
     }
 }

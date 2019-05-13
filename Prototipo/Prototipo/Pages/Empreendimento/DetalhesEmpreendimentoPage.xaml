@@ -2,17 +2,20 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Prototipo.Pages.Empreendimento.DetalhesEmpreendimentoPage"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:controls="clr-namespace:Prototipo.Controls"
              xmlns:templates="clr-namespace:Prototipo.Pages.Templates"
              BackgroundColor="{StaticResource PageBackgroundColor}"
              Title="{Binding Title}">
     <ContentPage.Content>
             <ScrollView>
-                <StackLayout>
-                    <Image
-                        Aspect="Fill"
-                    Source="{Binding Item.Imagem}"
-                    HeightRequest="150" />
+            <StackLayout>
+                <ffimageloading:CachedImage
+                    Source="{Binding Item.Imagem}" 
+                    Aspect="Fill"
+                HeightRequest="150">
+                </ffimageloading:CachedImage>
+                
                     <StackLayout>
                         <Label
                     Text="Unidades"
@@ -22,9 +25,8 @@
                     TextColor="White"
                     FontSize="Medium">
                         </Label>
-                        <ListView
+                    <ListView x:Name="ListUnidades"
                     ItemsSource="{Binding Item.Unidades}"
-                    CachingStrategy="RecycleElement"
                     HasUnevenRows="True">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
