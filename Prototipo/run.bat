@@ -1,1 +1,1 @@
-adb forward tcp:4290 tcp:4290
+adb forward tcp:8000 tcp:8000

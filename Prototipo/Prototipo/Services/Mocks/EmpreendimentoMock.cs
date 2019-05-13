@@ -39,7 +39,55 @@ namespace Prototipo.Services.Mocks
                         new Torre{
                         Id=1,
                     Imagem = "https://img.olx.com.br/thumbs256x256/24/245819099634883.jpg",
+                        Nome="Recanto Arcaia"
+                        },
+                        new Torre{
+                        Id=1,
+                    Imagem = "https://img.olx.com.br/thumbs256x256/24/245819099634883.jpg",
                         Nome="Recanto Ararucaia"
+                        },
+                        new Torre{
+                        Id=1,
+                    Imagem = "https://img.olx.com.br/thumbs256x256/24/245819099634883.jpg",
+                        Nome="Recanto"
+                        },
+                        new Torre{
+                        Id=1,
+                    Imagem = "https://img.olx.com.br/thumbs256x256/24/245819099634883.jpg",
+                        Nome="Ararucaia"
+                        }
+                    },
+                    Unidades= new List<Unidade>
+                    {
+                        new Unidade
+                        {
+                            Descricao="79 m - 1 Suite 1 Vaga",
+                            Valor = 918350,
+                    Imagem = "https://img.olx.com.br/thumbs256x256/24/245819099634883.jpg"
+                        },
+                        new Unidade
+                        {
+                            Descricao="79 m - 1 Suite 1 Vaga",
+                            Valor = 918350,
+                    Imagem = "https://img.olx.com.br/thumbs256x256/24/245819099634883.jpg"
+                        },
+                        new Unidade
+                        {
+                            Descricao="79 m - 1 Suite 1 Vaga",
+                            Valor = 918350,
+                    Imagem = "https://img.olx.com.br/thumbs256x256/24/245819099634883.jpg"
+                        },
+                        new Unidade
+                        {
+                            Descricao="79 m - 1 Suite 1 Vaga",
+                            Valor = 918350,
+                    Imagem = "https://img.olx.com.br/thumbs256x256/24/245819099634883.jpg"
+                        },
+                        new Unidade
+                        {
+                            Descricao="79 m - 1 Suite 1 Vaga",
+                            Valor = 918350,
+                    Imagem = "https://img.olx.com.br/thumbs256x256/24/245819099634883.jpg"
                         }
                     }
                 },

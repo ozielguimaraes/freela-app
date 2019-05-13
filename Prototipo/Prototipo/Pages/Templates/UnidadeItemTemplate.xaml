@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="Prototipo.Pages.Templates.UnidadeItemTemplate">
+    <ContentView.Content>
+        <Grid Margin="0,2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="0.25*" />
+            </Grid.ColumnDefinitions>
+
+            <ffimageloading:CachedImage 	
+                Grid.Row="0"
+                   Grid.RowSpan="2"
+                   Grid.Column="0"
+                    Source="{Binding Imagem}" 
+                    Aspect="AspectFill"
+                WidthRequest="70"
+                HeightRequest="70">
+            </ffimageloading:CachedImage>
+
+            <Label  Grid.Row="0"
+                   Grid.Column="1"
+                Text="{Binding Descricao}"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontSize="Small"
+                VerticalOptions="CenterAndExpand" />
+
+            <Label   Grid.Row="1"
+                   Grid.Column="1"
+                Text="{Binding Valor, StringFormat='{0:C}'}"
+                TextColor="#28abe1"
+                FontSize="Small"
+                VerticalOptions="Center" />
+            
+            
+            <Label Grid.Row="0"
+                   Grid.RowSpan="2"
+                   Grid.Column="2"
+                Text="{Binding Valor, StringFormat='{0:C}'}"
+                TextColor="#28abe1"
+                HorizontalOptions="CenterAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Enviar"
+                                  FontSize="Micro" />
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Grid.Row="1"
+                   Grid.Column="2"
+                Text="{Binding Valor, StringFormat='{0:C}'}"
+                TextColor="#28abe1"
+                HorizontalOptions="CenterAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Proposta" FontSize="Small" />
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

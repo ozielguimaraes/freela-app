@@ -11,6 +11,8 @@
             <Color x:Key="PrimaryLabelColor">#b4c2d1</Color>
             <Color x:Key="PlaceholderColor">#cecece</Color>
             <Color x:Key="SecondaryLabelColor">#404040</Color>
+            
+            <x:String x:Key="NextLine">&#10;</x:String>
 
             <Color x:Key="EntryTextColor">White</Color>
             <Color x:Key="EntryBackgroundColor">#2e3f56</Color>

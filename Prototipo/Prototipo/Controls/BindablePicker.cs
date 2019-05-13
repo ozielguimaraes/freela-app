@@ -338,7 +338,8 @@ namespace Prototipo.Controls
         private static void OnSelectedItemChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var boundPicker = (BindablePicker)bindable;
-            boundPicker.ItemSelected?.Invoke(boundPicker, new SelectedItemChangedEventArgs(newValue));
+            //TODO TEST senão remover , boundPicker.SelectedIndex
+            boundPicker.ItemSelected?.Invoke(boundPicker, new SelectedItemChangedEventArgs(newValue, boundPicker.SelectedIndex));
             boundPicker.InternalSelectedItemChanged();
         }
 
