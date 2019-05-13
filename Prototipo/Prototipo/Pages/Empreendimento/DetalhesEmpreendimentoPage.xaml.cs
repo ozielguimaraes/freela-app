@@ -15,7 +15,6 @@ namespace Prototipo.Pages.Empreendimento
             ListUnidades.ItemTapped += async (s, e) =>
             {
                 ListUnidades.SelectedItem = null;
-
             };
         }
     }

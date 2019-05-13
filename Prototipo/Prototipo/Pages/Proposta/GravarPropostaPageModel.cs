@@ -8,7 +8,7 @@ namespace Prototipo.Pages.Proposta
 
         public GravarPropostaPageModel(PropostaVm proposta = null)
         {
-            Title = proposta == null ? "Nova Proposta" : "Editar Proposta";
+            Title = proposta?.Numero > 0 ? "Editar Proposta" : "Nova Proposta";
             propostaSelecionada = proposta ?? new PropostaVm();
         }
 
