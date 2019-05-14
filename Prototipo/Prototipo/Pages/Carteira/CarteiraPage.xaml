@@ -4,6 +4,7 @@
              x:Class="Prototipo.Pages.Carteira.CarteiraPage"
              Title="{Binding Title}"
              Style="{StaticResource PageStyle}">
+
     <ContentPage.ToolbarItems>
         <ToolbarItem>
             <ToolbarItem.Icon>

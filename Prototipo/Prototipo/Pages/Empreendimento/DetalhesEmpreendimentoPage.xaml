@@ -4,9 +4,17 @@
              x:Class="Prototipo.Pages.Empreendimento.DetalhesEmpreendimentoPage"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:controls="clr-namespace:Prototipo.Controls"
+             xmlns:converters="clr-namespace:Prototipo.Converters;assembly=Prototipo"
              xmlns:templates="clr-namespace:Prototipo.Pages.Templates"
+             xmlns:behaviors="clr-namespace:Prototipo.Behaviors;assembly=Prototipo"
              BackgroundColor="{StaticResource PageBackgroundColor}"
              Title="{Binding Title}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ItemTappedEventArgsToItemTappedConverter x:Key="ItemTappedConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
@@ -28,6 +36,12 @@
                     <ListView x:Name="ListUnidades"
                     ItemsSource="{Binding Item.Unidades}"
                     HasUnevenRows="True">
+                        <ListView.Behaviors>
+                            <behaviors:EventToCommandBehavior 
+                                Command="{Binding AdicionarPropostaCommand}" 
+                                Converter="{StaticResource ItemTappedConverter}" 
+                                EventName="ItemTapped" />
+                        </ListView.Behaviors>
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -52,7 +66,7 @@
                                     </Label.Margin>
                                 </Label>
 
-                                <controls:HorizontalList 
+                                <controls:HorizontalList
                     ListOrientation="Horizontal" 
                     ItemsSource="{Binding Item.Torres}">
                                     <controls:HorizontalList.ItemTemplate>

@@ -13,8 +13,8 @@ namespace Prototipo.Pages.Empreendimento
 
         public Models.Empreendimento Item { get; set; }
 
-        private ObservableCollection<Models.Torre> torres;
-        public ObservableCollection<Models.Torre> Torres
+        private ObservableCollection<Torre> torres;
+        public ObservableCollection<Torre> Torres
         {
             get { return torres; }
             set { SetProperty(ref torres, value); }
@@ -29,7 +29,7 @@ namespace Prototipo.Pages.Empreendimento
 
         private async void AdicionarProposta(Unidade unidade)
         {
-            await NavigationService.PushModalAsync(new GravarPropostaPage(unidade));
+            await NavigationService.PushModalAsync(new NavigationPage(new GravarPropostaPage(unidade)));
         }
     }
 }
