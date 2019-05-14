@@ -8,60 +8,64 @@
              BackgroundColor="{StaticResource PageBackgroundColor}"
              Title="{Binding Title}">
     <ContentPage.Content>
-            <ScrollView>
+        <ScrollView>
             <StackLayout>
                 <ffimageloading:CachedImage
                     Source="{Binding Item.Imagem}" 
                     Aspect="Fill"
                 HeightRequest="150">
                 </ffimageloading:CachedImage>
-                
-                    <StackLayout>
-                        <Label
+
+                <StackLayout>
+                    <Label
                     Text="Unidades"
                             Margin="0,0,0,15"
                     HorizontalOptions="CenterAndExpand"
                     FontAttributes="Bold"
                     TextColor="White"
                     FontSize="Medium">
-                        </Label>
+                    </Label>
                     <ListView x:Name="ListUnidades"
                     ItemsSource="{Binding Item.Unidades}"
                     HasUnevenRows="True">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <ViewCell>
-                                        <templates:UnidadeItemTemplate />
-                                    </ViewCell>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-                    </StackLayout>
-                    <BoxView HeightRequest="5"
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <templates:UnidadeItemTemplate />
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.Footer>
+                            <StackLayout>
+                                <BoxView HeightRequest="5"
                      Color="Gray"/>
-                    <Label
+                                <Label
                     Text="Torres"
                     FontAttributes="Bold"
                     TextColor="White"
                     FontSize="Small">
-                        <Label.Margin>
-                            <OnPlatform x:TypeArguments="Thickness">
-                                <On Platform="Android" Value="12, 15, 0, 0" />
-                                <On Platform="iOS" Value="12, 15, 12, 0" />
-                            </OnPlatform>
-                        </Label.Margin>
-                    </Label>
+                                    <Label.Margin>
+                                        <OnPlatform x:TypeArguments="Thickness">
+                                            <On Platform="Android" Value="12, 15, 0, 0" />
+                                            <On Platform="iOS" Value="12, 15, 12, 0" />
+                                        </OnPlatform>
+                                    </Label.Margin>
+                                </Label>
 
-                    <controls:HorizontalList 
+                                <controls:HorizontalList 
                     ListOrientation="Horizontal" 
                     ItemsSource="{Binding Item.Torres}">
-                        <controls:HorizontalList.ItemTemplate>
-                            <DataTemplate>
-                                <templates:TorreItemTemplate />
-                            </DataTemplate>
-                        </controls:HorizontalList.ItemTemplate>
-                    </controls:HorizontalList>
+                                    <controls:HorizontalList.ItemTemplate>
+                                        <DataTemplate>
+                                            <templates:TorreItemTemplate />
+                                        </DataTemplate>
+                                    </controls:HorizontalList.ItemTemplate>
+                                </controls:HorizontalList>
+                            </StackLayout>
+                        </ListView.Footer>
+                    </ListView>
                 </StackLayout>
-            </ScrollView>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
