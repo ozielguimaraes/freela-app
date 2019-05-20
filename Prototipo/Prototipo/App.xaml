@@ -9,13 +9,15 @@
             <Color x:Key="PrimaryDarkColor">#0c1a2d</Color>
             <Color x:Key="Accent">#30c2dc</Color>
             <Color x:Key="PrimaryLabelColor">#b4c2d1</Color>
-            <Color x:Key="PlaceholderColor">#cecece</Color>
             <Color x:Key="SecondaryLabelColor">#404040</Color>
             
             <x:String x:Key="NextLine">&#10;</x:String>
 
             <Color x:Key="EntryTextColor">White</Color>
             <Color x:Key="EntryBackgroundColor">#2e3f56</Color>
+
+            <Color x:Key="PickerPlaceholderColor">White</Color>
+            <Color x:Key="PlaceholderColor">#cecece</Color>
 
             <Color x:Key="PageBackgroundColor">#151e29</Color>
 
@@ -32,6 +34,20 @@
                 <Setter Property="Padding" Value="{StaticResource PagePadding}" />
             </Style>
 
+            <Style TargetType="Entry">
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="TextColor" Value="{StaticResource EntryTextColor}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource PlaceholderColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource EntryBackgroundColor}" />
+            </Style>
+
+            <Style TargetType="Picker">
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="TitleColor" Value="{StaticResource PickerPlaceholderColor}" />
+                <Setter Property="TextColor" Value="{StaticResource EntryTextColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource EntryBackgroundColor}" />
+            </Style>
+            
             <Style x:Key="PageStyle" TargetType="ContentPage">
                 <Setter Property="Padding" Value="{StaticResource PagePadding}" />
                 <Setter Property="BackgroundColor" Value="{StaticResource PageBackgroundColor}" />

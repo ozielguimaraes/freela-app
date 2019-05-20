@@ -1,4 +1,5 @@
-﻿using Prototipo.ViewModels;
+﻿using Prototipo.Attributes;
+using Prototipo.ViewModels;
 using System;
 
 namespace Prototipo.Models
@@ -24,6 +25,27 @@ namespace Prototipo.Models
         {
             get { return dataNascimento; }
             set { SetProperty(ref dataNascimento, value); }
+        }
+
+        private EnumValueDataAttribute _escolaridade;
+        public EnumValueDataAttribute Escolaridade
+        {
+            get { return _escolaridade; }
+            set { SetProperty(ref _escolaridade, value); }
+        }
+
+        private EnumValueDataAttribute _genero;
+        public EnumValueDataAttribute Genero
+        {
+            get { return _genero; }
+            set { SetProperty(ref _genero, value); }
+        }
+
+        private EnumValueDataAttribute _estadoCivil;
+        public EnumValueDataAttribute EstadoCivil
+        {
+            get { return _estadoCivil; }
+            set { SetProperty(ref _estadoCivil, value); }
         }
 
         string nacionalidade;
@@ -61,6 +83,13 @@ namespace Prototipo.Models
             set { SetProperty(ref nomeMae, value); }
         }
 
+        private EnumValueDataAttribute _tipoDocumento;
+        public EnumValueDataAttribute TipoDocumento
+        {
+            get { return _tipoDocumento; }
+            set { SetProperty(ref _tipoDocumento, value); }
+        }
+
         string numeroDocumento;
         public string NumeroDocumento
         {
@@ -80,6 +109,13 @@ namespace Prototipo.Models
         {
             get { return dataEmissao; }
             set { SetProperty(ref dataEmissao, value); }
+        }
+
+        string categoriaProfissional;
+        public string CategoriaProfissional
+        {
+            get { return categoriaProfissional; }
+            set { SetProperty(ref categoriaProfissional, value); }
         }
 
         int quantidadeDependentes;
