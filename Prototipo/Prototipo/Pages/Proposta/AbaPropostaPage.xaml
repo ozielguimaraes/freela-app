@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Prototipo.Pages.Proposta.AbaPropostaPage"
-             xmlns:behavior="clr-namespace:Prototipo.Behaviors"
+             xmlns:behaviors="clr-namespace:Prototipo.Behaviors;assembly=Prototipo"
              Title="Proposta">
     <ContentPage.Content>
         <Grid>
@@ -236,7 +236,7 @@
                                MaxLength="10"
                                Keyboard="Numeric">
                             <Entry.Behaviors>
-                                <behavior:MoneyFormatterBehavior />
+                                <behaviors:MoneyFormatterBehavior />
                             </Entry.Behaviors>
                         </Entry>
 

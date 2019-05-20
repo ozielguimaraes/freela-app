@@ -119,7 +119,11 @@
                    TextColor="{StaticResource EntryTextColor}"
                    PlaceholderColor="{StaticResource PlaceholderColor}"
                    Keyboard="Numeric"
-                   ReturnType="Next" />
+                   ReturnType="Next">
+                    <Entry.Behaviors>
+                        <behaviors:MoneyFormatterBehavior />
+                    </Entry.Behaviors>
+                </Entry>
 
                 <Label Text="Nome do pai"
                    TextColor="{StaticResource PrimaryLabelColor}" />
