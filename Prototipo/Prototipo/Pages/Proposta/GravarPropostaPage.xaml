@@ -6,4 +6,4 @@
              Title="{Binding Title}"
              Style="{StaticResource PageStyle}">
 
-</TabbedPage>
+</TabbedPage>   

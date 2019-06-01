@@ -23,6 +23,7 @@
                 <Label Text="Nome completo"
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Placeholder="Ex: Oziel Guimarães de Paula Silva"
+                   MaxLength="50"
                    ReturnType="Next">
                     <Entry.Keyboard>
                         <Keyboard x:FactoryMethod="Create">
@@ -73,7 +74,7 @@
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text="{Binding Comprador.Nacionalidade}"
                        Placeholder="Ex: Brasileira"
-                   MaxLength="10"
+                   MaxLength="20"
                    ReturnType="Next">
                     <Entry.Keyboard>
                         <Keyboard x:FactoryMethod="Create">
@@ -88,7 +89,7 @@
                    TextColor="{StaticResource PrimaryLabelColor}" />
                 <Entry Text="{Binding Comprador.Naturalidade}"
                        Placeholder="Ex: Belo Horizonte"
-                   MaxLength="10"
+                   MaxLength="30"
                    ReturnType="Next">
                     <Entry.Keyboard>
                         <Keyboard x:FactoryMethod="Create">
