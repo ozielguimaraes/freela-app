@@ -123,9 +123,9 @@
                         <Frame OutlineColor="#115f61"
                                
     CornerRadius="100"
-    Padding="10,20"
+    Padding="20,20"
                                WidthRequest="150"
-    BackgroundColor="#031831"
+    BackgroundColor="{StaticResource PageBackgroundColor}"
                                HorizontalOptions="StartAndExpand"
     AbsoluteLayout.LayoutFlags="XProportional">
                             <Frame.AbsoluteLayout.LayoutBounds>
