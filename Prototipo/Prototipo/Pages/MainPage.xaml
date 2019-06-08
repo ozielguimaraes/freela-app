@@ -40,29 +40,17 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-
-                <Grid RowSpacing="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions >
-                        <ColumnDefinition Width=".50*" />
-                        <ColumnDefinition Width=".50*" />
-                    </Grid.ColumnDefinitions>
-
-                    <Label Grid.Column="0" 
-                           Grid.Row="0" 
+                
+                <FlexLayout Direction="Column">
+                    <Label
                            Margin="10,0,0,0" 
                            Text="{Binding AppVersion, StringFormat='Versão {0}'}" 
                            TextColor="#cccccc" 
                            FontSize="Micro">
                     </Label>
 
-                    <Label Grid.Column="0" 
-                           Grid.Row="1"
-                           Grid.ColumnSpan="2"
-                           Margin="10,0,0,5" 
+                    <Label
+                           Margin="10,0,0,3" 
                            Text="Powered By: Guimaraes Technologies" 
                            TextColor="{StaticResource PrimaryLabelColor}"
                            VerticalOptions="EndAndExpand"
@@ -71,7 +59,7 @@
                             <TapGestureRecognizer Command="{Binding OpenDeveloperProfileCommand}" />
                         </Label.GestureRecognizers>
                     </Label>
-                </Grid>
+                </FlexLayout>
             </StackLayout>
         </ContentPage>
     </MasterDetailPage.Master>
