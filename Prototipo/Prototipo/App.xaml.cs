@@ -1,4 +1,7 @@
 ﻿using DLToolkit.Forms.Controls;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using Prototipo.Pages.Account;
 using Prototipo.Services;
 using Prototipo.Services.Interfaces;
@@ -31,7 +34,8 @@ namespace Prototipo
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            base.OnStart();
+            AppCenter.Start($"android={Constants.AppCenter.Android};ios={Constants.AppCenter.iOS}", typeof(Analytics), typeof(Crashes));
         }
 
         protected override void OnSleep()
