@@ -16,6 +16,13 @@ namespace Prototipo.Pages.Proposta
         public ICommand NovaPreChaveCommand { get; set; }
         public ICommand DeletePreChaveCommand { get; set; }
 
+        private PreChaveVm _selectedItem;
+        public PreChaveVm SelectedItem
+        {
+            get => null;
+            set => SetProperty(ref _selectedItem, value);
+        }
+
         private string empreendimento = "Selecione ...";
         public string Empreendimento
         {

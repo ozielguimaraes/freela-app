@@ -262,6 +262,7 @@
 
                 <ListView 
                     Margin="0,0,0,10"
+                    SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
                           ItemsSource="{Binding PreChaves}"
                           CachingStrategy="RecycleElement"
                           HasUnevenRows="True">
