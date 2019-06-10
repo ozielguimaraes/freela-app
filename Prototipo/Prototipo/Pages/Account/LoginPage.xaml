@@ -10,7 +10,9 @@
                  VerticalOptions="Center">
         <Frame BackgroundColor="#B4005B63" HasShadow="True">
             <StackLayout Padding="10" Spacing="10">
-                <Label Text="ACESSO" HorizontalTextAlignment="Center" FontSize="Large">
+                <Label Text="ACESSO" 
+                       HorizontalTextAlignment="Center" 
+                       FontSize="Medium">
                     <Label.TextColor>
                         <OnPlatform x:TypeArguments="Color" Android="White" iOS="#212121"></OnPlatform>
                     </Label.TextColor>
@@ -18,6 +20,7 @@
 
                 <Label TextColor="Black" Text="Login"></Label>
                 <Entry TextColor="Black" 
+                       FontSize="Small"
                        BackgroundColor="White" 
                        Text="{Binding Login}" 
                        Placeholder="123.456.789-00" 
@@ -29,16 +32,20 @@
 
                 <Label TextColor="Black" Text="Senha"></Label>
                 <Entry TextColor="Black" 
+                       FontSize="Small"
                        BackgroundColor="White" 
                        IsPassword="true" 
                        Text="{Binding Senha}" 
                        Placeholder="senha"></Entry>
                 <Button Text="Entrar" 
+                        FontSize="Small"
+                        FontAttributes="Bold"
                         TextColor="White" 
                         BackgroundColor="#CC0066CC" 
                         Command="{Binding EfetuarLoginCommand}"></Button>
 
                 <ActivityIndicator Margin="0,5,0,5" 
+                                   IsVisible="{Binding IsLoading}" 
                                    IsRunning="{Binding IsLoading}" 
                                    Color="{StaticResource PrimaryColor}"></ActivityIndicator>
             </StackLayout>

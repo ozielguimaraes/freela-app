@@ -1,4 +1,5 @@
-﻿using Prototipo.Services.Interfaces;
+﻿using Microsoft.AppCenter.Crashes;
+using Prototipo.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,25 +13,25 @@ namespace Prototipo.Services
             Debug.WriteLine("-------------START--------------");
             Debug.WriteLine(messageError);
             Debug.WriteLine("--------------END-----------------");
-            //Crashes.TrackError(null, new Dictionary<string, string> { { "error", messageError } });
+            Crashes.TrackError(null, new Dictionary<string, string> { { "error", messageError } });
         }
 
         public void TrackError(Exception e)
         {
             WriteError(e);
-            //Crashes.TrackError(e);
+            Crashes.TrackError(e);
         }
 
         public void TrackError(Exception e, string messageError)
         {
             WriteError(e);
-            //Crashes.TrackError(e, new Dictionary<string, string> { { "error", messageError } });
+            Crashes.TrackError(e, new Dictionary<string, string> { { "error", messageError } });
         }
 
         public void TrackError(Exception e, Dictionary<string, string> properties)
         {
             WriteError(e);
-            //Crashes.TrackError(e, properties);
+            Crashes.TrackError(e, properties);
         }
 
         private void WriteError(Exception ex)
