@@ -2,19 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:control="clr-namespace:Prototipo.Controls"
-             xmlns:behaviors="clr-namespace:Prototipo.Behaviors"
-             xmlns:converters="clr-namespace:Prototipo.Converters;assembly=Prototipo"
              x:Class="Prototipo.Pages.Proposta.ListaPropostaPage"
-             Title="{Binding Title}">
+             Title="Minhas Propostas">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem>
-            <ToolbarItem.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource" Default="chat">
-                </OnPlatform>
-            </ToolbarItem.Icon>
-        </ToolbarItem>
-    </ContentPage.ToolbarItems>
     <StackLayout Margin="0,8,0,0">
         <ListView x:Name="ItemsListView"
                   ItemSelected="OnItemSelected"

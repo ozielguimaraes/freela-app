@@ -45,6 +45,7 @@ namespace Prototipo.Pages.Account
                 {
                     NavigationService.RemovePage(NavigationService.GetCurrentPage());
                     await NavigationService.PushModalAsync(new MainPage());
+                    //await NavigationService.PushModalAsync(new MainPage());
                     return;
                 }
 

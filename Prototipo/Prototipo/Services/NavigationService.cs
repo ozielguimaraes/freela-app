@@ -1,5 +1,4 @@
 ﻿using Prototipo.Pages;
-using Prototipo.Services;
 using Prototipo.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -13,6 +12,13 @@ namespace Prototipo.Services
     [Preserve(AllMembers = true)]
     public class NavigationService : INavigationService
     {
+        private readonly ExceptionService ExceptionService;
+
+        public NavigationService()
+        {
+            ExceptionService = new ExceptionService();
+        }
+
         public void NavigateToUrl(string url)
         {
             Device.OpenUri(new Uri(url));
@@ -27,67 +33,149 @@ namespace Prototipo.Services
 
         public void Navegar(Page page)
         {
-            var main = Application.Current.MainPage as MainPage;
-            main.Detail = page;
+            try
+            {
+                var main = Application.Current.MainPage as MainPage;
+                main.Detail = page;
+            }
+            catch (Exception ex)
+            {
+                ExceptionService.TrackError(ex);
+            }
         }
 
         public async Task PushAsync(Page page)
         {
-            await Application.Current.MainPage.Navigation.PushAsync(page);
+            try
+            {
+                await Application.Current.MainPage.Navigation.PushAsync(page);
+            }
+            catch (Exception ex)
+            {
+                ExceptionService.TrackError(ex);
+            }
         }
 
         public async Task PushModalAsync(Page page)
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(page);
+            try
+            {
+                await Application.Current.MainPage.Navigation.PushModalAsync(page);
+            }
+            catch (Exception ex)
+            {
+                ExceptionService.TrackError(ex);
+            }
         }
 
         public async Task PopAsync()
         {
-            await Application.Current.MainPage.Navigation.PopAsync();
+            try
+            {
+                await Application.Current.MainPage.Navigation.PopAsync();
+            }
+            catch (Exception ex)
+            {
+                ExceptionService.TrackError(ex);
+            }
         }
 
         public async Task PopToRootAsync()
         {
-            await Application.Current.MainPage.Navigation.PopToRootAsync();
+            try
+            {
+                await Application.Current.MainPage.Navigation.PopToRootAsync();
+            }
+            catch (Exception ex)
+            {
+                ExceptionService.TrackError(ex);
+            }
         }
 
         public async Task PopModalAsync()
         {
-            await Application.Current.MainPage.Navigation.PopModalAsync();
+            try
+            {
+                await Application.Current.MainPage.Navigation.PopModalAsync();
+            }
+            catch (Exception ex)
+            {
+                ExceptionService.TrackError(ex);
+            }
         }
 
         public void RemovePage(Type type)
         {
-            var page = (Page)Activator.CreateInstance(type);
-            foreach (var item in GetNavigationStack())
+            try
             {
-                if (item == page) Application.Current.MainPage.Navigation.RemovePage(page);
+                var page = (Page)Activator.CreateInstance(type);
+                foreach (var item in GetNavigationStack())
+                {
+                    if (item == page) Application.Current.MainPage.Navigation.RemovePage(page);
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionService.TrackError(ex);
             }
         }
 
         public void RemovePage(Page page)
         {
-            foreach (var item in GetNavigationStack())
+            try
             {
-                if (item == page) Application.Current.MainPage.Navigation.RemovePage(page);
+                if (page == null) return;
+
+                foreach (var item in GetNavigationStack())
+                {
+                    if ( item == page) Application.Current.MainPage.Navigation.RemovePage(page);
+                }
+            }
+            catch (Exception ex)
+            {
+                ExceptionService.TrackError(ex);
             }
         }
 
         public IList<Page> GetNavigationStack()
         {
-            return Application.Current.MainPage.Navigation.NavigationStack.ToList();
+            try
+            {
+                return Application.Current.MainPage.Navigation.NavigationStack.ToList();
+            }
+            catch (Exception ex)
+            {
+                ExceptionService.TrackError(ex);
+                throw;
+            }
         }
 
         public Page GetCurrentPage()
         {
-            var page = GetNavigationStack().LastOrDefault();
-            return page;
+            try
+            {
+                var pages = GetNavigationStack();
+                var page = pages.LastOrDefault();
+                return page;
+            }
+            catch (Exception ex)
+            {
+                ExceptionService.TrackError(ex);
+                throw;
+            }
         }
 
         public void NavigateOut()
         {
-            var account = DependencyService.Get<IAppManager>();
-            account.Close();
+            try
+            {
+                var account = DependencyService.Get<IAppManager>();
+                account.Close();
+            }
+            catch (Exception ex)
+            {
+                ExceptionService.TrackError(ex);
+            }
         }
     }
 }
