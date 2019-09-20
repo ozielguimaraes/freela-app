@@ -29,10 +29,14 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidLinkMode>Full</AndroidLinkMode>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <AndroidStoreUncompressedFileExtensions />
     <EnableProguard>true</EnableProguard>
     <AndroidLinkSkip>Prototipo;FFImageLoading.Forms.Platform</AndroidLinkSkip>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <BundleAssemblies>false</BundleAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -56,28 +60,24 @@
       <Version>2.0.11</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.AppCenter.Analytics">
-      <Version>2.0.0</Version>
+      <Version>2.1.1</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.AppCenter.Crashes">
-      <Version>2.0.0</Version>
+      <Version>2.1.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading">
-      <Version>2.4.5.900-pre</Version>
+      <Version>2.4.11.982</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading.Forms">
-      <Version>2.4.5.900-pre</Version>
+      <Version>2.4.11.982</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="3.6.0.293080" />
-    <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
-    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="27.0.2.1" />
-    <PackageReference Include="Xamarin.Android.Support.v4" Version="27.0.2.1" />
-    <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="27.0.2.1" />
-    <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="27.0.2.1" />
-    <PackageReference Include="Xamarin.HotReload">
-      <Version>1.2.5</Version>
-    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="4.2.0.815419" />
+    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0.3" />
+    <PackageReference Include="Xamarin.Android.Support.v4" Version="28.0.0.3" />
+    <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="28.0.0.3" />
+    <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Plugin.FilePicker">
-      <Version>2.0.135</Version>
+      <Version>2.1.34</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -114,9 +114,7 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\drawable\xamarin_logo.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\drawable-xxxhdpi\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Prototipo\Prototipo.csproj">
       <Project>{F9016FEA-4D34-4ED2-A729-56C8C76F03CF}</Project>
@@ -166,7 +164,25 @@
     <AndroidResource Include="Resources\drawable\developer.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\login_background.jpg" />
+    <AndroidResource Include="Resources\drawable\login_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\login_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xxhdpi\login_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-xhdpi\login_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-mdpi\login_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-ldpi\login_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\login_background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

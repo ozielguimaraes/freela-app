@@ -21,9 +21,6 @@ namespace Prototipo
             DependencyService.Register<IExceptionService, ExceptionService>();
             DependencyService.Register<INavigationService, NavigationService>();
             InicializarPlugins();
-#if DEBUG
-            HotReloader.Current.Start(this);
-#endif
             MainPage = new LoginPage();
         }
 
