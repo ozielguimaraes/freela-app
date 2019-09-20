@@ -29,10 +29,10 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <AndroidLinkMode>Full</AndroidLinkMode>
     <AndroidStoreUncompressedFileExtensions />
     <EnableProguard>true</EnableProguard>
-    <AndroidLinkSkip>Prototipo;FFImageLoading.Forms.Platform</AndroidLinkSkip>
+    <AndroidLinkSkip>Prototipo;FFImageLoading.Forms.Platform;Xamarin.Android.Support.v7.AppCompat;Xamarin.Android.Support.v4</AndroidLinkSkip>
     <AotAssemblies>false</AotAssemblies>
     <EnableLLVM>false</EnableLLVM>
     <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>

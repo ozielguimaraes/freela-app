@@ -1,54 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:behaviors="clr-namespace:Prototipo.Behaviors;assembly=Prototipo"
-             x:Class="Prototipo.Pages.Account.LoginPage"
-             BackgroundColor="#002b54"
-             Title="Login">
+<ContentPage
+    x:Class="Prototipo.Pages.Account.LoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behaviors="clr-namespace:Prototipo.Behaviors;assembly=Prototipo"
+    Title="Login"
+    BackgroundColor="#002b54">
 
-    <StackLayout Padding="30"
-                 VerticalOptions="Center">
-        <Frame BackgroundColor="#B4005B63" HasShadow="True">
+    <StackLayout Padding="30" VerticalOptions="Center">
+        <Frame BackgroundColor="#B4005B63" HasShadow="False">
             <StackLayout Padding="10" Spacing="10">
-                <Label Text="ACESSO" 
-                       HorizontalTextAlignment="Center" 
-                       FontSize="Medium">
+                <Label
+                    FontSize="Medium"
+                    HorizontalTextAlignment="Center"
+                    Text="ACESSO">
                     <Label.TextColor>
-                        <OnPlatform x:TypeArguments="Color" Android="White" iOS="#212121"></OnPlatform>
+                        <OnPlatform
+                            x:TypeArguments="Color"
+                            Android="White"
+                            iOS="#212121" />
                     </Label.TextColor>
                 </Label>
 
-                <Label TextColor="Black" Text="Login"></Label>
-                <Entry TextColor="Black" 
-                       FontSize="Small"
-                       BackgroundColor="White" 
-                       Text="{Binding Login}" 
-                       Placeholder="123.456.789-00" 
-                       Keyboard="Numeric">
+                <Label Text="Login" TextColor="Black" />
+                <Entry
+                    BackgroundColor="White"
+                    FontSize="Small"
+                    Keyboard="Numeric"
+                    Placeholder="123.456.789-00"
+                    Text="{Binding Login}"
+                    TextColor="Black">
                     <Entry.Behaviors>
                         <behaviors:CpfFormatterBehavior />
                     </Entry.Behaviors>
                 </Entry>
 
-                <Label TextColor="Black" Text="Senha"></Label>
-                <Entry TextColor="Black" 
-                       FontSize="Small"
-                       BackgroundColor="White" 
-                       IsPassword="true" 
-                       Text="{Binding Senha}" 
-                       Placeholder="senha"></Entry>
-                <Button Text="Entrar" 
-                        FontSize="Small"
-                        FontAttributes="Bold"
-                        TextColor="White" 
-                        BackgroundColor="#CC0066CC" 
-                        Command="{Binding EfetuarLoginCommand}"></Button>
+                <Label Text="Senha" TextColor="Black" />
+                <Entry
+                    BackgroundColor="White"
+                    FontSize="Small"
+                    IsPassword="true"
+                    Placeholder="senha"
+                    Text="{Binding Senha}"
+                    TextColor="Black" />
+                <Button
+                    BackgroundColor="#CC0066CC"
+                    Command="{Binding EfetuarLoginCommand}"
+                    FontAttributes="Bold"
+                    FontSize="Small"
+                    Text="Entrar"
+                    TextColor="White" />
 
-                <ActivityIndicator Margin="0,5,0,5" 
-                                   IsVisible="{Binding IsLoading}" 
-                                   IsRunning="{Binding IsLoading}" 
-                                   Color="{StaticResource PrimaryColor}"></ActivityIndicator>
+                <ActivityIndicator
+                    Margin="0,5,0,5"
+                    IsRunning="{Binding IsLoading}"
+                    IsVisible="{Binding IsLoading}"
+                    Color="{StaticResource PrimaryColor}" />
             </StackLayout>
-        </Frame>    
+        </Frame>
     </StackLayout>
 </ContentPage>
