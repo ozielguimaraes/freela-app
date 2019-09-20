@@ -25,9 +25,9 @@ namespace Prototipo.Droid
             CachedImageRenderer.Init(true);
             Forms.Init(this, savedInstanceState);
             var xfApplication = new App();
-#if DEBUG
-            HotReloader.Current.Start(xfApplication, 4290);
-#endif
+//#if DEBUG
+//            HotReloader.Current.Start(xfApplication, 4290);
+//#endif
             LoadApplication(xfApplication);
         }
     }
