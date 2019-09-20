@@ -29,7 +29,7 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidLinkMode>Full</AndroidLinkMode>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <AndroidStoreUncompressedFileExtensions />
     <EnableProguard>true</EnableProguard>
     <AndroidLinkSkip>Prototipo;FFImageLoading.Forms.Platform;Xamarin.Android.Support.v7.AppCompat;Xamarin.Android.Support.v4</AndroidLinkSkip>
@@ -114,7 +114,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\drawable\xamarin_logo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\house.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Prototipo\Prototipo.csproj">
       <Project>{F9016FEA-4D34-4ED2-A729-56C8C76F03CF}</Project>

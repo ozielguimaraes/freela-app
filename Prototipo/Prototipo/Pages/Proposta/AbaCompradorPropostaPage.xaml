@@ -1,30 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:behaviors="clr-namespace:Prototipo.Behaviors;assembly=Prototipo"
-             x:Class="Prototipo.Pages.Proposta.AbaCompradorPropostaPage"
-             Title="Comprador">
+<ContentPage
+    x:Class="Prototipo.Pages.Proposta.AbaCompradorPropostaPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behaviors="clr-namespace:Prototipo.Behaviors;assembly=Prototipo"
+    Title="Comprador">
 
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Label Text="CPF"
-                   TextColor="{StaticResource PrimaryLabelColor}" />
-                <Entry Text="{Binding Comprador.Cpf}"
-                   Placeholder="Ex: 123.456.789-00"
-                   MaxLength="14"
-                   Keyboard="Numeric"
-                   ReturnType="Next">
+                <Label Text="CPF" TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry
+                    Keyboard="Numeric"
+                    MaxLength="14"
+                    Placeholder="Ex: 123.456.789-00"
+                    ReturnType="Next"
+                    Text="{Binding Comprador.Cpf}">
                     <Entry.Behaviors>
                         <behaviors:CpfFormatterBehavior />
                     </Entry.Behaviors>
                 </Entry>
 
-                <Label Text="Nome completo"
-                   TextColor="{StaticResource PrimaryLabelColor}" />
-                <Entry Placeholder="Ex: Oziel Guimarães de Paula Silva"
-                   MaxLength="50"
-                   ReturnType="Next">
+                <Label Text="Nome completo" TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry
+                    MaxLength="50"
+                    Placeholder="Ex: Oziel Guimarães de Paula Silva"
+                    ReturnType="Next">
                     <Entry.Keyboard>
                         <Keyboard x:FactoryMethod="Create">
                             <x:Arguments>
@@ -34,48 +35,45 @@
                     </Entry.Keyboard>
                 </Entry>
 
-                <Label Text="Data de nascimento"
-                   TextColor="{StaticResource PrimaryLabelColor}" />
-                <Entry Text="{Binding Comprador.DataNascimento}"
-                   Placeholder="Ex: 01/01/2001"
-                   MaxLength="10"
-                   Keyboard="Numeric"
-                   ReturnType="Next">
+                <Label Text="Data de nascimento" TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry
+                    Keyboard="Numeric"
+                    MaxLength="10"
+                    Placeholder="Ex: 01/01/2001"
+                    ReturnType="Next"
+                    Text="{Binding Comprador.DataNascimento}">
                     <Entry.Behaviors>
                         <behaviors:DateFormatterBehavior />
                     </Entry.Behaviors>
                 </Entry>
 
-                <Label Text="Escolaridade"
-                   TextColor="{StaticResource PrimaryLabelColor}" />
-                <Picker 
+                <Label Text="Escolaridade" TextColor="{StaticResource PrimaryLabelColor}" />
+                <Picker
                     Title="Escolaridade"
                     ItemDisplayBinding="{Binding Value}"
-                    SelectedItem="{Binding Comprador.Escolaridade}"
-                    ItemsSource="{Binding ListaEscolaridade}" />
+                    ItemsSource="{Binding ListaEscolaridade}"
+                    SelectedItem="{Binding Comprador.Escolaridade}" />
 
-                <Label Text="Gênero"
-                   TextColor="{StaticResource PrimaryLabelColor}" />
-                <Picker 
+                <Label Text="Gênero" TextColor="{StaticResource PrimaryLabelColor}" />
+                <Picker
                     Title="Gênero"
                     ItemDisplayBinding="{Binding Value}"
-                    SelectedItem="{Binding Comprador.Genero}"
-                    ItemsSource="{Binding ListaGenero}" />
+                    ItemsSource="{Binding ListaGenero}"
+                    SelectedItem="{Binding Comprador.Genero}" />
 
-                <Label Text="Estado civil"
-                   TextColor="{StaticResource PrimaryLabelColor}" />
-                <Picker 
+                <Label Text="Estado civil" TextColor="{StaticResource PrimaryLabelColor}" />
+                <Picker
                     Title="Estado civil"
                     ItemDisplayBinding="{Binding Value}"
-                    SelectedItem="{Binding Comprador.EstadoCivil}"
-                    ItemsSource="{Binding ListaEstadoCivil}" />
+                    ItemsSource="{Binding ListaEstadoCivil}"
+                    SelectedItem="{Binding Comprador.EstadoCivil}" />
 
-                <Label Text="Nacionalidade"
-                   TextColor="{StaticResource PrimaryLabelColor}" />
-                <Entry Text="{Binding Comprador.Nacionalidade}"
-                       Placeholder="Ex: Brasileira"
-                   MaxLength="20"
-                   ReturnType="Next">
+                <Label Text="Nacionalidade" TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry
+                    MaxLength="20"
+                    Placeholder="Ex: Brasileira"
+                    ReturnType="Next"
+                    Text="{Binding Comprador.Nacionalidade}">
                     <Entry.Keyboard>
                         <Keyboard x:FactoryMethod="Create">
                             <x:Arguments>
@@ -85,12 +83,12 @@
                     </Entry.Keyboard>
                 </Entry>
 
-                <Label Text="Naturalidade"
-                   TextColor="{StaticResource PrimaryLabelColor}" />
-                <Entry Text="{Binding Comprador.Naturalidade}"
-                       Placeholder="Ex: Belo Horizonte"
-                   MaxLength="30"
-                   ReturnType="Next">
+                <Label Text="Naturalidade" TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry
+                    MaxLength="30"
+                    Placeholder="Ex: Belo Horizonte"
+                    ReturnType="Next"
+                    Text="{Binding Comprador.Naturalidade}">
                     <Entry.Keyboard>
                         <Keyboard x:FactoryMethod="Create">
                             <x:Arguments>
@@ -100,23 +98,23 @@
                     </Entry.Keyboard>
                 </Entry>
 
-                <Label Text="Valor FGTS"
-                   TextColor="{StaticResource PrimaryLabelColor}" />
-                <Entry Text="{Binding Comprador.ValorFgts}"
-                       Placeholder="Ex: 12.200,00"
-                   Keyboard="Numeric"
-                   ReturnType="Next">
+                <Label Text="Valor FGTS" TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry
+                    Keyboard="Numeric"
+                    Placeholder="Ex: 12.200,00"
+                    ReturnType="Next"
+                    Text="{Binding Comprador.ValorFgts}">
                     <Entry.Behaviors>
                         <behaviors:MoneyFormatterBehavior />
                     </Entry.Behaviors>
                 </Entry>
 
-                <Label Text="Nome do pai"
-                   TextColor="{StaticResource PrimaryLabelColor}" />
-                <Entry Text="{Binding Comprador.NomePai}"
-                       Placeholder="Ex: João da Fonseca Souza"
-                   MaxLength="10"
-                   ReturnType="Next">
+                <Label Text="Nome do pai" TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry
+                    MaxLength="10"
+                    Placeholder="Ex: João da Fonseca Souza"
+                    ReturnType="Next"
+                    Text="{Binding Comprador.NomePai}">
                     <Entry.Keyboard>
                         <Keyboard x:FactoryMethod="Create">
                             <x:Arguments>
@@ -126,12 +124,12 @@
                     </Entry.Keyboard>
                 </Entry>
 
-                <Label Text="Nome da mãe"
-                   TextColor="{StaticResource PrimaryLabelColor}" />
-                <Entry Text="{Binding Comprador.NomeMae}"
-                       Placeholder="Ex: Joaquina Rocha de Souza"
-                   MaxLength="10"
-                   ReturnType="Next">
+                <Label Text="Nome da mãe" TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry
+                    MaxLength="10"
+                    Placeholder="Ex: Joaquina Rocha de Souza"
+                    ReturnType="Next"
+                    Text="{Binding Comprador.NomeMae}">
                     <Entry.Keyboard>
                         <Keyboard x:FactoryMethod="Create">
                             <x:Arguments>
@@ -142,33 +140,33 @@
                 </Entry>
 
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Documentos"
-                           TextColor="{StaticResource PrimaryLabelColor}" 
-                           FontSize="Medium" />
+                    <Label
+                        FontSize="Medium"
+                        Text="Documentos"
+                        TextColor="{StaticResource PrimaryLabelColor}" />
                 </StackLayout>
 
-                <Label Text="Tipo documento"
-                   TextColor="{StaticResource PrimaryLabelColor}" />
-                <Picker 
+                <Label Text="Tipo documento" TextColor="{StaticResource PrimaryLabelColor}" />
+                <Picker
                     Title="Tipo documento"
                     ItemDisplayBinding="{Binding Value}"
-                    SelectedItem="{Binding Comprador.TipoDocumento}"
-                    ItemsSource="{Binding ListaTipoDocumento}" />
+                    ItemsSource="{Binding ListaTipoDocumento}"
+                    SelectedItem="{Binding Comprador.TipoDocumento}" />
 
-                <Label Text="N° documento"
-                   TextColor="{StaticResource PrimaryLabelColor}" />
-                <Entry Text="{Binding Comprador.NumeroDocumento}"
-                       Placeholder="Ex: 312654"
-                   MaxLength="30"
-                   Keyboard="Numeric"
-                   ReturnType="Next" />
+                <Label Text="N° documento" TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry
+                    Keyboard="Numeric"
+                    MaxLength="30"
+                    Placeholder="Ex: 312654"
+                    ReturnType="Next"
+                    Text="{Binding Comprador.NumeroDocumento}" />
 
-                <Label Text="Orgão expedidor"
-                   TextColor="{StaticResource PrimaryLabelColor}" />
-                <Entry Text="{Binding Comprador.OrgaoExpedidor}"
+                <Label Text="Orgão expedidor" TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry
+                    MaxLength="10"
                     Placeholder="Ex: SSP"
-                   MaxLength="10"
-                   ReturnType="Next">
+                    ReturnType="Next"
+                    Text="{Binding Comprador.OrgaoExpedidor}">
                     <Entry.Keyboard>
                         <Keyboard x:FactoryMethod="Create">
                             <x:Arguments>
@@ -178,35 +176,35 @@
                     </Entry.Keyboard>
                 </Entry>
 
-                <Label Text="Data de emissão"
-                   TextColor="{StaticResource PrimaryLabelColor}" />
-                <Entry Text="{Binding Comprador.DataEmissao}"
-                   Placeholder="Ex: 01/01/2005"
-                   MaxLength="10"
-                   Keyboard="Numeric"
-                   ReturnType="Next">
+                <Label Text="Data de emissão" TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry
+                    Keyboard="Numeric"
+                    MaxLength="10"
+                    Placeholder="Ex: 01/01/2005"
+                    ReturnType="Next"
+                    Text="{Binding Comprador.DataEmissao}">
                     <Entry.Behaviors>
                         <behaviors:DateFormatterBehavior />
                     </Entry.Behaviors>
                 </Entry>
 
-                <Label Text="Cat. profissional"
-                   TextColor="{StaticResource PrimaryLabelColor}" />
-                <Entry Text="{Binding Comprador.CategoriaProfissional}"
-                       Placeholder="Ex: 98673571"
-                   TextColor="{StaticResource EntryTextColor}"
-                   MaxLength="20"
-                   ReturnType="Next" />
+                <Label Text="Cat. profissional" TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry
+                    MaxLength="20"
+                    Placeholder="Ex: 98673571"
+                    ReturnType="Next"
+                    Text="{Binding Comprador.CategoriaProfissional}"
+                    TextColor="{StaticResource EntryTextColor}" />
 
-                <Label Text="Dependentes n°"
-                   TextColor="{StaticResource PrimaryLabelColor}" />
-                <Entry Text="{Binding Comprador.QuantidadeDependentes}"
-                       Placeholder="Ex: 2"
-                   MaxLength="2"
-                   Keyboard="Numeric"
-                   ReturnType="Done" />
+                <Label Text="Dependentes n°" TextColor="{StaticResource PrimaryLabelColor}" />
+                <Entry
+                    Keyboard="Numeric"
+                    MaxLength="2"
+                    Placeholder="Ex: 2"
+                    ReturnType="Done"
+                    Text="{Binding Comprador.QuantidadeDependentes}" />
 
-                <!--<Button x:Name="AdicionarDocumentos" Text="Adicionar documentos" 
+                <!--<Button x:Name="AdicionarDocumentos" Text="Adicionar documentos"
                     BackgroundColor="#c9c9c9"
                     CornerRadius="8"
                         Clicked="AdicionarDocumentos_Clicked"
