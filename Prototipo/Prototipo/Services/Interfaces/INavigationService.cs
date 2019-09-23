@@ -7,10 +7,12 @@ namespace Prototipo.Services.Interfaces
 {
     public interface INavigationService
     {
+        void GoToHome<T>() where T : class;
         void NavigateToUrl(string url);
         void MakePhoneCall(string number);
         Task PushModalAsync(Page page);
         void Navegar(Page page);
+        Task GoToAsync<T>(bool navigate = false) where T : class;
         Task PushAsync(Page page);
         Task PopAsync();
         Task PopToRootAsync();

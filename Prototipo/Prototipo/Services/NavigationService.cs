@@ -28,7 +28,7 @@ namespace Prototipo.Services
         {
             if (string.IsNullOrWhiteSpace(number)) return;
 
-            NavigateToUrl($"tel:{number.Replace("(", "").Replace("-", "")}");
+            NavigateToUrl($"tel:{number.Replace("(", "").Replace(")", "").Replace("-", "")}");
         }
 
         public void Navegar(Page page)
@@ -36,12 +36,51 @@ namespace Prototipo.Services
             try
             {
                 var main = Application.Current.MainPage as MainPage;
-                main.Detail = page;
+                //main.Detail = page;
             }
             catch (Exception ex)
             {
                 ExceptionService.TrackError(ex);
             }
+        }
+
+        public async Task GoToAsync<T>(bool navigate) where T : class
+        {
+            var page = GetPage<T>();
+            await Application.Current.MainPage.Navigation.PushAsync(page);
+        }
+
+        public void GoToHome<T>() where T : class
+        {
+            var page = GetPage<T>();
+            Application.Current.MainPage = page as Shell;
+        }
+
+        private Page GetPage<T>()
+        {
+            var pageModelType = typeof(T);
+            var pageModelTypeName = pageModelType.Name;
+
+            if (!pageModelType.FullName.Contains("Pages"))
+                throw new Exception($"'{pageModelTypeName}' deve ficar dentro da pasta 'Pages'");
+
+            if (!pageModelTypeName.EndsWith("PageModel"))
+                throw new Exception($"'{pageModelTypeName}' terminar com 'PageModel'");
+
+            var pageTypeName = pageModelType.FullName.Replace("PageModel", "Page");
+            var pageType = Type.GetType(pageTypeName);
+            if (pageType == null) throw new Exception($"Página '{pageType.Name}' não existe");
+
+            if (!(Activator.CreateInstance(pageType) is Page page))
+                throw new Exception($"Página '{pageTypeName}' não herda de 'Page'");
+
+            if (page == null) throw new Exception($"Página '{pageType.Name}' não existe");
+
+            if (!(Activator.CreateInstance(pageModelType) is T pageModel)) throw new Exception($"PageModel '{pageModelTypeName}' não existe");
+
+            page.BindingContext = pageModel;
+
+            return page;
         }
 
         public async Task PushAsync(Page page)
@@ -128,7 +167,7 @@ namespace Prototipo.Services
 
                 foreach (var item in GetNavigationStack())
                 {
-                    if ( item == page) Application.Current.MainPage.Navigation.RemovePage(page);
+                    if (item == page) Application.Current.MainPage.Navigation.RemovePage(page);
                 }
             }
             catch (Exception ex)

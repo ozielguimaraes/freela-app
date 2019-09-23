@@ -1,66 +1,69 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
-            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            x:Class="Prototipo.Pages.MainPage"
-                  Title="Master">
+<Shell
+    x:Class="Prototipo.Pages.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:about="clr-namespace:Prototipo.Pages.About"
+    xmlns:menu="clr-namespace:Prototipo.Pages.Menu"
+    xmlns:vm="clr-namespace:Prototipo.Pages"
+    Title="Master">
 
-    <MasterDetailPage.Master>
-        <ContentPage BackgroundColor="#344860" Padding="0">
-            <StackLayout>
-                <StackLayout BackgroundColor="#11233c" HeightRequest="80">
-                    <Label Text="Bem Vindo(a)"
-                 FontSize="Small"
-                 VerticalOptions="CenterAndExpand"
-                 TextColor="White"
-                 HorizontalOptions="Center"/>
-                    <BoxView Margin="0" HeightRequest="1" Color="Gray"></BoxView>
-                </StackLayout>
-                <ListView ItemsSource="{Binding Items}"
-                          HasUnevenRows="True"
-                              HorizontalOptions="FillAndExpand"
-                              VerticalOptions="FillAndExpand"
-                              RowHeight="60"
-                              ItemSelected="OnMenuItemSelected"
-                              SeparatorVisibility="None">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout VerticalOptions="FillAndExpand"
-                             Orientation="Horizontal"
-                             Padding="30,10,0,10"
-                             Spacing="15">
+    <!--
+        Styles and Resources
+    -->
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White" />
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarTitleColor" Value="White" />
+            </Style>
+            <Style BasedOn="{StaticResource BaseStyle}" TargetType="ShellItem" />
+        </ResourceDictionary>
+    </Shell.Resources>
 
-                                    <Label Text="{Binding Title}"
-                         FontSize="Small"
-                                 FontAttributes="Bold"
-                         VerticalOptions="Center"
-                         TextColor="#cccccc"/>
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                
-                <FlexLayout Direction="Column">
-                    <Label
-                           Margin="10,0,0,0" 
-                           Text="{Binding AppVersion, StringFormat='Versão {0}'}" 
-                           TextColor="#cccccc" 
-                           FontSize="Micro">
-                    </Label>
+    <!--  Your Pages  -->
+    <TabBar>
+        <Tab Title="About" Icon="tab_about.png">
+            <ShellContent ContentTemplate="{DataTemplate about:AboutPage}" />
+        </Tab>
+    </TabBar>
 
-                    <Label
-                           Margin="10,0,0,3" 
-                           Text="Powered By: Guimaraes Technologies" 
-                           TextColor="{StaticResource PrimaryLabelColor}"
-                           VerticalOptions="EndAndExpand"
-                           FontSize="Micro">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding OpenDeveloperProfileCommand}" />
-                        </Label.GestureRecognizers>
-                    </Label>
-                </FlexLayout>
-            </StackLayout>
-        </ContentPage>
-    </MasterDetailPage.Master>
-</MasterDetailPage>
+    <!-- Optional Templates
+    // These may be provided inline as below or as separate classes.
+
+    // This header appears at the top of the Flyout.
+    <Shell.FlyoutHeaderTemplate>
+	<DataTemplate>
+            <Grid>ContentHere</Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+
+    // ItemTemplate is for ShellItems as displayed in a Flyout
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <ContentView>
+                Bindable Properties: Title, Icon
+            </ContentView>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    // MenuItemTemplate is for MenuItems as displayed in a Flyout
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <ContentView>
+                Bindable Properties: Text, Icon
+            </ContentView>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+
+    -->
+
+</Shell>
