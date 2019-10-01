@@ -47,11 +47,9 @@ namespace Prototipo.Pages.Account
                     //NavigationService.GoToHome<MainPageModel>();
                     Device.BeginInvokeOnMainThread(() =>
                     {
-                        Application.Current.MainPage = new MainPage
-                        {
-                            BindingContext = new MainPageModel()
-                        };
+                        Application.Current.MainPage = new MainPage();
                     });
+                    await NavigationService.PopToRootAsync();
 
                     //await NavigationService.PushModalAsync(new MainPage());
                     //await NavigationService.PushModalAsync(new MainPage());

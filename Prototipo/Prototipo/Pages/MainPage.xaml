@@ -29,12 +29,15 @@
         </ResourceDictionary>
     </Shell.Resources>
 
+    <Shell.FlyoutHeader>
+        <menu:FlyoutHeader />
+    </Shell.FlyoutHeader>
     <!--  Your Pages  -->
-    <TabBar>
-        <Tab Title="About" Icon="tab_about.png">
+    <FlyoutItem>
+        <Tab Title="About" >
             <ShellContent ContentTemplate="{DataTemplate about:AboutPage}" />
         </Tab>
-    </TabBar>
+    </FlyoutItem>
 
     <!-- Optional Templates
     // These may be provided inline as below or as separate classes.

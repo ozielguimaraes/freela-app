@@ -8,21 +8,21 @@ namespace Prototipo.Pages
 {
     public partial class MainPage : Shell
     {
-        private readonly MenuPageModel _pageModel;
+        private readonly MainPageModel _pageModel;
 
         public MainPage()
         {
             InitializeComponent();
             RegisterRoutes();
             Title = Constants.AppName;
-            BindingContext = _pageModel = new MenuPageModel();
+            BindingContext = _pageModel = new MainPageModel();
             //Detail = new NavigationPage(new Carteira.CarteiraPage());
         }
 
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            _pageModel.LoadItemsCommand.Execute(null);
+            //_pageModel.LoadItemsCommand.Execute(null);
         }
 
         private void RegisterRoutes()
