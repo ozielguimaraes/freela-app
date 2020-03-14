@@ -12,6 +12,7 @@ namespace Prototipo.Pages.Account
         public ICommand EfetuarLoginCommand { get; set; }
 
         private string senha;
+
         public string Senha
         {
             get { return senha; }
@@ -19,6 +20,7 @@ namespace Prototipo.Pages.Account
         }
 
         private string login;
+
         public string Login
         {
             get { return login; }
